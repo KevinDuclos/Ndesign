@@ -5,19 +5,19 @@
 
 {% block body %}
 <div class="register">
-<div class="container">
-    <div class="row">
-        <div class="col-sm-4 mr-auto ml-auto">
+<div class="">
+    <div class="">
+        <div class="">
             <h2>Inscription</h2>
             {% if not form.vars.valid %}
-            <div class="alert alert-danger">
+            <div class="">
                 Le formulaire contien des erreur
             </div>
             {% endif %}
                 {{ form_start(form) }}
                 {{ form_widget(form.email, {
                     'attr':{
-                        'class': 'form-control email',
+                        'class': '',
                         'placeholder': 'E-Mail',
                         
                     }
@@ -25,7 +25,7 @@
                 <br>                
                 {{ form_widget(form.username, {
                     'attr':{
-                        'class': 'form-control username',
+                        'class': '',
                         'placeholder': 'Pseudo',
                         
                     }
@@ -33,7 +33,7 @@
                 <br>                
                 {{ form_widget(form.plainPassword.first, {
                     'attr':{
-                        'class': 'form-control password',
+                        'class': '',
                         'placeholder': 'Mot de passe',
                         
                     }
@@ -41,13 +41,13 @@
                 <br>
                 {{ form_widget(form.plainPassword.second, {
                     'attr':{
-                        'class': 'form-control repeat-password',
+                        'class': '',
                         'placeholder': 'Repetez votre mot de passe',
                         
                     }
                 }) }}
                 <br>
-                <button type="submit" class="btn btn-success btn-block">S'inscrire</button>
+                <button type="submit" class="">S'inscrire</button>
                 {{ form_end(form) }}
         </div>
     </div>
@@ -56,8 +56,5 @@
 {% endblock body %}
 
 {% block javascripts %}
-        {% javascripts '@Script_CheckForm_Registration' %}
-            <script src="{{ asset_url }}"></script>
-        {% endjavascripts %}
 {% endblock %}
 
