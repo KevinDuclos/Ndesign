@@ -18,4 +18,16 @@ class DefaultController extends Controller
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+    public function retrieveAction(){
+        return $this->render('@App/Default/single.html.twig');
+    }
+    public function createAction(){
+        return $this->render('@App/Default/create.html.twig');
+    }
+    public function updateAction(){
+        return $this->render('@App/Default/update.html.twig');
+    }
+    public function deleteAction(){
+        return $this->render('@App/Default/delete.html.twig');
+    }
 }
