@@ -11,15 +11,12 @@ class DefaultController extends Controller
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction(Request $request)
+    public function indexAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', [
-            'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
-        ]);
+        return $this->render('@App/Default/index.html.twig');
     }
     public function retrieveAction(){
-        return $this->render('@App/Default/single.html.twig');
+        return $this->render('@App/Default/retrieve.html.twig');
     }
     public function createAction(){
         return $this->render('@App/Default/create.html.twig');

@@ -1,0 +1,20 @@
+app_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+
+app_create:
+    path:     /create/
+    defaults: { _controller: AppBundle:Default:create }
+
+app_update:
+    path:     /update/
+    defaults: { _controller: AppBundle:Default:update }
+
+app_retrieve:
+    path:     /retrieve/
+    defaults: { _controller: AppBundle:Default:retrieve }
+
+app_delete:
+    path:     /delete/
+    defaults: { _controller: AppBundle:Default:delete }
+

@@ -3,9 +3,8 @@ user:
     prefix:   /user
 
 app:
-    resource: '@AppBundle/Controller/'
-    prefix: /
-    type: annotation
+    resource: '@AppBundle/Resources/config/routing.yml'
+    prefix: /home
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
