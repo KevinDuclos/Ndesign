@@ -3,26 +3,53 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}NDESIGN{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.jpg') }}" />
+        {# Typo de base #}
+        <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+        {# CSS #}
+        {% block stylesheets %}
+            {% stylesheets '@Style_Main' %}
+                <link rel="stylesheet" href=" {{ asset_url }} "/>
+            {% endstylesheets %}
+        {% endblock stylesheets %}
+
+        {# Favicon #}
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.jpg') }}" />
     </head>
     <body>
 
+    {# HEADER #}
     <header>
 
-        <h1>Bonjour</h1>
+        {# Logo #}
+        <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }} " alt="Logo NDesign" class="logo-ndesign">
+
+        {# Barre blanche #}
+        <span class="header">
+            {# Barre de recherche #}
+            <input type="search" name="" id="" placeholder="Rechercher" class="search">
+            <a href="#">
+                <img src="{{ asset('assets/img/search.svg') }} " alt="Icône recherche" class="icone-search">
+            </a>        
+            {# Icône panier #}
+            <a href="#">
+                <img src="{{ asset('assets/img/panier.svg') }} " alt="Icône panier" class="icone-panier">        
+            </a>
+            {# Icône user #}
+            <a href="#">
+                <img src="{{ asset('assets/img/user.svg') }} " alt="Icône user" class="icone-user">        
+            </a>
+        </span>
 
     </header>
-
 
         {% block body %}{% endblock %}
 
     <footer>
 
-    <h2>salut</h2>
-
     </footer>
 
         {% block javascripts %}{% endblock %}
+
     </body>
 </html>

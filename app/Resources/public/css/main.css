@@ -1,0 +1,177 @@
+/*
+ * RESET
+ */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+ * END RESET
+ */
+
+/*
+ * CLEAR
+ */
+
+.clear:before,.clear:after {
+    content: '';
+    display: table;
+}
+
+.clear:after {
+    clear: both;
+}
+
+.clear {
+    *zoom: 1;
+}
+
+/* 
+ * END CLEAR
+ */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow', sans-serif;
+    background-color: rgb(240, 240, 240);
+}
+
+/*
+ * HEADER
+ */
+
+/* Fond blanc */
+.header {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 130px;
+    color: white;
+    background-color: white;
+    z-index: 0;    
+}
+
+/* Logo NDesign */
+.logo-ndesign {
+    position: absolute;
+    width: 15%;
+    left: 70px;
+    top: 5px;
+    z-index: 20;
+}
+
+/* Barre de recherche */
+.search {
+    position: absolute;    
+    width: 37%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 25px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid grey;
+    left: 370px;
+    top: 50%;
+    margin-top: -11px;
+}
+
+.icone-search {
+    position: absolute;
+    margin-top: -2px;    
+    left: 65%;
+    top: 50%;   
+}
+
+/* Icône panier */
+.icone-panier {
+    position: absolute;
+    width: 4%;
+    right: 160px;
+    top: 50%;
+    margin-top: -27px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius:    50px;
+    border-radius:         50px;
+    transition: all 0.5s;
+}
+
+.icone-panier:hover {
+    -webkit-box-shadow: 0px 0px 8px 0px #9b9b9b;
+    -moz-box-shadow:    0px 0px 8px 0px #9b9b9b;
+    -o-box-shadow:      0px 0px 8px 0px #9b9b9b;
+    box-shadow:         0px 0px 8px 0px #9b9b9b;
+}
+
+/* Icône user */
+.icone-user {
+    position: absolute;
+    width: 4%;
+    right: 80px;
+    top: 50%;
+    margin-top: -27px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius:    50px;
+    border-radius:         50px;
+    transition: all 0.5s;
+}
+
+.icone-user:hover {
+    -webkit-box-shadow: 0px 0px 8px 0px #9b9b9b;
+    -moz-box-shadow:    0px 0px 8px 0px #9b9b9b;
+    -o-box-shadow:      0px 0px 8px 0px #9b9b9b;
+    box-shadow:         0px 0px 8px 0px #9b9b9b;
+}
+
+/* 
+ * MAIN-CONTENT
+ */
+
+
+
+/*
+ * FOOTER
+ */
+
+.h2 {
+    text-transform: uppercase;
+}
