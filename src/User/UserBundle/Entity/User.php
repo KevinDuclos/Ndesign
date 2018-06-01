@@ -25,16 +25,22 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="adress", type="string", length=255)
+     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
      */
     private $adress;
 
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="created_at", type="date")
+     * @ORM\Column(name="created_at", type="date", nullable=true)
      */
     private $created_at;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="users")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $commande;
 
     /**
      * Get id.
@@ -92,5 +98,55 @@ class User extends BaseUser
     public function getCreatedAt()
     {
         return $this->created_at;
+    }
+
+    /**
+     * Set commande.
+     *
+     * @param \App\Entity\Commande $commande
+     *
+     * @return User
+     */
+    public function setCommande(\App\Entity\Commande $commande)
+    {
+        $this->commande = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Get commande.
+     *
+     * @return \App\Entity\Commande
+     */
+    public function getCommande()
+    {
+        return $this->commande;
+    }
+
+    /**
+     * Add commande.
+     *
+     * @param \AppBundle\Entity\Commande $commande
+     *
+     * @return User
+     */
+    public function addCommande(\AppBundle\Entity\Commande $commande)
+    {
+        $this->commande[] = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Remove commande.
+     *
+     * @param \AppBundle\Entity\Commande $commande
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCommande(\AppBundle\Entity\Commande $commande)
+    {
+        return $this->commande->removeElement($commande);
     }
 }
