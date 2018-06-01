@@ -2,12 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}NDESIGN{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.jpg') }}" />
     </head>
     <body>
+
+    <header>
+
+        <h1>Bonjour</h1>
+
+    </header>
+
+
         {% block body %}{% endblock %}
+
+    <footer>
+
+    <h2>salut</h2>
+
+    </footer>
+
         {% block javascripts %}{% endblock %}
     </body>
 </html>
