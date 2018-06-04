@@ -53,3 +53,7 @@ app_login:
 app_test:
     path: /test/
     defaults: { _controller: AppBundle:Test:test }
+
+app_users:
+    path: /users/
+    defaults: { _controller: AppBundle:Admin:users }
