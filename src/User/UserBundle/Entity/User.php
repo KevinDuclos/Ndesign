@@ -23,9 +23,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="User\UserBundle\Entity\Adresse", cascade={"persist"})
      */
     private $adress;
 
@@ -41,6 +39,12 @@ class User extends BaseUser
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;
+
+    public function __construct(){
+        $this->createdAt= new \DateTime();
+        $this->role = 'Utilisateur';
+        $this->enabled = 1;
+    }
 
     /**
      * Get id.

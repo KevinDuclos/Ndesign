@@ -43,11 +43,9 @@ class Produit
     private $poids;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="tag", type="string", length=255)
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Categorie", cascade={"persist"})
      */
-    private $tag;
+    private $categorie;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Commande", cascade={"persist"})
@@ -201,5 +199,41 @@ class Produit
     public function getCommandes()
     {
         return $this->commandes;
+    }
+
+    /**
+     * Add categorie.
+     *
+     * @param \AppBundle\Entity\Category $categorie
+     *
+     * @return Produit
+     */
+    public function addCategorie(\AppBundle\Entity\Category $categorie)
+    {
+        $this->categorie[] = $categorie;
+
+        return $this;
+    }
+
+    /**
+     * Remove categorie.
+     *
+     * @param \AppBundle\Entity\Category $categorie
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCategorie(\AppBundle\Entity\Category $categorie)
+    {
+        return $this->categorie->removeElement($categorie);
+    }
+
+    /**
+     * Get categorie.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCategorie()
+    {
+        return $this->categorie;
     }
 }

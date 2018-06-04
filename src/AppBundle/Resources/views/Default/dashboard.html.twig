@@ -1,6 +1,6 @@
 {% extends ('base_admin.html.twig') %}
 
-    {% block body %}
+     {% block body %}
 	<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">			
 		<div class="row">
 			<ol class="breadcrumb">
@@ -24,7 +24,7 @@
 							<svg class="glyph stroked bag"><use xlink:href="#stroked-bag"></use></svg>
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
-							<div class="large">120</div>
+							<div class="large">{{ count }}</div>
 							<div class="text-muted">New Orders</div>
 						</div>
 					</div>
@@ -269,6 +269,7 @@
 				</div>
 								
 			</div><!--/.col-->
-		</div><!--/.row-->
+		</div><!--/.row--> 
     </div>	<!--/.main-->
-    {% endblock body %}
+    {% endblock body %} 
+
