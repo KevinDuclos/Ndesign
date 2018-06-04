@@ -1,51 +1,59 @@
 app_homepage:
     path:     /
-    defaults: { _controller: AppBundle:Default:index }
+    defaults: { _controller: AppBundle:App:index }
 
 app_create:
     path:     /create/
-    defaults: { _controller: AppBundle:Default:create }
+    defaults: { _controller: AppBundle:App:create }
 
 app_update:
     path:     /update/
-    defaults: { _controller: AppBundle:Default:update }
+    defaults: { _controller: AppBundle:App:update }
 
 app_retrieve:
     path:     /retrieve/
-    defaults: { _controller: AppBundle:Default:retrieve }
+    defaults: { _controller: AppBundle:App:retrieve }
 
 app_delete:
     path:     /delete/
-    defaults: { _controller: AppBundle:Default:delete }
+    defaults: { _controller: AppBundle:App:delete }
 
 app_dashboard:
     path: /dashboard/
-    defaults: { _controller: AppBundle:Default:dashboard }
+    defaults: { _controller: AppBundle:Admin:dashboard }
 
 app_charts:
     path: /charts/
-    defaults: { _controller: AppBundle:Default:charts }
+    defaults: { _controller: AppBundle:Admin:charts }
 
 app_tables:
     path: /tables/
-    defaults: { _controller: AppBundle:Default:tables }
+    defaults: { _controller: AppBundle:Admin:tables }
 
 app_forms:
     path: /forms/
-    defaults: { _controller: AppBundle:Default:forms }
+    defaults: { _controller: AppBundle:Admin:forms }
 
 app_panels:
     path: /panels/
-    defaults: { _controller: AppBundle:Default:panels }
+    defaults: { _controller: AppBundle:Admin:panels }
 
 app_icons:
     path: /icons/
-    defaults: { _controller: AppBundle:Default:icons }
+    defaults: { _controller: AppBundle:Admin:icons }
 
 app_widgets:
     path: /widgets/
-    defaults: { _controller: AppBundle:Default:widgets }
+    defaults: { _controller: AppBundle:Admin:widgets }
 
 app_login:
     path: /login/
-    defaults: { _controller: AppBundle:Default:login }
+    defaults: { _controller: AppBundle:Admin:login }
+
+app_test:
+    path: /test/
+    defaults: { _controller: AppBundle:Test:test }
+
+app_users:
+    path: /users/
+    defaults: { _controller: AppBundle:Admin:users }

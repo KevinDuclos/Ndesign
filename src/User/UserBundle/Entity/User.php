@@ -23,9 +23,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
+     * @ORM\OneToOne(targetEntity="User\UserBundle\Entity\Adresse", cascade={"persist"})
      */
     private $adress;
 

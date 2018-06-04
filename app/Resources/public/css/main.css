@@ -92,6 +92,9 @@ html, body {
     background-color: white;
     z-index: 0;    
 }
+main {
+    margin-top: 130px;
+}
 
 /* Logo NDesign */
 .logo-ndesign {

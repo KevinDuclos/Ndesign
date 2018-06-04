@@ -1,13 +1,11 @@
-{# {% trans_default_domain 'FOSUserBundle' %} #}
-
-
-{# {% extends 'base.html.twig' %} #}
+{% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
 
 {% block body %}
+
+michel est de retour et on va debug
 <div class="register">
-<div class="">
-    <div class="">
-        <div class="">
+
             <h2>Inscription</h2>
             {% if not form.vars.valid %}
             <div class="">
@@ -49,9 +47,7 @@
                 <br>
                 <button type="submit" class="">S'inscrire</button>
                 {{ form_end(form) }}
-        </div>
-    </div>
-</div>
+     
 </div>
 {% endblock body %}
 

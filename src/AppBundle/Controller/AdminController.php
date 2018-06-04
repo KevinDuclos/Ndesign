@@ -7,27 +7,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Produit;
 
-class DefaultController extends Controller
+class AdminController extends Controller
 {
     /**
      * @Route("/", name="homepage")
      */
-    public function indexAction()
-    {
-        return $this->render('@App/Default/index.html.twig');
-    }
-    public function retrieveAction(){
-        return $this->render('@App/Default/retrieve.html.twig');
-    }
-    public function createAction(){
-        return $this->render('@App/Default/create.html.twig');
-    }
-    public function updateAction(){
-        return $this->render('@App/Default/update.html.twig');
-    }
-    public function deleteAction(){
-        return $this->render('@App/Default/delete.html.twig');
-    }
     public function dashboardAction(){
   
        
@@ -45,7 +29,10 @@ class DefaultController extends Controller
 
                 return $this ->render('@App/Default/dashboard.html.twig', ['count' => $count]);
 
+
+
     }
+
     public function widgetsAction(){
         return $this->render('@App/Default/widgets.html.twig');
     }
@@ -65,6 +52,23 @@ class DefaultController extends Controller
         return $this->render('@App/Default/icons.html.twig');
     }
     public function loginAction(){
+    }
+
+    // A mettre dans admin controller
+    public function usersAction(){
+
+        {
+            $em = $this->getDoctrine()->getManager();
+            $users = $em
+                ->getRepository('UserBundle:User')
+                ->findAll();
+
+            return $this->render('@App/Default/users.html.twig', [
+                'users' => $users
+            ]);
+        }
+
+        
     }
     
 }
