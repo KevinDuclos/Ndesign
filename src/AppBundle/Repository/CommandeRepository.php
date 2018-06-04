@@ -10,4 +10,15 @@ namespace AppBundle\Repository;
  */
 class CommandeRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+    public function countAllCommande()
+    {
+
+        return $this->createQueryBuilder('commande')->select('count(commande.id)')
+        
+
+                ->getQuery()->getSingleScalarResult();
+       
+    }
 }

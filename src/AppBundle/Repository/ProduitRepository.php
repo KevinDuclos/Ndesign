@@ -12,7 +12,7 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
 
 
-    public function countAllProduits()
+    public function countAllproduit()
     {
 
         return $this->createQueryBuilder('produit')->select('count(produit.id)')

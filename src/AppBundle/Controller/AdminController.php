@@ -13,21 +13,22 @@ class AdminController extends Controller
      * @Route("/", name="homepage")
      */
     public function dashboardAction(){
-  
+        $prod=$this->getDoctrine()->getManager();
        
-         $em=$this->getDoctrine()->getManager();
+        $prod = $prod->getRepository('AppBundle:Produit')->countAllProduit();
        
-                $count = $em->getRepository('AppBundle:Produit')->countAllProduits();
-
-
-                return $this ->render('@App/Default/dashboard.html.twig', ['count' => $count]);
-
-
         $em=$this->getDoctrine()->getManager();
-    
-                $count = $em->getRepository('AppBundle:Produit')->countAllProduits();
+       
+                $count = $em->getRepository('AppBundle:Commande')->countAllCommande();
 
-                return $this ->render('@App/Default/dashboard.html.twig', ['count' => $count]);
+
+                
+
+
+               
+
+
+                return $this ->render('@App/Default/dashboard.html.twig', ['prod' => $prod, 'count'=> $count]);
 
 
 
