@@ -6,28 +6,12 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
-class DefaultController extends Controller
+class AdminController extends Controller
 {
-    /**
-     * @Route("/", name="homepage")
-     */
-    public function indexAction()
-    {
-        return $this->render('@App/Default/index.html.twig');
-    }
-    public function retrieveAction(){
-        return $this->render('@App/Default/retrieve.html.twig');
-    }
-    public function createAction(){
-        return $this->render('@App/Default/create.html.twig');
-    }
-    public function updateAction(){
-        return $this->render('@App/Default/update.html.twig');
-    }
-    public function deleteAction(){
-        return $this->render('@App/Default/delete.html.twig');
-    }
-    public function dashboardAction(){
+
+
+
+public function dashboardAction(){
         return $this->render('@App/Default/dashboard.html.twig');
     }
     public function widgetsAction(){
@@ -51,5 +35,4 @@ class DefaultController extends Controller
     public function loginAction(){
         return $this->render('@App/Default/login.html.twig');
     }
-    
 }
