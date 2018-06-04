@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Entity\Produit;
 
 class DefaultController extends Controller
 {
@@ -28,7 +29,22 @@ class DefaultController extends Controller
         return $this->render('@App/Default/delete.html.twig');
     }
     public function dashboardAction(){
-        return $this->render('@App/Default/dashboard.html.twig');
+  
+       
+         $em=$this->getDoctrine()->getManager();
+       
+                $count = $em->getRepository('AppBundle:Produit')->countAllProduits();
+
+
+                return $this ->render('@App/Default/dashboard.html.twig', ['count' => $count]);
+
+
+        $em=$this->getDoctrine()->getManager();
+    
+                $count = $em->getRepository('AppBundle:Produit')->countAllProduits();
+
+                return $this ->render('@App/Default/dashboard.html.twig', ['count' => $count]);
+
     }
     public function widgetsAction(){
         return $this->render('@App/Default/widgets.html.twig');
@@ -49,7 +65,6 @@ class DefaultController extends Controller
         return $this->render('@App/Default/icons.html.twig');
     }
     public function loginAction(){
-        return $this->render('@App/Default/login.html.twig');
     }
     
 }
