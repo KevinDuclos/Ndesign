@@ -6,7 +6,7 @@ use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
 use Doctrine\Bundle\FixturesBundle\ORMFixtureInterface;  
 
-class AppFixtures extends Fixture implements ORMFixtureInterface
+class ProduitsFixtures extends Fixture implements ORMFixtureInterface
 
 {
     public function load(ObjectManager $manager)

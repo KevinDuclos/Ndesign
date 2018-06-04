@@ -24,7 +24,7 @@
         {# Logo #}
         <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }} " alt="Logo NDesign" class="logo-ndesign">
 
-        {# Barre blanche #}
+        {# Fond blanc #}
         <span class="header">
             {# Barre de recherche #}
             <input type="search" name="" id="" placeholder="Rechercher" class="search">
@@ -42,15 +42,36 @@
         </span>
 
     </header>
-    <div class="clear"></div>
-    <main role="main">
-        {% block body %}{% endblock body %}
-    </main>
-    <footer>
+
+        <div class="clear"></div>
+
+        <main role="main">
+
+            {% block body %}{% endblock %}
+
+        </main>
+
+        <div class="clear"></div>        
+
+    {# FOOTER #}
+    <footer>      
+
+        <a href="#">
+            <img src="{{ asset('assets/img/contact.png') }}" alt="" class="img-contact">
+        </a>
+
+        <a href="#">
+            <img src="{{ asset('assets/img/logo-ndesign-bw-svg.svg') }}" alt="" class="logo-nb">
+        </a>
 
     </footer>
+   
+        {# Script JQuery #}
+        {% block javascripts %}
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
-        {% block javascripts %}{% endblock %}
+        {% endblock %}
 
     </body>
 </html>

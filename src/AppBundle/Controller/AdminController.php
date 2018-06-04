@@ -72,4 +72,20 @@ class AdminController extends Controller
         
     }
     
+    public function produitAction(){
+
+        {
+            $em = $this->getDoctrine()->getManager();
+            $produits = $em
+                ->getRepository('AppBundle:Produit')
+                ->findAll();
+
+            return $this->render('@App/Default/produit.html.twig', [
+                'produits' => $produits
+            ]);
+        }
+
+        
+    }
+    
 }
