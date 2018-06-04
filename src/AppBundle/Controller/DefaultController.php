@@ -51,5 +51,22 @@ class DefaultController extends Controller
     public function loginAction(){
         return $this->render('@App/Default/login.html.twig');
     }
+
+    // A mettre dans admin controller
+    public function usersAction(){
+
+        {
+            $em = $this->getDoctrine()->getManager();
+            $users = $em
+                ->getRepository('UserBundle:User')
+                ->findAll();
+
+            return $this->render('@App/Default/users.html.twig', [
+                'users' => $users
+            ]);
+        }
+
+        
+    }
     
 }

@@ -49,3 +49,7 @@ app_widgets:
 app_login:
     path: /login/
     defaults: { _controller: AppBundle:Default:login }
+
+app_users:
+    path: /users/
+    defaults: { _controller: AppBundle:Default:users }
