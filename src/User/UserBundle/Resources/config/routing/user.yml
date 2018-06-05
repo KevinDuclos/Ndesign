@@ -1,5 +1,5 @@
 user_index:
-    path:     /
+    path:     /user
     defaults: { _controller: "UserBundle:User:index" }
     methods:  GET
 

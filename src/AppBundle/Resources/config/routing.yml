@@ -1,6 +1,6 @@
 app_homepage:
     path: /
-    defaults: { _controller: AppBundle:dashboard:index }
+    defaults: { _controller: AppBundle:App:index }
 
 app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"
