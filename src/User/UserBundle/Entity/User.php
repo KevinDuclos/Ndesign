@@ -40,12 +40,6 @@ class User extends BaseUser
      */
     private $commande;
 
-    public function __construct(){
-        $this->createdAt= new \DateTime();
-        $this->role = 'Utilisateur';
-        $this->enabled = 1;
-    }
-
     /**
      * Get id.
      *
