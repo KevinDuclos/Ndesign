@@ -14,7 +14,7 @@
         {% endblock stylesheets %}
 
         {# Favicon #}
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.jpg') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon-svg.svg') }}" />
     </head>
     <body>
 
@@ -54,14 +54,32 @@
         <div class="clear"></div>        
 
     {# FOOTER #}
+    <div class="to-the-top"><a href="#" class="to-the-top">Haut de<br><div class="mot-page">page</div></a></div>
+
     <footer>      
 
-        <a href="#">
-            <img src="{{ asset('assets/img/contact.png') }}" alt="" class="img-contact">
+        {# Bloc de liens #}
+        <div class="liens-footer">
+            <div><a href="#" class="lien-a">Conditions Générales d'Utilisation</a></div>
+            <div><a href="#" class="lien-a">Conditions Générales de Vente</a></div>
+            <div><a href="#" class="lien-a">Politique de confidentialité</a></div>
+            <div><a href="#" class="lien-a">Tarification</a> - Paiement 100% sécurisé</div>
+        </div>
+
+        {# Image contact #}
+        <a href="#">        
+            <img src="{{ asset('assets/img/contact.svg') }} " alt="Image contact" class="image-contact">
         </a>
 
-        <a href="#">
-            <img src="{{ asset('assets/img/logo-ndesign-bw-svg.svg') }}" alt="" class="logo-nb">
+        {# Image team #}
+        <a href="#">        
+            <img src="{{ asset('assets/img/team.svg') }} " alt="Team" class="icone-team" title="DECK">
+        </a>
+
+        {# Ajouter un if(isLog) #}
+        {# Logo admin #}
+        <a href="#">        
+            <img src="{{ asset('assets/img/logo-admin.svg') }} " alt="Logo-admin" class="logo-admin">
         </a>
 
     </footer>
