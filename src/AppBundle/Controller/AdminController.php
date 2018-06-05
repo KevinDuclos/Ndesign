@@ -32,21 +32,7 @@ class AdminController extends Controller
 
     }
 
-    public function widgetsAction(){
-        return $this->render('@App/Default/widgets.html.twig');
-    }
-    public function chartsAction(){
-        return $this->render('@App/Default/charts.html.twig');
-    }
-    public function tablesAction(){
-        return $this->render('@App/Default/tables.html.twig');
-    }
-    public function formsAction(){
-        return $this->render('@App/Default/forms.html.twig');
-    }
-    public function panelsAction(){
-        return $this->render('@App/Default/panels.html.twig');
-    }
+   
     public function iconsAction(){
         return $this->render('@App/Default/icons.html.twig');
     }
