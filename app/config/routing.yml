@@ -5,6 +5,9 @@ user:
 app:
     resource: '@AppBundle/Resources/config/routing.yml'
     prefix: /
+app_produit:
+    resource: "@AppBundle/Resources/config/routing/produit.yml"
+    prefix:   /produit
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
