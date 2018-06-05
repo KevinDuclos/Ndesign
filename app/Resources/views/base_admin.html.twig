@@ -53,11 +53,6 @@
 		</form>
 		<ul class="nav menu">
 			<li><a href="{{ path('app_dashboard') }}"><svg class="glyph stroked dashboard-dial"><use xlink:href="#stroked-dashboard-dial"></use></svg> Dashboard</a></li>
-			<li><a href="{{ path('app_widgets') }}"><svg class="glyph stroked calendar"><use xlink:href="#stroked-calendar"></use></svg> Widgets</a></li>
-			<li><a href="{{ path('app_charts') }}"><svg class="glyph stroked line-graph"><use xlink:href="#stroked-line-graph"></use></svg> Charts</a></li>
-			<li><a href="{{ path('app_tables') }}"><svg class="glyph stroked table"><use xlink:href="#stroked-table"></use></svg> Tables</a></li>
-			<li><a href="{{ path('app_forms') }}"><svg class="glyph stroked pencil"><use xlink:href="#stroked-pencil"></use></svg> Forms</a></li>
-			<li><a href="{{ path('app_panels') }}"><svg class="glyph stroked app-window"><use xlink:href="#stroked-app-window"></use></svg> Alerts &amp; Panels</a></li>
 			<li><a href="{{ path('app_icons') }}"><svg class="glyph stroked star"><use xlink:href="#stroked-star"></use></svg> Icons</a></li>
 			<li><a href="{{ path('app_users') }}"><svg class="glyph stroked male user"><use xlink:href="#stroked-male-user"></svg> Users List</a></li>
 			<li><a href="{{ path('app_produits') }}"><svg class="glyph stroked star"><use xlink:href="#stroked-star"/></svg><use xlink:href="#stroked-male-user"></svg> Product List</a></li>
@@ -66,7 +61,10 @@
 
 	</div><!--/.sidebar-->
 	<div class="container">
+	    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+
     {% block body %}{% endblock body %}
+	</div>
 	</div>
 
 

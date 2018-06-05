@@ -1,22 +1,10 @@
 app_homepage:
-    path:     /
-    defaults: { _controller: AppBundle:App:index }
+    path: /
+    defaults: { _controller: AppBundle:dashboard:index }
 
-app_create:
-    path:     /create/
-    defaults: { _controller: AppBundle:App:create }
-
-app_update:
-    path:     /update/
-    defaults: { _controller: AppBundle:App:update }
-
-app_retrieve:
-    path:     /retrieve/
-    defaults: { _controller: AppBundle:App:retrieve }
-
-app_delete:
-    path:     /delete/
-    defaults: { _controller: AppBundle:App:delete }
+app_produit:
+    resource: "@AppBundle/Resources/config/routing/produit.yml"
+    prefix:   /admin/produit
 
 app_dashboard:
     path: /admin/dashboard/
@@ -62,8 +50,4 @@ app_produits:
     path: /admin/produits/
     defaults: { _controller: AppBundle:Admin:produit }
 
-user_update:
-    path: /admin/users/{id}
-    defaults: { _controller: AppBundle:Admin:users_update }
-    requirements:
-        id: \d+
+

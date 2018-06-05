@@ -1,4 +1,4 @@
-{% extends ('base_admin.html.twig') %}
+{% extends 'base_admin.html.twig' %}
 
 {% block body %}
     <h1>Users list</h1>
@@ -14,7 +14,7 @@
         <tbody>
         {% for user in users %}
             <tr>
-                <td><a href="{{ path('user_show', { 'id': user.username }) }}">{{ user.username }}</a></td>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td>{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
@@ -36,5 +36,4 @@
             <a href="{{ path('user_new') }}">Create a new user</a>
         </li>
     </ul>
-
 {% endblock %}
