@@ -9,12 +9,12 @@
         {# CSS #}
         {% block stylesheets %}
             {% stylesheets '@Style_Main' %}
-                <link rel="stylesheet" href=" {{ asset_url }} "/>
+                <link rel="stylesheet" href="{{ asset_url }}"/>
             {% endstylesheets %}
         {% endblock stylesheets %}
 
         {# Favicon #}
-        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon-svg.svg') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}" />
     </head>
     <body>
 
@@ -22,71 +22,67 @@
     <header>
 
         {# Logo #}
-        <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }} " alt="Logo NDesign" class="logo-ndesign">
+        <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="Logo NDesign" class="logo-ndesign">
 
-        {# Fond blanc #}
+        {# Barre de navigation #}
         <span class="header">
             {# Barre de recherche #}
-            <input type="search" name="" id="" placeholder="Rechercher" class="search">
-            <a href="#">
-                <img src="{{ asset('assets/img/search.svg') }} " alt="Icône recherche" class="icone-search">
-            </a>        
+            <div class="rechercher">
+                <input type="search" name="" id="" placeholder="Rechercher" class="search">
+                <a href="#">
+                    <img src="{{ asset('assets/img/search.svg') }}" alt="Icône recherche" class="icone-search">
+                </a>        
+            </div>
             {# Icône panier #}
             <a href="#">
-                <img src="{{ asset('assets/img/panier.svg') }} " alt="Icône panier" class="icone-panier">        
+                <img src="{{ asset('assets/img/panier.svg') }}" alt="Icône panier" class="icone-panier">        
             </a>
             {# Icône user #}
             <a href="#">
-                <img src="{{ asset('assets/img/user.svg') }} " alt="Icône user" class="icone-user">        
+                <img src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user">        
             </a>
         </span>
 
     </header>
+    {# FIN HEADER #}
 
         <div class="clear"></div>
 
-        <main role="main">
-
             {% block body %}{% endblock %}
-
-        </main>
 
         <div class="clear"></div>        
 
     {# FOOTER #}
-    <div class="to-the-top"><a href="#" class="to-the-top">Haut de<br><div class="mot-page">page</div></a></div>
-
-    <footer>      
-
-        {# Bloc de liens #}
-        <div class="liens-footer">
-            <div><a href="#" class="lien-a">Conditions Générales d'Utilisation</a></div>
-            <div><a href="#" class="lien-a">Conditions Générales de Vente</a></div>
-            <div><a href="#" class="lien-a">Politique de confidentialité</a></div>
-            <div><a href="#" class="lien-a">Tarification</a> - Paiement 100% sécurisé</div>
-        </div>
+    <footer>
 
         {# Image contact #}
         <a href="#">        
-            <img src="{{ asset('assets/img/contact.svg') }} " alt="Image contact" class="image-contact">
+            <img src="{{ asset('assets/img/contact.svg') }}" alt="Image contact" class="image-contact" title="Contactez-nous !">
         </a>
 
         {# Image team #}
         <a href="#">        
-            <img src="{{ asset('assets/img/team.svg') }} " alt="Team" class="icone-team" title="DECK">
+            <img src="{{ asset('assets/img/team.svg') }}" alt="Team" class="icone-team" title="DECK">
         </a>
 
-        {# Ajouter un if(isLog) #}
-        {# Logo admin #}
-        <a href="#">        
-            <img src="{{ asset('assets/img/logo-admin.svg') }} " alt="Logo-admin" class="logo-admin">
-        </a>
+        {# Liens du footer #}
+        <div class="liens-footer">
+            <span><a href="#" class="lien-a">Conditions Générales d'Utilisation</a> &ndash; </span>
+            <span><a href="#" class="lien-a">Conditions Générales de Vente</a> &ndash; </span>
+            <span><a href="#" class="lien-a">Politique de confidentialité</a> &ndash; </span>
+            <span><a href="#" class="lien-a">Tarification</a> (Paiement 100% sécurisé)</span>
+            {# Ajouter un if #}
+            <span> &ndash; <a href="#" class="lien-a">Administration</a></span>  
+
+            <div>&copy; NDesign &ndash; 2018 &ndash; Création DECK</div>
+        </div>
 
     </footer>
+    {# FIN FOOTER #}
    
-        {# Script JQuery #}
         {% block javascripts %}
         
+        {# Script JQuery #}
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 
         {% endblock %}
