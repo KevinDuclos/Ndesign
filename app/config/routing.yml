@@ -1,7 +1,9 @@
 app:
     resource: '@AppBundle/Resources/config/routing.yml'
     prefix: /
-
+admin:
+    resource: '@AppBundle/Resources/config/routing/admin.yml'
+    prefix: /admin
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /

@@ -6,48 +6,6 @@ app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"
     prefix:   /admin/produit
 
-app_dashboard:
-    path: /admin/dashboard/
-    defaults: { _controller: AppBundle:Admin:dashboard }
 
-app_charts:
-    path: /admin/charts/
-    defaults: { _controller: AppBundle:Admin:charts }
-
-app_tables:
-    path: /admin/tables/
-    defaults: { _controller: AppBundle:Admin:tables }
-
-app_forms:
-    path: /admin/forms/
-    defaults: { _controller: AppBundle:Admin:forms }
-
-app_panels:
-    path: /admin/panels/
-    defaults: { _controller: AppBundle:Admin:panels }
-
-app_icons:
-    path: /admin/icons/
-    defaults: { _controller: AppBundle:Admin:icons }
-
-app_widgets:
-    path: /admin/widgets/
-    defaults: { _controller: AppBundle:Admin:widgets }
-
-app_login:
-    path: /admin/login/
-    defaults: { _controller: AppBundle:Admin:login }
-
-app_test:
-    path: /admin/test/
-    defaults: { _controller: AppBundle:Test:test }
-
-app_users:
-    path: /admin/users/
-    defaults: { _controller: AppBundle:Admin:users }
-
-app_produits:
-    path: /admin/produits/
-    defaults: { _controller: AppBundle:Admin:produit }
 
 
