@@ -10,7 +10,7 @@ user:
     
 app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"
-    prefix:   /
+    prefix:   /admin/produits
 
 fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"

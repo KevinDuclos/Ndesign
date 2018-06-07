@@ -10,3 +10,14 @@ app_contact:
     path: /contact
     defaults: { _controller: AppBundle:App:contact }
 
+app_single:
+    path: /single/{id}
+    defaults: 
+        _controller: AppBundle:App:single
+    requirements:
+        id: \d+
+        _method: GET 
+        
+app_vente:
+    path: /conditions-de-ventes/
+    defaults: { _controller: AppBundle:App:vente }

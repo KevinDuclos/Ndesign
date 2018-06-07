@@ -12,10 +12,12 @@ class TestController extends Controller
         $em = $this->getDoctrine()->getManager();
         $commandes = $em
             ->getRepository('AppBundle:Commande')
-            ->findAll();
+            ->getAllCommandeJoinwithProduct();
         
-        return $this->render('@App/Default/test.html.twig', [
-            'commandes' => $commandes
+        return $this->render('@App/App/test.html.twig', [
+            'commandes' => $commandes,
+            'user' => $this->getUser()
+            
         ]);
 
     }

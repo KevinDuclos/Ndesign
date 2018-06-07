@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="ND_user")
  * @ORM\Entity(repositoryClass="User\UserBundle\Repository\UserRepository")
  */
 class User extends BaseUser
@@ -22,10 +22,7 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="User\UserBundle\Entity\Adresse", cascade={"persist"})
-     */
-    private $adress;
+  
 
     /**
      * @var \DateTime
@@ -50,29 +47,7 @@ class User extends BaseUser
         return $this->id;
     }
 
-    /**
-     * Set adress.
-     *
-     * @param string $adress
-     *
-     * @return User
-     */
-    public function setAdress($adress)
-    {
-        $this->adress = $adress;
-
-        return $this;
-    }
-
-    /**
-     * Get adress.
-     *
-     * @return string
-     */
-    public function getAdress()
-    {
-        return $this->adress;
-    }
+    
 
     /**
      * Set createdAt.
