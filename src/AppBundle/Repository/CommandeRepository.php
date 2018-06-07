@@ -21,4 +21,16 @@ class CommandeRepository extends \Doctrine\ORM\EntityRepository
                 ->getQuery()->getSingleScalarResult();
        
     }
+    public function getAllCommandeJoinwithProduct()
+      {
+            return $this->createQueryBuilder('commande')
+                  ->leftJoin('commande.produits','commande_produit')
+                  ->addSelect('commande_produit')
+
+                  ->leftJoin('commande_produit.commandes', 'produit')
+                  ->addSelect('produit')
+
+                  ->getQuery()
+                  ->getResult();
+      }
 }
