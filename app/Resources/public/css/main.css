@@ -289,6 +289,66 @@ a {
     margin-top: 40px;
 }
 
+/* FIN INDEX */
+
+/* CONNEXION */
+
+/* Formulaire de connexion */
+.form-connexion {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+    top: 100px;
+    padding: 10px;
+    background-color: rgb(245, 245, 245);
+}
+
+.input {
+    display: block;
+    width: 98%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    background-color: transparent;   
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+#username {
+    margin-bottom: 20px;
+}
+
+#password {
+    margin-bottom: 20px;
+}
+
+.remember-me {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.bouton-connexion {
+    display: block;
+    position: relative;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: 'Barlow', sans-serif;    
+    color: black;
+    font-size: 17px;
+    font-weight: 600;
+    background-color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    cursor: pointer;
+}
+
+/* FIN CONNEXION */
+
 /*
  * FOOTER
  */
