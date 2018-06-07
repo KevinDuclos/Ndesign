@@ -228,7 +228,7 @@ main {
     position: absolute;
     text-align: end;
     right: 60px;
-    font-size: 75px;
+    font-size: 90px;
     font-weight: 400;
     color: white;
     left: 40%;
@@ -284,6 +284,10 @@ a {
     padding: 20px;
 }
 
+a.single-template {
+    text-decoration: none;    
+}
+
 /* Bouton RESSOURCES */
 .plus-ressources {
     position: absolute;
@@ -299,6 +303,11 @@ a {
     left: 50%;
     margin-left: -140px;
     margin-top: 40px;
+}
+
+a.plus-ressources {
+    text-decoration: none;
+    color: white;    
 }
 
 /***************
