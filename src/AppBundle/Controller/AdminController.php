@@ -26,7 +26,7 @@ class AdminController extends Controller
                
 
 
-                return $this ->render('@App/Default/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users] );
+                return $this ->render('@App/admin/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users] );
 
 
 
@@ -34,7 +34,7 @@ class AdminController extends Controller
 
    
     public function iconsAction(){
-        return $this->render('@App/Default/icons.html.twig');
+        return $this->render('@App/admin/icons.html.twig');
     }
     public function loginAction(){
     }
@@ -48,7 +48,7 @@ class AdminController extends Controller
                 ->getRepository('UserBundle:User')
                 ->findAll();
 
-            return $this->render('@App/Default/users.html.twig', [
+            return $this->render('@App/admin/users.html.twig', [
                 'users' => $users
             ]);
         }
@@ -64,7 +64,7 @@ class AdminController extends Controller
                 ->getRepository('AppBundle:Produit')
                 ->findAll();
 
-            return $this->render('@App/Default/produit.html.twig', [
+            return $this->render('@App/admin/produit.html.twig', [
                 'produits' => $produits
             ]);
         }
