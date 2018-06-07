@@ -1,5 +1,5 @@
 produit_index:
-    path:     /
+    path:     /produits
     defaults: { _controller: "AppBundle:Produit:index" }
     methods:  GET
 

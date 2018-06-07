@@ -26,29 +26,15 @@ class AdminController extends Controller
                
 
 
-                return $this ->render('@App/Default/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users] );
+                return $this ->render('@App/admin/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users] );
 
 
 
     }
 
-    public function widgetsAction(){
-        return $this->render('@App/Default/widgets.html.twig');
-    }
-    public function chartsAction(){
-        return $this->render('@App/Default/charts.html.twig');
-    }
-    public function tablesAction(){
-        return $this->render('@App/Default/tables.html.twig');
-    }
-    public function formsAction(){
-        return $this->render('@App/Default/forms.html.twig');
-    }
-    public function panelsAction(){
-        return $this->render('@App/Default/panels.html.twig');
-    }
+   
     public function iconsAction(){
-        return $this->render('@App/Default/icons.html.twig');
+        return $this->render('@App/admin/icons.html.twig');
     }
     public function loginAction(){
     }
@@ -62,7 +48,7 @@ class AdminController extends Controller
                 ->getRepository('UserBundle:User')
                 ->findAll();
 
-            return $this->render('@App/Default/users.html.twig', [
+            return $this->render('@App/admin/users.html.twig', [
                 'users' => $users
             ]);
         }
@@ -78,7 +64,7 @@ class AdminController extends Controller
                 ->getRepository('AppBundle:Produit')
                 ->findAll();
 
-            return $this->render('@App/Default/produit.html.twig', [
+            return $this->render('@App/admin/produit.html.twig', [
                 'produits' => $produits
             ]);
         }
