@@ -1,0 +1,55 @@
+
+a, a:hover, a:focus {
+    color: #00000000;
+}
+a {
+    color : black ;
+    text-decoration: none;
+}
+
+.panel-blue .widget-left {
+    background: red;
+    color: #fff;
+}
+.panel-orange .widget-left {
+    background:#a101fd;
+    color: #fff;
+}
+
+.panel-teal .widget-left {
+    background: #00ffd2;
+    color: #000000;
+}
+body {
+    background: #f1f4f7;
+    padding-top: 50px;
+    color: #a101fd;
+}
+
+.user-menu a {
+    color: #fff;
+}
+a {
+    color: red;
+    text-decoration: none;
+}
+a, a:hover, a:focus {
+    color: #00000000;
+}
+a, a:hover, a:focus {
+    color: red;
+}
+a {
+    color: red;
+    text-decoration: none;
+}
+user agent stylesheet
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.navbar-header .navbar-brand span {
+    color: #a101fd;
+}

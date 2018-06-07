@@ -1,6 +1,7 @@
 {% extends ('base_admin.html.twig') %}
 
 {% block body %}
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">	
     <h1>Users list</h1>
 
     <table>
@@ -14,15 +15,15 @@
         <tbody>
         {% for user in users %}
             <tr>
-                <td><a href="{{ path('user_show', { 'id': user.username }) }}">{{ user.username }}</a></td>
+                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
                 <td>{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>
+                            <a href="{{ path('user_show', { 'id': user.id }) }}">Show</a>
                         </li>
                         <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">edit</a>
+                            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
                         </li>
                     </ul>
                 </td>
@@ -36,5 +37,5 @@
             <a href="{{ path('user_new') }}">Create a new user</a>
         </li>
     </ul>
-
+</div>
 {% endblock %}

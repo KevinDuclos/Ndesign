@@ -21,4 +21,16 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
                 ->getQuery()->getSingleScalarResult();
        
     }
+
+
+
+    public function getAllproduit()
+    {
+
+        return $this->createQueryBuilder('produit')->select('produit')->setMaxResults(3)
+        
+
+                ->getQuery()->getresult();
+       
+    }
 }

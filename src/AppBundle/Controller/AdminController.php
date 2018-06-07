@@ -21,12 +21,12 @@ class AdminController extends Controller
 
         $users = $em->getRepository('UserBundle:User')->countAllUser();
                 
-
+        $temps = $em->getRepository('AppBundle:Produit')->getAllProduit();
 
                
 
 
-                return $this ->render('@App/admin/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users] );
+                return $this ->render('@App/admin/dashboard.html.twig', ['prod' => $prod, 'count'=> $count, 'users'=>$users, 'temps'=>$temps] );
 
 
 
@@ -71,5 +71,7 @@ class AdminController extends Controller
 
         
     }
+
+    
     
 }
