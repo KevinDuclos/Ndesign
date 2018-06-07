@@ -1,69 +1,12 @@
 app_homepage:
-    path:     /
+    path: /
     defaults: { _controller: AppBundle:App:index }
 
-app_create:
-    path:     /create/
-    defaults: { _controller: AppBundle:App:create }
+app_produit:
+    resource: "@AppBundle/Resources/config/routing/produit.yml"
+    prefix:   /admin/produit
 
-app_update:
-    path:     /update/
-    defaults: { _controller: AppBundle:App:update }
+app_contact:
+    path: /contact
+    defaults: { _controller: AppBundle:App:contact }
 
-app_retrieve:
-    path:     /retrieve/
-    defaults: { _controller: AppBundle:App:retrieve }
-
-app_delete:
-    path:     /delete/
-    defaults: { _controller: AppBundle:App:delete }
-
-app_dashboard:
-    path: /admin/dashboard/
-    defaults: { _controller: AppBundle:Admin:dashboard }
-
-app_charts:
-    path: /admin/charts/
-    defaults: { _controller: AppBundle:Admin:charts }
-
-app_tables:
-    path: /admin/tables/
-    defaults: { _controller: AppBundle:Admin:tables }
-
-app_forms:
-    path: /admin/forms/
-    defaults: { _controller: AppBundle:Admin:forms }
-
-app_panels:
-    path: /admin/panels/
-    defaults: { _controller: AppBundle:Admin:panels }
-
-app_icons:
-    path: /admin/icons/
-    defaults: { _controller: AppBundle:Admin:icons }
-
-app_widgets:
-    path: /admin/widgets/
-    defaults: { _controller: AppBundle:Admin:widgets }
-
-app_login:
-    path: /admin/login/
-    defaults: { _controller: AppBundle:Admin:login }
-
-app_test:
-    path: /admin/test/
-    defaults: { _controller: AppBundle:Test:test }
-
-app_users:
-    path: /admin/users/
-    defaults: { _controller: AppBundle:Admin:users }
-
-app_produits:
-    path: /admin/produits/
-    defaults: { _controller: AppBundle:Admin:produit }
-
-user_update:
-    path: /admin/users/{id}
-    defaults: { _controller: AppBundle:Admin:users_update }
-    requirements:
-        id: \d+

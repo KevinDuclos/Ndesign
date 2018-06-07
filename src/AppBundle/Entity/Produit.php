@@ -57,28 +57,9 @@ class Produit
      */
     private $commandes;
 
-    /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
-     * 
-     * @Vich\UploadableField(mapping="product_image", fileNameProperty="image.name", size="image.size", mimeType="image.mimeType", originalName="image.originalName", dimensions="image.dimensions")
-     * 
-     * @var File
-     */
-    private $imageFile;
+    
 
-    /**
-     * @ORM\Embedded(class="Vich\UploaderBundle\Entity\File")
-     *
-     * @var EmbeddedFile
-     */
-    private $image;
-
-    /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var \DateTime
-     */
-    private $updatedAt;
+  
 
     /**
      * Get id.
@@ -265,7 +246,33 @@ class Produit
     {
         return $this->categorie;
     }
+    /**
+     * @ORM\Entity
+     * @Vich\Uploadable
+     */
 
+  
+
+    // ... other fields
+
+    /**
+     * NOTE: This is not a mapped field of entity metadata, just a simple property.
+     * 
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="image.id", size="image.size", mimeType="image.mimeType", originalName="image.originalName", dimensions="image.dimensions")
+     * 
+     * @var File
+     */
+    private $imageFile;
+
+    /**
+     * @ORM\Embedded(class="Vich\UploaderBundle\Entity\File")
+     *
+     * @var EmbeddedFile
+     */
+    private $image;
+
+ 
+    
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the  update. If this
@@ -300,5 +307,4 @@ class Produit
     {
         return $this->image;
     }
-
 }

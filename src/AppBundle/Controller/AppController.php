@@ -13,20 +13,11 @@ class AppController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('@App/Default/index.html.twig');
+        return $this->render('@App/App/index.html.twig');
     }
-    public function retrieveAction(){
-        return $this->render('@App/Default/retrieve.html.twig');
+    public function contactAction()
+    {
+        return $this->render('@App/App/contact.html.twig');
     }
-    public function createAction(){
-        return $this->render('@App/Default/create.html.twig');
-    }
-    public function updateAction(){
-        return $this->render('@App/Default/update.html.twig');
-    }
-    public function deleteAction(){
-        return $this->render('@App/Default/delete.html.twig');
-    }
-   
     
 }
