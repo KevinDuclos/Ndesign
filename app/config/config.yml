@@ -132,3 +132,12 @@ stof_doctrine_extensions:
             timestampable: false
     mongodb:
         default: ~
+    # app/config/config.yml
+vich_uploader:
+    db_driver: orm
+    mappings: 
+        template: 
+            uri_prefix: /template/ 
+            upload_destination: '%kernel.root_dir%/../web/assets/template/' 
+            #service: vich_uploader.namer_property
+            #options: { property: 'personalNamer'}
