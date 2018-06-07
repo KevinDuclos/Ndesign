@@ -12,7 +12,7 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * Produit
  *
- * @ORM\Table(name="produit")
+ * @ORM\Table(name="ND_produit")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProduitRepository")
  */
 class Produit

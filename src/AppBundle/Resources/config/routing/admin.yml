@@ -2,29 +2,9 @@ app_dashboard:
     path: /dashboard/
     defaults: { _controller: AppBundle:Admin:dashboard }
 
-app_charts:
-    path: /charts/
-    defaults: { _controller: AppBundle:Admin:charts }
-
-app_tables:
-    path: /tables/
-    defaults: { _controller: AppBundle:Admin:tables }
-
-app_forms:
-    path: /forms/
-    defaults: { _controller: AppBundle:Admin:forms }
-
-app_panels:
-    path: /panels/
-    defaults: { _controller: AppBundle:Admin:panels }
-
 app_icons:
     path: /icons/
     defaults: { _controller: AppBundle:Admin:icons }
-
-app_widgets:
-    path: /widgets/
-    defaults: { _controller: AppBundle:Admin:widgets }
 
 app_login:
     path: /login/
