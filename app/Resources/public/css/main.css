@@ -148,6 +148,7 @@ textarea:focus {
 
 /* Icône panier */
 .icone-panier {
+    cursor: pointer;
     position: absolute;
     width: 4%;
     right: 140px;
@@ -172,6 +173,7 @@ textarea:focus {
 
 /* Icône user */
 .icone-user {
+    cursor: pointer;    
     position: absolute;
     width: 4%;
     right: 60px;
