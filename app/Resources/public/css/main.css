@@ -345,26 +345,69 @@ a.plus-ressources {
     display: flex;
 }
 
-/* Bloc adresse */
-.bloc-adresse {
+/* Localisation */
+.bloc-localisation {
     float: left;
     width: 50%;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.google-maps {
+/* Bloc adresse */
+.bloc-adresse {
+    position: relative;
     width: 100%;
-    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
 }
 
-/* Logo bloc adresse */
-.logo-adresse {
+.nom {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.campus {
+    font-weight: 600; 
+    font-size: 20px;
+    margin-bottom: 4px;        
+}
+
+.rue {
+    font-size: 18px;    
+}
+
+.ville {
+    margin-bottom: 8px;
+    font-size: 18px;        
+}
+
+.numero {
+    font-weight: 600;     
+}
+
+/* Google maps */
+.div-google-maps {
     position: absolute;
-    width: 30%;
-    top: 10px;
-    left: 50%;
-    margin-left: -75px;
+    width: 100%;
+    height: 50%;
+    top: 40%;
+    overflow: hidden;
+}
+
+.bloc-google iframe {
+    float: left;   
+    width: 50%;     
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
 }
 
 /* Formulaire */
@@ -390,7 +433,7 @@ a.plus-ressources {
 .input-textarea {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 225px;
     font-family: 'Barlow', sans-serif;
     font-size: 20px;
     font-weight: 500;    
@@ -402,6 +445,7 @@ a.plus-ressources {
     position: relative;
     width: 10%;
     left: 50%;
+    margin-left: -25px;
     top: 20px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
