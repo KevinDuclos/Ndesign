@@ -5,6 +5,7 @@
         <title>{% block title %}NDESIGN{% endblock %}</title>
         {# Typo de base #}
         <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
         {# CSS #}
         {% block stylesheets %}
@@ -34,12 +35,12 @@
                 </a>        
             </div>
             {# Icône panier #}
-            <a href="#">
-                <img src="{{ asset('assets/img/panier.svg') }}" alt="Icône panier" class="icone-panier">        
-            </a>
+            <a data-toggle="modal" data-backdrop="false" data-target="modal">
+                <img id="modal-panier" src="{{ asset('assets/img/panier.svg') }}" alt="Icône panier" class="icone-panier" role="button">
+            </a> 
             {# Icône user #}
-            <a href="#">
-                <img src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user">        
+            <a data-toggle="modal" data-backdrop="false" data-target="user-modal">
+                <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">        
             </a>
         </span>
 
@@ -50,7 +51,58 @@
 
             {% block body %}{% endblock %}
 
-        <div class="clear"></div>        
+        <div class="clear"></div>     
+
+        {# Modal Panier #}
+            <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Mon Panier</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table">
+                        <tbody id="order-target">
+                            {% for commande in commandes %}
+                                {% for produits in commande.produits %}
+
+                                {% endfor %}
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                    <button type="button" class="btn btn-primary">Payer</button>
+                </div>
+                </div>
+            </div>
+            </div>
+        {# Fin Modal Panier #}
+        {# Modal User #}
+        <div class="modal fade" id="user-modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modal-title">Connexion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                    <button type="button" class="btn btn-primary">Connexion</button>
+                </div>
+                </div>
+            </div>
+        </div>
+        {# Fin Modal User #}
 
     {# FOOTER #}
     <footer>
@@ -84,7 +136,9 @@
         
         {# Script JQuery #}
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="{{ asset('assets/js/script.js') }}"></script>
         {% endblock %}
 
     </body>
