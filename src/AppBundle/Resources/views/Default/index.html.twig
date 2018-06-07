@@ -2,44 +2,52 @@
 
 {% block body %}
 
+    {# FEATURE #}
     <div class="feature">
-
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-        <p>hello</p>
-
+        <h2 class="accroche">Des <span class="strong">ressources</span> pour vos <span class="strong">sites vitrines</span></h2>
+        <img src="{{ asset('assets/img/feature.jpg') }}" alt="Clavier iMac" class="img-feature">        
     </div>
+    {# FIN FEATURE #}
+
+    {# CONTENU PRINCIPAL #}
+    <main role="main">
+
+        {# APERCUS TEMPLATES #}
+        <div class="templates">
+
+            <a href="" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template1.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">AltoFocus</h5>                      
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template2.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">Small Business</h5>                      
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template3.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">Spatial</h5>                      
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        {# FIN APERCUS TEMPLATES #}
+
+        <a href="#" class="plus-ressources">Voir toutes les ressources</a>
+        
+    </main>
+    {# FIN CONTENU PRINCIPAL #}
 
 {% endblock %}
