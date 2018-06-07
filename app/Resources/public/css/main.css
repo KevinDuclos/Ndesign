@@ -378,13 +378,9 @@ a.plus-ressources {
     margin-bottom: 4px;        
 }
 
-.rue {
+.adresse {
     font-size: 18px;    
-}
-
-.ville {
     margin-bottom: 8px;
-    font-size: 18px;        
 }
 
 .numero {
@@ -503,9 +499,9 @@ footer {
 /* Liens */
 .liens-footer {
     text-align: center;
+    padding-bottom: 20px;
     color: black;
-    padding-bottom: 20px;   
-    line-height: 3; 
+    line-height: 2; 
     text-decoration: none; 
 }
 
