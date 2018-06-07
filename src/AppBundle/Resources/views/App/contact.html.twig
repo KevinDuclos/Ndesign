@@ -2,10 +2,45 @@
 
 {% block body %}
 
+    {# Image contact #}
+    <div class="thumbnail">
+        <img src="{{ asset('assets/img/fond-contact-send.jpg') }}" alt="" class="img-contact">
+    </div>
+
     {# CONTENU PRINCIPAL #}
     <main role="main">
 
-        <img src="{{ asset('assets/img/here4u.svg') }}" alt="Nous sommes là pour vous" class="here4u">
+        <section class="page-contact">
+
+            {# Carte google maps #}
+            <div class="bloc-adresse">
+                <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="" class="logo-adresse">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.4352431543616!2d1.09965751514831!3d49.438490267640155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de7e3153ffff%3A0x3ae23858ef5e17f0!2sNFactory%2C+Incubateur+%26+Acc%C3%A9l%C3%A9rateur+Normand!5e0!3m2!1sfr!2sfr!4v1528378829330" class="google-maps" allowfullscreen></iframe>
+            </div>
+
+            {# Formulaire de contact #}
+            <form action="" method="post" class="form-contact">
+
+                {# Champ email #}
+                <input type="text" name="" id="" class="input-text" placeholder="Email">
+
+                {# Champ tel #}
+                <input type="tel" name="" id="" class="input-text" placeholder="Téléphone">
+
+                {# Champ objet #}
+                <input type="text" name="" id="" class="input-text" placeholder="Objet">
+
+                {# Champ texte #}
+                <textarea name="" id="" cols="30" class="input-textarea" placeholder="Votre message..."></textarea>
+
+                {# Bouton de contact #}
+                <a href="#">
+                    <img src="{{ asset('assets/img/send.svg') }}" alt="" class="icone-send">
+                </a>
+
+            </form>
+
+        </section>
 
     </main>
     {# FIN CONTENU PRINCIPAL #}
