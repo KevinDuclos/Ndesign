@@ -54,33 +54,33 @@
         <div class="clear"></div>     
 
         {# Modal Panier #}
-            <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="modal-title">Mon Panier</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <table class="table">
-                        <tbody id="order-target">
-                            {# {% for commande in commandes %}
-                                {% for produits in commande.produits %}
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Mon panier</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <table class="table">
+                            <tbody id="order-target">
+                                {# {% for commande in commandes %}
+                                    {% for produits in commande.produits %}
 
-                                {% endfor %}
-                            {% endfor %} #}
-                        </tbody>
-                    </table>
+                                    {% endfor %}
+                                {% endfor %} #}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                        <button type="button" class="btn btn-primary">Payer</button>
+                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                    <button type="button" class="btn btn-primary">Payer</button>
-                </div>
             </div>
-            </div>
-            </div>
+        </div>
         {# Fin Modal Panier #}
 
         {# Modal User #}
@@ -101,8 +101,8 @@
                         <button type="button" class="btn btn-primary">Connexion</button>
                     </div>
                 </div>
-                </div>
-                </div>
+            </div>
+        </div>
         {# Fin Modal User #}
 
     {# FOOTER #}
