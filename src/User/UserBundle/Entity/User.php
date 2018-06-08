@@ -38,6 +38,12 @@ class User extends BaseUser
      */
     private $commande;
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->created_at = new \DateTime();
+    }
+
     /**
      * Get id.
      *
