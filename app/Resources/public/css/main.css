@@ -77,22 +77,26 @@ html, body {
     font-family: 'Barlow', sans-serif;
 }
 
-/* Focus des input */
+/* Focus des input & textarea */
 input:focus {
-    outline:  none;
+    outline: none;
+}
+
+textarea:focus {
+    outline: none;
 }
 
 /* Couleur des placeholder */
 ::placeholder {
-    color: black;
+    color: rgba(0, 0, 0, 0.7);
     font-family: 'Barlow', sans-serif;
     font-weight: 300;    
     font-size: 20px;
 }
 
-/*
- * HEADER
- */
+/***************************
+ ********* HEADER **********
+ ***************************/
 
 /* BG blanc */
 .header {
@@ -144,6 +148,7 @@ input:focus {
 
 /* Icône panier */
 .icone-panier {
+    cursor: pointer;
     position: absolute;
     width: 4%;
     right: 140px;
@@ -168,6 +173,7 @@ input:focus {
 
 /* Icône user */
 .icone-user {
+    cursor: pointer;    
     position: absolute;
     width: 4%;
     right: 60px;
@@ -190,21 +196,27 @@ input:focus {
     box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
-/* 
- * MAIN-CONTENT
- */
+/***************************
+ ******* END HEADER ********
+ ***************************/
 
-/* Contenu principal */
+/***************************
+ ****** MAIN-CONTENT *******
+ ***************************/
+
+/* Base contenu principal */
 main {
     position: relative;
     width: 80%;
     margin-top: 90px;
     margin-right: auto;
-    margin-bottom: 60px;    
+    margin-bottom: 50px;    
     margin-left: auto;
 }
 
-/* INDEX */
+/***************
+ **** INDEX ****
+ ***************/
 
 /* Feature */
 .feature {
@@ -216,7 +228,7 @@ main {
     position: absolute;
     text-align: end;
     right: 60px;
-    font-size: 75px;
+    font-size: 90px;
     font-weight: 400;
     color: white;
     left: 40%;
@@ -272,6 +284,10 @@ a {
     padding: 20px;
 }
 
+a.single-template {
+    text-decoration: none;    
+}
+
 /* Bouton RESSOURCES */
 .plus-ressources {
     position: absolute;
@@ -289,76 +305,179 @@ a {
     margin-top: 40px;
 }
 
-/* FIN INDEX */
-
-/* CONNEXION */
-
-/* Formulaire de connexion */
-.form-connexion {
-    width: 40%;
-    margin: 0 auto;
-    position: relative;
-    top: 100px;
-    padding: 10px;
-    background-color: rgb(245, 245, 245);
+a.plus-ressources {
+    text-decoration: none;
+    color: white;    
 }
 
-.input {
+/***************
+ ** END INDEX **
+ ***************/
+
+/***************
+ *** CONTACT ***
+ ***************/
+
+/* Image contact */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-contact {
     display: block;
-    width: 98%;
+    width: 100%;
+}
+
+.img-contact {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Section */
+.page-contact {
+    position: relative;
+    margin: 0 auto;
+    top: 60px;
+    display: flex;
+}
+
+/* Localisation */
+.bloc-localisation {
+    float: left;
+    width: 50%;
+    position: relative;
+}
+
+/* Bloc adresse */
+.bloc-adresse {
+    position: relative;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
+}
+
+.nom {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.campus {
+    font-weight: 600; 
+    font-size: 20px;
+    margin-bottom: 4px;        
+}
+
+.adresse {
+    font-size: 18px;    
+    margin-bottom: 8px;
+}
+
+.numero {
+    font-weight: 600;     
+}
+
+/* Google maps */
+.div-google-maps {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 40%;
+    overflow: hidden;
+}
+
+.bloc-google iframe {
+    float: left;   
+    width: 50%;     
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+/* Formulaire */
+.form-contact {
+    float: right;
+    position: relative;
+    width: 50%;
+    margin-left: 80px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
     font-family: 'Barlow', sans-serif;
     font-size: 20px;
-    font-weight: 500;
-    background-color: transparent;   
+    font-weight: 500;    
     border: 1px solid transparent;
     border-bottom: 1px solid black;
 }
 
-#username {
-    margin-bottom: 20px;
-}
-
-#password {
-    margin-bottom: 20px;
-}
-
-.remember-me {
-    font-size: 17px;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-
-.bouton-connexion {
+.input-textarea {
     display: block;
-    position: relative;
-    left: 50%;
-    margin-left: -50px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-family: 'Barlow', sans-serif;    
-    color: black;
-    font-size: 17px;
-    font-weight: 600;
-    background-color: white;
-    text-decoration: none;
-    text-transform: uppercase;
+    width: 100%;
+    height: 225px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
     border: 1px solid transparent;
-    cursor: pointer;
+    border-bottom: 1px solid black;
 }
 
-/* FIN CONNEXION */
+.icone-send {
+    position: relative;
+    width: 10%;
+    left: 50%;
+    margin-left: -25px;
+    top: 20px;
+    -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
+    -moz-box-shadow:    2px 2px 0px 0px lightgrey;
+    -o-box-shadow:      2px 2px 0px 0px lightgrey;
+    box-shadow:         2px 2px 0px 0px lightgrey;
+    -webkit-border-radius: 50px;
+    -moz-border-radius:    50px;
+    border-radius:         50px;
+    transition: all 0.3s;
+}
 
-/*
- * FOOTER
- */
+.icone-send:hover {
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+/***************
+ * END CONTACT *
+ ***************/
+
+/***************************
+ **** END MAIN-CONTENT *****
+ ***************************/
+
+/***************************
+ ********* FOOTER **********
+ ***************************/
 
  /* BG blanc */
 footer {
     position: relative;
     background-color: rgb(245, 245, 245);
     width: 100%;
-    margin-top: 60px;
+    margin-top: 120px;
 }
 
 /* Image de contact */
@@ -380,9 +499,9 @@ footer {
 /* Liens */
 .liens-footer {
     text-align: center;
+    padding-bottom: 20px;
     color: black;
-    padding-bottom: 20px;   
-    line-height: 3; 
+    line-height: 2; 
     text-decoration: none; 
 }
 
@@ -399,3 +518,7 @@ footer {
     color: black;
     text-decoration: underline;
 }
+
+/***************************
+ ******* END FOOTER ********
+ ***************************/
