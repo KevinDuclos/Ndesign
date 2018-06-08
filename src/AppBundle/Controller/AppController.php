@@ -25,9 +25,22 @@ class AppController extends Controller
                 
             ]);
     }
+    public function retrieveAction($id){
+        $em = $this->getDoctrine()->getManager();
+        $template = $em
+            ->getRepository('AppBundle:Produit')
+            ->find($id);
+        
+        return $this->render('@App/App/single.html.twig', [
+            'produit' => $produit
+        ]);
+    }
     public function contactAction()
     {
         return $this->render('@App/App/contact.html.twig');
     }
-
+    public function venteAction()
+    {
+        return $this->render('@App/App/vente.html.twig');
+    }
 }
