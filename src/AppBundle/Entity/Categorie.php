@@ -28,7 +28,11 @@ class Categorie
      */
     private $category;
 
-
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Produit", cascade={"persist"})
+     */
+    private $produits;
+    
     /**
      * Get id.
      *

@@ -12,8 +12,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * Produit
  *
+ * @ORM\Entity
  * @ORM\Table(name="ND_produit")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProduitRepository")
+ * @Vich\Uploadable   
+ * 
  */
 class Produit
 {
@@ -58,9 +61,6 @@ class Produit
     private $commandes;
 
     
-
-  
-
     /**
      * Get id.
      *
@@ -166,6 +166,7 @@ class Produit
     {
         return $this->tag;
     }
+
     /**
      * Constructor
      */
@@ -246,14 +247,12 @@ class Produit
     {
         return $this->categorie;
     }
-    /**
-     * @ORM\Entity
-     * @Vich\Uploadable
-     */
+
+   
 
   
 
-    // ... other fields
+   
 
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.

@@ -33,14 +33,14 @@ class ProduitType extends AbstractType
             )
                     ))
 
-            // ->add('categorie',EntityType::class,array(
-            // 'class'=> 'AppBundle\Entity\Categorie',
-            // 'choice_label' => 'category',
-            // 'choices'=>getCategory(),
-            // 'attr'=> array(
-            //     "class"=>"form-control"
-            // )
-            //         ))
+            ->add('categorie',EntityType::class,array(
+            'class'=> 'AppBundle\Entity\Categorie',
+            'choice_label' => 'category',
+            'multiple'=>false,
+            'attr'=> array(
+                "class"=>"form-control"
+            )
+                    ))
             ->add('prix',TextType::class,array(
             'attr'=> array(
                 "class"=>"form-control"
