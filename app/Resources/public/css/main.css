@@ -228,7 +228,7 @@ main {
     position: absolute;
     text-align: end;
     right: 60px;
-    font-size: 75px;
+    font-size: 90px;
     font-weight: 400;
     color: white;
     left: 40%;
@@ -284,6 +284,10 @@ a {
     padding: 20px;
 }
 
+a.single-template {
+    text-decoration: none;    
+}
+
 /* Bouton RESSOURCES */
 .plus-ressources {
     position: absolute;
@@ -299,6 +303,11 @@ a {
     left: 50%;
     margin-left: -140px;
     margin-top: 40px;
+}
+
+a.plus-ressources {
+    text-decoration: none;
+    color: white;    
 }
 
 /***************
@@ -336,26 +345,65 @@ a {
     display: flex;
 }
 
-/* Bloc adresse */
-.bloc-adresse {
+/* Localisation */
+.bloc-localisation {
     float: left;
     width: 50%;
     position: relative;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 
-.google-maps {
+/* Bloc adresse */
+.bloc-adresse {
+    position: relative;
     width: 100%;
-    height: 200px;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
 }
 
-/* Logo bloc adresse */
-.logo-adresse {
+.nom {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.campus {
+    font-weight: 600; 
+    font-size: 20px;
+    margin-bottom: 4px;        
+}
+
+.adresse {
+    font-size: 18px;    
+    margin-bottom: 8px;
+}
+
+.numero {
+    font-weight: 600;     
+}
+
+/* Google maps */
+.div-google-maps {
     position: absolute;
-    width: 30%;
-    top: 10px;
-    left: 50%;
-    margin-left: -75px;
+    width: 100%;
+    height: 50%;
+    top: 40%;
+    overflow: hidden;
+}
+
+.bloc-google iframe {
+    float: left;   
+    width: 50%;     
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
 }
 
 /* Formulaire */
@@ -381,7 +429,7 @@ a {
 .input-textarea {
     display: block;
     width: 100%;
-    height: 200px;
+    height: 225px;
     font-family: 'Barlow', sans-serif;
     font-size: 20px;
     font-weight: 500;    
@@ -393,6 +441,7 @@ a {
     position: relative;
     width: 10%;
     left: 50%;
+    margin-left: -25px;
     top: 20px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
@@ -450,9 +499,9 @@ footer {
 /* Liens */
 .liens-footer {
     text-align: center;
+    padding-bottom: 20px;
     color: black;
-    padding-bottom: 20px;   
-    line-height: 3; 
+    line-height: 2; 
     text-decoration: none; 
 }
 
