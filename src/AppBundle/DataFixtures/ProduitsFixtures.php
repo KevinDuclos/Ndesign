@@ -17,8 +17,9 @@ class ProduitsFixtures extends Fixture implements ORMFixtureInterface
             $produit->setTitre('produit '.$i);
             $produit->setPrix(mt_rand(10, 100));
             $produit->setPoids(mt_rand(10, 100));
-            $produit->setTag('tag '.$i);
-            
+            $produit->setImageName('name');
+            $produit->setImageSize(12);
+            $produit->setImageFile(null);
             $manager->persist($produit);
         }
 

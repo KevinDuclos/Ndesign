@@ -37,7 +37,16 @@ class AppController extends Controller
     }
     public function contactAction()
     {
-        return $this->render('@App/App/contact.html.twig');
+        $em = $this->getDoctrine()->getManager();
+            $commandes = $em
+                ->getRepository('AppBundle:Commande')
+                ->getAllCommandeJoinwithProduct();
+            
+            return $this->render('@App/App/contact.html.twig', [
+                'commandes' => $commandes,
+                'user' => $this->getUser()
+                
+            ]);
     }
     public function venteAction()
     {
