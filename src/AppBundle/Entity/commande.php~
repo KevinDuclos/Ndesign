@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use User\UserBundle\Entity\User;
 
 /**
  * commande
  *
- * @ORM\Table(name="commande")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\commandeRepository")
+ * @ORM\Table(name="ND_commande")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommandeRepository")
  */
 class Commande
 {

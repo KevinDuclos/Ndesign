@@ -10,7 +10,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 
 
@@ -33,7 +32,7 @@ class ProduitType extends AbstractType
             )
                     ))
 
-            ->add('categorie',EntityType::class,array(
+            ->add('category',EntityType::class,array(
             'class'=> 'AppBundle\Entity\Categorie',
             'choice_label' => 'category',
             'multiple'=>false,
