@@ -117,7 +117,9 @@ textarea:focus {
     z-index: 20;
     background-color: white;
     border: 10px solid white;
-    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
 }
 
 /* Barre de recherche */
@@ -158,9 +160,9 @@ textarea:focus {
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
     box-shadow:         2px 2px 0px 0px lightgrey;
-    -webkit-border-radius: 50px;
-    -moz-border-radius:    50px;
-    border-radius:         50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
     transition: all 0.3s;
 }
 
@@ -183,9 +185,9 @@ textarea:focus {
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
     box-shadow:         2px 2px 0px 0px lightgrey;
-    -webkit-border-radius: 50px;
-    -moz-border-radius:    50px;
-    border-radius:         50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
     transition: all 0.3s;
 }
 
@@ -318,7 +320,7 @@ a.plus-ressources {
  *** CONTACT ***
  ***************/
 
-/* Image contact */
+/* Image contact haut de page */
 .thumbnail {
     position: relative;
     width: 100%;
@@ -447,9 +449,9 @@ a.plus-ressources {
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
     box-shadow:         2px 2px 0px 0px lightgrey;
-    -webkit-border-radius: 50px;
-    -moz-border-radius:    50px;
-    border-radius:         50px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
     transition: all 0.3s;
 }
 
@@ -463,6 +465,217 @@ a.plus-ressources {
 /***************
  * END CONTACT *
  ***************/
+
+/***************
+ ** CONNEXION **
+ ***************/
+
+/* Image connexion haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+}
+
+.thumbnail .img-connexion {
+    display: block;
+    width: 100%;
+}
+
+.img-connexion {
+    height: 310px;
+    object-fit: cover;
+}
+
+/* Traduction accroche */
+.traduction {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+}
+
+/* Icône user connexion */
+.bloc-icone-user {
+    position: relative;
+    top: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icone-user-connexion {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+/* Formulaire de connexion */
+.form-connexion {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    top: 90px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton connexion */
+.bouton-connexion {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+}
+
+/* Aide connexion */
+a.sign-up {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    width: 50%;
+    padding-left: 35px;
+    font-weight: 500;    
+    transition: all 0.3s;
+}
+
+a.sign-up:hover {
+    text-decoration: underline;    
+}
+
+a.forget-password {
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    right: 35px;
+    font-weight: 500;
+    transition: all 0.3s;    
+}
+
+a.forget-password:hover {
+    text-decoration: underline;    
+}
+
+/*******************
+ ** END CONNEXION **
+ *******************/
+
+/*********************
+ **** INSCRIPTION ****
+ *********************/
+
+/* Image inscription haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+}
+
+.thumbnail .img-inscription {
+    display: block;
+    width: 100%;
+}
+
+.img-inscription {
+    height: 310px;
+    object-fit: cover;
+}
+
+/* Icône user inscription */
+.bloc-icone-user {
+    position: relative;
+    top: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icone-user-inscription {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+/* Formulaire de inscription */
+.form-inscription {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    top: 90px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton inscription */
+.bouton-inscription {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+}
+
+/*********************
+ ** END INSCRIPTION **
+ *********************/
 
 /***************************
  **** END MAIN-CONTENT *****

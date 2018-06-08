@@ -1,55 +1,72 @@
 {% trans_default_domain 'FOSUserBundle' %}
-{# {% extends 'base.html.twig' %} #}
+{% extends 'base.html.twig' %}
 
 {% block body %}
 
-<div class="register">
+    {# Image inscription #}
+    <div class="thumbnail">
+        <img src="{{ asset('assets/img/fond-p-inscription.jpg') }}" alt="" class="img-inscription">
+        <div class="traduction">*Bienvenue</div>        
+    </div>
 
-            <h2>Inscription</h2>
-            {% if not form.vars.valid %}
-            <div class="">
-                Le formulaire contien des erreur
+    {# CONTENU PRINCIPAL #}
+    <main role="main">
+
+        <div class="register">
+
+            {# Icône user inscription #}
+            <div class="bloc-icone-user">
+                <img src="{{ asset('assets/img/user.svg') }}" alt="" class="icone-user-inscription">            
             </div>
-            {% endif %}
-                {{ form_start(form) }}
+
+            {# Formulaire d'inscrition #}
+            {{ form_start(form, {
+                'attr' :{
+                    'class': 'form-inscription'
+                }
+            }) }}
+
+                {# Champ email #}
                 {{ form_widget(form.email, {
                     'attr':{
-                        'class': '',
-                        'placeholder': 'E-Mail',
-                        
+                        'class': 'input-text',
+                        'placeholder': 'Email'
                     }
                 }) }}
-                <br>                
+
+                {# Champ pseudo #}
                 {{ form_widget(form.username, {
                     'attr':{
-                        'class': '',
-                        'placeholder': 'Pseudo',
-                        
+                        'class': 'input-text',
+                        'placeholder': 'Pseudo'
                     }
                 }) }}
-                <br>                
+
+                {# Champ mot de passe #}
                 {{ form_widget(form.plainPassword.first, {
                     'attr':{
-                        'class': '',
-                        'placeholder': 'Mot de passe',
-                        
+                        'class': 'input-text',
+                        'placeholder': 'Mot de passe'
                     }
                 }) }}
-                <br>
+
+                {# Champ confirmation mot de passe #}
                 {{ form_widget(form.plainPassword.second, {
                     'attr':{
-                        'class': '',
-                        'placeholder': 'Repetez votre mot de passe',
-                        
+                        'class': 'input-text',
+                        'placeholder': 'Confirmation du mot de passe'
                     }
                 }) }}
-                <br>
-                <button type="submit" class="">S'inscrire</button>
-                {{ form_end(form) }}
+
+                <input type="submit" class="bouton-inscription" value="Inscription"/>
+
+            {{ form_end(form) }}
      
-</div>
+        </div>
+    
+    </main>
+    {# FIN CONTENU PRINCIPAL #}
+
 {% endblock body %}
 
-{% block javascripts %}
-{% endblock %}
-
+{% block javascripts %}{% endblock %}
