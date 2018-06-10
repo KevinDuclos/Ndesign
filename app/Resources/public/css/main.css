@@ -752,6 +752,72 @@ a.forget-password:hover {
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
 }
 
+.blocs-modif {
+    display: flex;
+}
+
+.bloc-profil {
+    float: left;
+    width: 30%;
+    border: 2px solid #F49B00;
+    height: 320px;
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.bloc-profil:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+.bloc-mdp {
+    float: left;
+    width: 30%;    
+    border: 2px solid #A6A74F;
+    width: 30%;
+    height: 320px;    
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.bloc-mdp:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+.bloc-paiement {
+    float: left;
+    width: 30%;
+    border: 2px solid #59B39E;    
+    width: 30%;
+    height: 320px;    
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;      
+}
+
+.bloc-paiement:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
 /*******************
  * END PAGE PROFIL *
  *******************/
