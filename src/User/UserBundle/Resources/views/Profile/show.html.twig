@@ -1,10 +1,15 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<div class="container">
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
-</div>  
+
+    <main class="main">
+
+        <div class="bonjour">
+            <p>Bonjour, <span style="font-weight: 500;">{{ user.username }}</span> !</p>
+            <p style="font-size: 18px; margin-top: 7px;">({{ user.email }})</p>            
+        </div>
+
+    </main>
+
 {% endblock body %}
