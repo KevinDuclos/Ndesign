@@ -15,7 +15,7 @@
         </thead>
         <tbody>
         {% for commande in commandes %}
-            {% for produit in commandes.id_produit %}
+            {% for produit in commande.produits %}
                 <tr>
                     <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
                     <td>{{ produit.titre }}</td>
