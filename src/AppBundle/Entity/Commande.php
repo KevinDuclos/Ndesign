@@ -32,7 +32,7 @@ class Commande
     /**
      * @ORM\ManyToOne(targetEntity="User\UserBundle\Entity\User", inversedBy="commande")
      */
-    private $users;
+    private $user;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Produit", cascade={"persist"})
@@ -77,58 +77,10 @@ class Commande
      */
     public function __construct()
     {
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
-    /**
-     * Add user.
-     *
-     * @param \User\UserBundle\Entity\User $user
-     *
-     * @return Commande
-     */
-    public function addUser(\User\UserBundle\Entity\User $user)
-    {
-        $this->users[] = $user;
-
-        return $this;
-    }
-
-    /**
-     * Remove user.
-     *
-     * @param \User\UserBundle\Entity\User $user
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeUser(\User\UserBundle\Entity\User $user)
-    {
-        return $this->users->removeElement($user);
-    }
-
-    /**
-     * Get users.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-    /**
-     * Set users.
-     *
-     * @param \User\UserBundle\Entity\User|null $users
-     *
-     * @return Commande
-     */
-    public function setUsers(\User\UserBundle\Entity\User $users = null)
-    {
-        $this->users = $users;
-
-        return $this;
-    }
 
     /**
      * Add produit.
@@ -164,5 +116,29 @@ class Commande
     public function getProduits()
     {
         return $this->produits;
+    }
+
+    /**
+     * Set user.
+     *
+     * @param \User\UserBundle\Entity\User|null $user
+     *
+     * @return Commande
+     */
+    public function setUser(\User\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user.
+     *
+     * @return \User\UserBundle\Entity\User|null
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

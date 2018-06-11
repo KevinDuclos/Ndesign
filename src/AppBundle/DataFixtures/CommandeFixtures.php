@@ -14,7 +14,7 @@ class CommandeFixtures extends Fixture implements ORMFixtureInterface
         // create 20 produits! Bam!
         for ($i = 0; $i < 20; $i++) {
             $commande = new Commande();
-            $commande->setUsers(null);
+            $commande->setUser(null);
             $commande->setDate(new \DateTime());
             
             
