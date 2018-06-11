@@ -1,10 +1,63 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% extends 'base.html.twig' %}
+
 {% block body %}
-<div class="container">
-<div class="fos_user_user_show">
-    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
-    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
-</div>
-</div>  
+
+    <main class="main">
+
+        <div class="bonjour">
+            <p>Bonjour, <span style="font-weight: 500;">{{ user.username }}</span> !</p>
+            <p style="font-size: 18px; margin-top: 7px;">({{ user.email }})</p>            
+        </div>
+
+        <div class="blocs-modif">
+
+            {# Modifier les infos du profil #}
+            <a href="" class="bloc-profil">            
+                <div class="content-bloc-profil"></div>
+            </a>
+
+            {# Modifier le mot de passe #}
+            <a href="" class="bloc-mdp">            
+                <div class="content-bloc-mdp"></div>
+            </a>
+
+            {# Modifier le mode de paiement #}
+            <a href="" class="bloc-paiement">            
+                <div class="content-bloc-paiement"></div>
+            </a>
+
+            {# Voir l'historique des commandes #}
+            <a href="" class="bloc-commandes">                        
+                <div class="content-bloc-commandes"></div>
+            </a>
+
+        </div>
+
+        <div class="blocs-modif">
+
+            {# Modifier les infos du profil #}
+            <a href="" class="bloc-profil">            
+                <div class="content-bloc-profil"></div>
+            </a>
+
+            {# Modifier le mot de passe #}
+            <a href="" class="bloc-mdp">            
+                <div class="content-bloc-mdp"></div>
+            </a>
+
+            {# Modifier le mode de paiement #}
+            <a href="" class="bloc-paiement">            
+                <div class="content-bloc-paiement"></div>
+            </a>
+
+            {# Voir l'historique des commandes #}
+            <a href="" class="bloc-commandes">                        
+                <div class="content-bloc-commandes"></div>
+            </a>
+
+        </div>
+
+    </main>
+
 {% endblock body %}
