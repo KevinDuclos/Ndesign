@@ -25,3 +25,7 @@ app_single:
 app_vente:
     path: /conditions-de-ventes/
     defaults: { _controller: AppBundle:App:vente }
+
+app_panier:
+    path: /user/panier
+    defaults: { _controller: AppBundle:App:panier}

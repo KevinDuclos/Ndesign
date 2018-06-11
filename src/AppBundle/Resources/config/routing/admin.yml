@@ -18,3 +18,11 @@ app_users:
     path: /users/
     defaults: { _controller: AppBundle:Admin:users }
 
+app_commandes:
+    path: /commandes/
+    defaults: { _controller: AppBundle:Admin:commande }
+
+app_admin_contact:
+    path: /contact/
+    defaults: { _controller: AppBundle:Admin:contact }
+

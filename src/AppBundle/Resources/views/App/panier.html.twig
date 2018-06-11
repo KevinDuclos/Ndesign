@@ -1,1 +1,21 @@
 {% extends 'base.html.twig' %}
+
+ {% block body %}
+ <main role="main">
+<h2>Panier</h2>
+
+<table>
+  <tr>
+    <th>Nom produit</th>
+    <th>Quantité</th>
+    <th>Prix</th>
+  </tr>
+  {% for commande in commandes %}
+    {% for produit in commandes.id_produit %}
+    
+    {% endfor %}
+  {% endfor %}
+
+</table>
+</main>
+{% endblock body %}

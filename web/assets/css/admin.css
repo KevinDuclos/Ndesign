@@ -23,7 +23,7 @@ a {
 body {
     background: #f1f4f7;
     padding-top: 50px;
-    color: #a101fd;
+    color: gray;
 }
 
 .user-menu a {
@@ -37,10 +37,10 @@ a, a:hover, a:focus {
     color: #00000000;
 }
 a, a:hover, a:focus {
-    color: red;
+    color: black;
 }
 a {
-    color: red;
+    color: black;
     text-decoration: none;
 }
 user agent stylesheet
@@ -51,7 +51,7 @@ a:-webkit-any-link {
 }
 
 .navbar-header .navbar-brand span {
-    color: #a101fd;
+    color: #fd5d01;
 }
 ul li {
     list-style: none;
