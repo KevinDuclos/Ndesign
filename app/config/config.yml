@@ -92,9 +92,9 @@ assetic:
 
 vich_uploader:
     db_driver: orm
+    twig: true
     mappings: 
-        template: 
+        produit_image: 
             uri_prefix: /assets/template/ 
             upload_destination: '%kernel.root_dir%/../web/assets/template/' 
-            # service: vich_uploader.namer_property
-            #options: { property: 'personalNamer'}
+          

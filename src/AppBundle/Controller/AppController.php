@@ -25,7 +25,7 @@ class AppController extends Controller
                 
             ]);
     }
-    public function retrieveAction($id){
+    public function singleAction($id){
         $em = $this->getDoctrine()->getManager();
         $template = $em
             ->getRepository('AppBundle:Produit')

@@ -35,7 +35,7 @@ class Commande
     private $users;
 
     /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Produit", cascade={"persist"})
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Produit", inversedBy="commandes")
      */
     private $produits;
 
@@ -116,6 +116,10 @@ class Commande
         return $this->users;
     }
 
+  
+
+   
+
     /**
      * Set users.
      *
@@ -131,35 +135,23 @@ class Commande
     }
 
     /**
-     * Add produit.
+     * Set produits.
      *
-     * @param \AppBundle\Entity\Produit $produit
+     * @param \AppBundle\Entity\Produit|null $produits
      *
      * @return Commande
      */
-    public function addProduit(\AppBundle\Entity\Produit $produit)
+    public function setProduits(\AppBundle\Entity\Produit $produits = null)
     {
-        $this->produits[] = $produit;
+        $this->produits = $produits;
 
         return $this;
     }
 
     /**
-     * Remove produit.
-     *
-     * @param \AppBundle\Entity\Produit $produit
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeProduit(\AppBundle\Entity\Produit $produit)
-    {
-        return $this->produits->removeElement($produit);
-    }
-
-    /**
      * Get produits.
      *
-     * @return \Doctrine\Common\Collections\Collection
+     * @return \AppBundle\Entity\Produit|null
      */
     public function getProduits()
     {

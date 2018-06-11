@@ -2,9 +2,13 @@ app_homepage:
     path: /
     defaults: { _controller: AppBundle:App:index }
 
+app_produits:
+    path: /admin/produits/
+    defaults: { _controller: AppBundle:Admin:produit }
+
 app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"
-    prefix:   /admin/produit
+    prefix:   /admin
 
 app_contact:
     path: /contact
