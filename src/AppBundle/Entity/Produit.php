@@ -53,10 +53,6 @@ class Produit
      */
     private $category;
 
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="produits")
-     */
-    private $commandes;
 
     /**
      * 
@@ -81,7 +77,16 @@ class Produit
     private $imageSize;
 
 
-   
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="produits")
+     */
+    private $commande;
+
+    public function __construct()
+    {
+        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
 
     /**
      * Get id.
@@ -231,13 +236,8 @@ class Produit
     {
         return $this->category;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->commandes = new \Doctrine\Common\Collections\ArrayCollection();
-    }
+    
+
 
     /**
      * Add commande.
@@ -248,7 +248,7 @@ class Produit
      */
     public function addCommande(\AppBundle\Entity\Commande $commande)
     {
-        $this->commandes[] = $commande;
+        $this->commande[] = $commande;
 
         return $this;
     }
@@ -262,16 +262,16 @@ class Produit
      */
     public function removeCommande(\AppBundle\Entity\Commande $commande)
     {
-        return $this->commandes->removeElement($commande);
+        return $this->commande->removeElement($commande);
     }
 
     /**
-     * Get commandes.
+     * Get commande.
      *
      * @return \Doctrine\Common\Collections\Collection
      */
-    public function getCommandes()
+    public function getCommande()
     {
-        return $this->commandes;
+        return $this->commande;
     }
 }
