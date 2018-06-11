@@ -75,103 +75,808 @@ html, body {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', sans-serif;
-    background-color: rgb(240, 240, 240);
 }
 
-/*
- * HEADER
- */
+/* Focus des input & textarea */
+input:focus {
+    outline: none;
+}
 
-/* Fond blanc */
+textarea:focus {
+    outline: none;
+}
+
+/* Couleur des placeholder */
+::placeholder {
+    color: rgba(0, 0, 0, 0.7);
+    font-family: 'Barlow', sans-serif;
+    font-weight: 300;    
+    font-size: 20px;
+}
+
+/***************************
+ ********* HEADER **********
+ ***************************/
+
+/* BG blanc */
 .header {
     position: absolute;
     left: 0;
     right: 0;
-    height: 130px;
-    color: white;
-    background-color: white;
-    z-index: 0;    
+    height: 90px;
+    background-color: white;     
+    z-index: 1;  
 }
 
 /* Logo NDesign */
 .logo-ndesign {
     position: absolute;
-    width: 15%;
-    left: 70px;
-    top: 5px;
+    width: 10%;
+    left: 50px;
+    top: -10px;
     z-index: 20;
+    background-color: white;
+    border: 10px solid white;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
 }
 
 /* Barre de recherche */
+.rechercher {
+    position: relative;
+    width: 25%;
+    left: 25%;
+    top: 50%;    
+    margin-top: -14px;    
+}
+
 .search {
     position: absolute;    
-    width: 37%;
+    width: 100%;
     font-family: 'Barlow', sans-serif;
-    font-size: 25px;
+    font-size: 20px;
+    font-weight: 500;    
     border: 1px solid transparent;
-    border-bottom: 1px solid grey;
-    left: 370px;
-    top: 50%;
-    margin-top: -11px;
+    border-bottom: 1px solid black;
 }
 
 .icone-search {
     position: absolute;
-    margin-top: -2px;    
-    left: 65%;
-    top: 50%;   
+    right: -25px;
+    top: 50%;
+    margin-top: 5px;
 }
 
 /* Icône panier */
 .icone-panier {
+    cursor: pointer;
     position: absolute;
     width: 4%;
-    right: 160px;
+    right: 140px;
     top: 50%;
     margin-top: -27px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius:    50px;
-    border-radius:         50px;
-    transition: all 0.5s;
+    -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
+    -moz-box-shadow:    2px 2px 0px 0px lightgrey;
+    -o-box-shadow:      2px 2px 0px 0px lightgrey;
+    box-shadow:         2px 2px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    transition: all 0.3s;
 }
 
 .icone-panier:hover {
-    -webkit-box-shadow: 0px 0px 8px 0px #9b9b9b;
-    -moz-box-shadow:    0px 0px 8px 0px #9b9b9b;
-    -o-box-shadow:      0px 0px 8px 0px #9b9b9b;
-    box-shadow:         0px 0px 8px 0px #9b9b9b;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
 /* Icône user */
 .icone-user {
+    cursor: pointer;    
     position: absolute;
     width: 4%;
-    right: 80px;
+    right: 60px;
     top: 50%;
     margin-top: -27px;
-    -webkit-border-radius: 50px;
-    -moz-border-radius:    50px;
-    border-radius:         50px;
-    transition: all 0.5s;
+    -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
+    -moz-box-shadow:    2px 2px 0px 0px lightgrey;
+    -o-box-shadow:      2px 2px 0px 0px lightgrey;
+    box-shadow:         2px 2px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    transition: all 0.3s;
 }
 
 .icone-user:hover {
-    -webkit-box-shadow: 0px 0px 8px 0px #9b9b9b;
-    -moz-box-shadow:    0px 0px 8px 0px #9b9b9b;
-    -o-box-shadow:      0px 0px 8px 0px #9b9b9b;
-    box-shadow:         0px 0px 8px 0px #9b9b9b;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
-/* 
- * MAIN-CONTENT
- */
+/***************************
+ ******* END HEADER ********
+ ***************************/
 
+/***************************
+ ****** MAIN-CONTENT *******
+ ***************************/
 
+/* Base contenu principal */
+main {
+    position: relative;
+    width: 80%;
+    margin-top: 90px;
+    margin-right: auto;
+    margin-bottom: 50px;    
+    margin-left: auto;
+}
 
-/*
- * FOOTER
- */
+/***************
+ **** INDEX ****
+ ***************/
 
-.h2 {
+/* Feature */
+.feature {
+    position: relative;
+    top: 90px;
+}
+
+/* Titre "Des ressources pour vos sites web" */
+.titre-feature {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    color: white;
+    text-align: end;
+    font-size: 90px;
+    font-weight: 300;
+}
+
+/* "Découvrez nos contenus exclusifs" */
+.intro {
+    position: absolute;
+    left: 60px;
+    bottom: 200px;
+    color: white;
+    font-size: 60px;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+/* Animation phrase 1 */
+.part1 {
+    opacity: 0;
+    -moz-animation: anim 1s linear forwards 2s;
+    -webkit-animation: anim 1s linear forwards 2s;
+    -o-animation: anim 1s linear forwards 2s;
+    -ms-animation: anim 1s linear forwards 2s;
+    animation: anim 1s linear forwards 2s;
+}
+
+/* Animation phrase 2 */
+.part2 {
+    opacity: 0;
+    -moz-animation: anim 1s linear forwards 2.4s;
+    -webkit-animation: anim 1s linear forwards 2.4s;
+    -o-animation: anim 1s linear forwards 2.4s;
+    -ms-animation: anim 1s linear forwards 2.4s;
+    animation: anim 1s linear forwards 2.4s;
+}
+
+/* Animation phrase 3 */
+.part3 {
+    opacity: 0;
+    -moz-animation: anim 1s linear forwards 2.8s;
+    -webkit-animation: anim 1s linear forwards 2.8s;
+    -o-animation: anim 1s linear forwards 2.8s;
+    -ms-animation: anim 1s linear forwards 2.8s;
+    animation: anim 1s linear forwards 2.8s;
+}
+
+@-moz-keyframes anim {
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+@-webkit-keyframes anim {
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+@-o-keyframes anim {
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+@-ms-keyframes anim {
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+@keyframes anim {
+    0%  {opacity:0;}
+    100% {opacity:1;}
+}
+
+/* Background feature - INDEX */
+.img-feature {
+    width: 100%;
+    margin-bottom: 70px;
+}
+
+/* Aperçus des templates */
+.templates {
+    display: flex;
+}
+
+/* Template individuel */
+.template {
+    margin: 10px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.template:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+a {
+    text-decoration: none;    
+}
+
+/* Image template */
+.image-template {   
+    width: 100%;
+}
+
+/* Titre template */
+.titre-template {  
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    padding: 20px;
+}
+
+a.single-template {
+    text-decoration: none;    
+}
+
+/* Bouton RESSOURCES */
+.plus-ressources {
+    position: absolute;
+    text-decoration: none;
     text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    padding: 10px;
+    font-weight: 600;
+    left: 50%;
+    margin-left: -140px;
+    margin-top: 40px;
 }
+
+a.plus-ressources {
+    text-decoration: none;
+    color: white;    
+}
+
+/***************
+ ** END INDEX **
+ ***************/
+
+/***************
+ *** CONTACT ***
+ ***************/
+
+/* Image contact haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-contact {
+    display: block;
+    width: 100%;
+}
+
+.img-contact {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Section */
+.page-contact {
+    position: relative;
+    margin: 0 auto;
+    top: 60px;
+    display: flex;
+}
+
+/* Localisation */
+.bloc-localisation {
+    float: left;
+    width: 50%;
+    position: relative;
+}
+
+/* Bloc adresse */
+.bloc-adresse {
+    position: relative;
+    width: 100%;
+    border: 1px solid black;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;    
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
+}
+
+.nom {
+    font-weight: 800;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.campus {
+    font-weight: 600; 
+    font-size: 20px;
+    margin-bottom: 4px;        
+}
+
+.adresse {
+    font-size: 18px;    
+    margin-bottom: 8px;
+}
+
+.numero {
+    font-weight: 600;     
+}
+
+/* Google maps */
+.div-google-maps {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+    top: 40%;
+    overflow: hidden;
+}
+
+.bloc-google iframe {
+    float: left;   
+    width: 50%;     
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+}
+
+/* Formulaire */
+.form-contact {
+    float: right;
+    position: relative;
+    width: 50%;
+    margin-left: 80px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+.input-textarea {
+    display: block;
+    width: 100%;
+    height: 225px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+.icone-send {
+    position: relative;
+    width: 10%;
+    left: 50%;
+    margin-left: -25px;
+    top: 20px;
+    -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
+    -moz-box-shadow:    2px 2px 0px 0px lightgrey;
+    -o-box-shadow:      2px 2px 0px 0px lightgrey;
+    box-shadow:         2px 2px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    transition: all 0.3s;
+}
+
+.icone-send:hover {
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+/***************
+ * END CONTACT *
+ ***************/
+
+/***************
+ ** CONNEXION **
+ ***************/
+
+/* Image connexion haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+}
+
+.thumbnail .img-connexion {
+    display: block;
+    width: 100%;
+}
+
+.img-connexion {
+    height: 310px;
+    object-fit: cover;
+}
+
+/* Traduction accroche */
+.traduction {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 12px;
+}
+
+/* Icône user connexion */
+.bloc-icone-user {
+    position: relative;
+    top: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icone-user-connexion {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+/* Formulaire de connexion */
+.form-connexion {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    top: 90px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton connexion */
+.bouton-connexion {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+}
+
+/* Aide connexion */
+a.sign-up {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    width: 50%;
+    padding-left: 35px;
+    font-weight: 500;    
+    transition: all 0.3s;
+}
+
+a.sign-up:hover {
+    text-decoration: underline;    
+}
+
+a.forget-password {
+    position: absolute;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: black;
+    right: 35px;
+    font-weight: 500;
+    transition: all 0.3s;    
+}
+
+a.forget-password:hover {
+    text-decoration: underline;    
+}
+
+/*******************
+ ** END CONNEXION **
+ *******************/
+
+/*********************
+ **** INSCRIPTION ****
+ *********************/
+
+/* Image inscription haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+}
+
+.thumbnail .img-inscription {
+    display: block;
+    width: 100%;
+}
+
+.img-inscription {
+    height: 310px;
+    object-fit: cover;
+}
+
+/* Icône user inscription */
+.bloc-icone-user {
+    position: relative;
+    top: 50px;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.icone-user-inscription {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+/* Formulaire de inscription */
+.form-inscription {
+    position: relative;
+    width: 40%;
+    margin: 0 auto;
+    top: 90px;
+}
+
+.input-text {
+    display: block;
+    margin-bottom: 20px;
+    padding-bottom: 5px;
+    width: 100%;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton inscription */
+.bouton-inscription {
+    width: 100%;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+}
+
+/*********************
+ ** END INSCRIPTION **
+ *********************/
+
+/*******************
+ *** PAGE PROFIL ***
+ *******************/
+
+.bonjour {
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 30px;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+}
+
+.blocs-modif {
+    display: flex;
+}
+
+.bloc-profil {
+    float: left;
+    width: 30%;
+    border: 2px solid #F49B00;
+    height: 320px;
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.bloc-profil:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+.bloc-mdp {
+    float: left;
+    width: 30%;    
+    border: 2px solid #A6A74F;
+    width: 30%;
+    height: 320px;    
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.bloc-mdp:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+.bloc-paiement {
+    float: left;
+    width: 30%;
+    border: 2px solid #59B39E;    
+    width: 30%;
+    height: 320px;    
+    margin: 20px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;      
+}
+
+.bloc-paiement:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+/*******************
+ * END PAGE PROFIL *
+ *******************/
+
+/***************************
+ **** END MAIN-CONTENT *****
+ ***************************/
+
+/***************************
+ ********* FOOTER **********
+ ***************************/
+
+ /* BG blanc */
+footer {
+    position: relative;
+    background-color: rgb(245, 245, 245);
+    width: 100%;
+    margin-top: 120px;
+}
+
+/* Image de contact */
+.image-contact {
+    margin-left: 200px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 15%;
+}
+
+/* Icônes de la team */
+.icone-team {
+    position: absolute;
+    width: 17%;
+    margin-top: 40px;
+    right: 200px;
+}
+
+/* Liens */
+.liens-footer {
+    text-align: center;
+    padding-bottom: 20px;
+    color: black;
+    line-height: 2; 
+    text-decoration: none; 
+}
+
+/* Transformation des <a> */
+.lien-a {
+    color: black;    
+    font-weight: 500;        
+    font-size: 15px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.lien-a:hover {
+    color: black;
+    text-decoration: underline;
+}
+
+/***************************
+ ******* END FOOTER ********
+ ***************************/

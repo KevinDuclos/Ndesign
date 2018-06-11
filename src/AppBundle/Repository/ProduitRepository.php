@@ -10,4 +10,27 @@ namespace AppBundle\Repository;
  */
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
+
+
+    public function countAllproduit()
+    {
+
+        return $this->createQueryBuilder('produit')->select('count(produit.id)')
+        
+
+                ->getQuery()->getSingleScalarResult();
+       
+    }
+
+
+
+    public function getAllproduit()
+    {
+
+        return $this->createQueryBuilder('produit')->select('produit')->setMaxResults(3)
+        
+
+                ->getQuery()->getresult();
+       
+    }
 }

@@ -1,51 +1,23 @@
 app_homepage:
-    path:     /
-    defaults: { _controller: AppBundle:Default:index }
+    path: /
+    defaults: { _controller: AppBundle:App:index }
 
-app_create:
-    path:     /create/
-    defaults: { _controller: AppBundle:Default:create }
+app_produit:
+    resource: "@AppBundle/Resources/config/routing/produit.yml"
+    prefix:   /admin/produit
 
-app_update:
-    path:     /update/
-    defaults: { _controller: AppBundle:Default:update }
+app_contact:
+    path: /contact
+    defaults: { _controller: AppBundle:App:contact }
 
-app_retrieve:
-    path:     /retrieve/
-    defaults: { _controller: AppBundle:Default:retrieve }
-
-app_delete:
-    path:     /delete/
-    defaults: { _controller: AppBundle:Default:delete }
-
-app_dashboard:
-    path: /dashboard/
-    defaults: { _controller: AppBundle:Default:dashboard }
-
-app_charts:
-    path: /charts/
-    defaults: { _controller: AppBundle:Default:charts }
-
-app_tables:
-    path: /tables/
-    defaults: { _controller: AppBundle:Default:tables }
-
-app_forms:
-    path: /forms/
-    defaults: { _controller: AppBundle:Default:forms }
-
-app_panels:
-    path: /panels/
-    defaults: { _controller: AppBundle:Default:panels }
-
-app_icons:
-    path: /icons/
-    defaults: { _controller: AppBundle:Default:icons }
-
-app_widgets:
-    path: /widgets/
-    defaults: { _controller: AppBundle:Default:widgets }
-
-app_login:
-    path: /login/
-    defaults: { _controller: AppBundle:Default:login }
+app_single:
+    path: /single/{id}
+    defaults: 
+        _controller: AppBundle:App:single
+    requirements:
+        id: \d+
+        _method: GET 
+        
+app_vente:
+    path: /conditions-de-ventes/
+    defaults: { _controller: AppBundle:App:vente }

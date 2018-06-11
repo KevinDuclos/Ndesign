@@ -3,12 +3,13 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use User\UserBundle\Entity\User;
 
 /**
  * commande
  *
- * @ORM\Table(name="commande")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\commandeRepository")
+ * @ORM\Table(name="ND_commande")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CommandeRepository")
  */
 class Commande
 {
@@ -32,6 +33,11 @@ class Commande
      * @ORM\ManyToOne(targetEntity="User\UserBundle\Entity\User", inversedBy="commande")
      */
     private $users;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Produit", cascade={"persist"})
+     */
+    private $produits;
 
     /**
      * Get id.
@@ -122,5 +128,41 @@ class Commande
         $this->users = $users;
 
         return $this;
+    }
+
+    /**
+     * Add produit.
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     *
+     * @return Commande
+     */
+    public function addProduit(\AppBundle\Entity\Produit $produit)
+    {
+        $this->produits[] = $produit;
+
+        return $this;
+    }
+
+    /**
+     * Remove produit.
+     *
+     * @param \AppBundle\Entity\Produit $produit
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeProduit(\AppBundle\Entity\Produit $produit)
+    {
+        return $this->produits->removeElement($produit);
+    }
+
+    /**
+     * Get produits.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getProduits()
+    {
+        return $this->produits;
     }
 }

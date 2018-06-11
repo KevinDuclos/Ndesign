@@ -4,11 +4,12 @@ namespace User\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Entity\Commande;
 
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="ND_user")
  * @ORM\Entity(repositoryClass="User\UserBundle\Repository\UserRepository")
  */
 class User extends BaseUser
@@ -22,12 +23,7 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="adress", type="string", length=255, nullable=true)
-     */
-    private $adress;
+  
 
     /**
      * @var \DateTime
@@ -42,6 +38,12 @@ class User extends BaseUser
      */
     private $commande;
 
+    public function __construct()
+    {
+        parent::__construct();
+        $this->created_at = new \DateTime();
+    }
+
     /**
      * Get id.
      *
@@ -52,29 +54,7 @@ class User extends BaseUser
         return $this->id;
     }
 
-    /**
-     * Set adress.
-     *
-     * @param string $adress
-     *
-     * @return User
-     */
-    public function setAdress($adress)
-    {
-        $this->adress = $adress;
-
-        return $this;
-    }
-
-    /**
-     * Get adress.
-     *
-     * @return string
-     */
-    public function getAdress()
-    {
-        return $this->adress;
-    }
+    
 
     /**
      * Set createdAt.

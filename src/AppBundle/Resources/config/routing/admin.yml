@@ -1,0 +1,23 @@
+app_dashboard:
+    path: /dashboard/
+    defaults: { _controller: AppBundle:Admin:dashboard }
+
+app_icons:
+    path: /icons/
+    defaults: { _controller: AppBundle:Admin:icons }
+
+app_login:
+    path: /login/
+    defaults: { _controller: AppBundle:Admin:login }
+
+app_test:
+    path: /test/
+    defaults: { _controller: AppBundle:Test:test }
+
+app_users:
+    path: /users/
+    defaults: { _controller: AppBundle:Admin:users }
+
+app_produits:
+    path: /produits/
+    defaults: { _controller: AppBundle:Admin:produit }

@@ -1,0 +1,64 @@
+{% extends ('base.html.twig') %}
+
+{% block body %}
+
+    {# FEATURE #}
+    <div class="feature">
+        {# Titre feature #}
+        <div class="titre-feature"><span style="font-size: 80px;">Des <span style="font-weight: 600;">ressources</span> pour</span><br>vos <span style="font-weight: 600;">sites web</span></div>
+
+        {# Présentation du site #}
+        <div class="intro">
+            <span class="part1">Découvrez notre <span style="font-weight: 600;">contenu exclusif</span>,</span>
+            <br>
+            <span class="part2">conçu par <span style="font-weight: 600;">NDesign</span>, en suivant</span>
+            <br>
+            <span class="part3">les toutes <span style="font-weight: 600;">dernières tendances</span>.</span>
+        </div>
+        <img src="{{ asset('assets/img/bg-p-index.jpg') }}" alt="Image feature" class="img-feature">
+    </div>
+    {# END FEATURE #}
+
+    {# CONTENU PRINCIPAL #}
+    <main role="main">
+
+        {# APERCUS TEMPLATES #}
+        <div class="templates">
+
+            <a href="" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template1.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">AltoFocus</h5>                      
+                    </div>
+                </div>
+            </a>
+
+            <a href="" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template2.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">Small Business</h5>                      
+                    </div>
+                </div>
+            </a>
+
+            <a href="{{ path('app_single',{'id': 1}) }}" class="single-template">
+                <div class="template">
+                    <img class="image-template" src="{{ asset('assets/img/template3.png') }}" alt="Image de template">
+                    <div class="textes-template">
+                        <h5 class="titre-template">Spatial</h5>                      
+                    </div>
+                </div>
+            </a>
+
+        </div>
+        {# FIN APERCUS TEMPLATES #}
+
+        <a href="#" class="plus-ressources">Voir toutes les ressources</a>
+        
+    </main>
+    {# FIN CONTENU PRINCIPAL #}
+
+{% endblock %}
+
