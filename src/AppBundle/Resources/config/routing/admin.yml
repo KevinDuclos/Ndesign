@@ -18,6 +18,3 @@ app_users:
     path: /users/
     defaults: { _controller: AppBundle:Admin:users }
 
-app_produits:
-    path: /produits/
-    defaults: { _controller: AppBundle:Admin:produit }

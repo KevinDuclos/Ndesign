@@ -53,3 +53,11 @@ a:-webkit-any-link {
 .navbar-header .navbar-brand span {
     color: #a101fd;
 }
+ul li {
+    list-style: none;
+}
+
+main th, td, tr, table, tbody{
+    border : 1px solid black;
+    padding: 5px;
+}

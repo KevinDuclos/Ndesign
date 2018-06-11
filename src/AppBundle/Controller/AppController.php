@@ -25,9 +25,9 @@ class AppController extends Controller
                 
             ]);
     }
-    public function retrieveAction($id){
+    public function singleAction($id){
         $em = $this->getDoctrine()->getManager();
-        $template = $em
+        $produit = $em
             ->getRepository('AppBundle:Produit')
             ->find($id);
         
@@ -37,7 +37,16 @@ class AppController extends Controller
     }
     public function contactAction()
     {
-        return $this->render('@App/App/contact.html.twig');
+        $em = $this->getDoctrine()->getManager();
+            $commandes = $em
+                ->getRepository('AppBundle:Commande')
+                ->getAllCommandeJoinwithProduct();
+            
+            return $this->render('@App/App/contact.html.twig', [
+                'commandes' => $commandes,
+                'user' => $this->getUser()
+                
+            ]);
     }
     public function venteAction()
     {

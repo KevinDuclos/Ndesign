@@ -3,16 +3,15 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Categorie;
-
+use AppBundle\Form\ImageType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 class ProduitType extends AbstractType
 {
@@ -33,24 +32,25 @@ class ProduitType extends AbstractType
             )
                     ))
 
-            // ->add('categorie',EntityType::class,array(
-            // 'class'=> 'AppBundle\Entity\Categorie',
-            // 'choice_label' => 'category',
-            // 'choices'=>getCategory(),
-            // 'attr'=> array(
-            //     "class"=>"form-control"
-            // )
-            //         ))
+            ->add('category',EntityType::class,array(
+            'class'=> 'AppBundle\Entity\Categorie',
+            'choice_label' => 'category',
+            'multiple'=>false,
+            'attr'=> array(
+                "class"=>"form-control"
+            )
+                    ))
             ->add('prix',TextType::class,array(
             'attr'=> array(
                 "class"=>"form-control"
             )
             ))
-            ->add('imagefile',FileType::class,array(
-                'attr'=> array(
-                    "class"=>"btn"
-                )
-                    ));
+            ->add('imageFile',VichImageType::class, [
+                'required' => false,
+                'allow_delete' => true,
+                'download_uri' => true,
+                'image_uri' => true,
+            ]);
     }
     /**
      * {@inheritdoc}
