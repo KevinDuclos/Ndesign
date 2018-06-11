@@ -5,14 +5,18 @@
 <h2>Panier</h2>
 
 <table>
+<thead>
   <tr>
     <th>Nom produit</th>
     <th>Quantité</th>
     <th>Prix</th>
   </tr>
+  </thead>
   {% for commande in commandes %}
-  {{ commande.getProduits }}
+  {% for produit in commande.produits %}
 
+    {{  dump(produit) }}
+  {% endfor %}
   {% endfor %}
 
 </table>
