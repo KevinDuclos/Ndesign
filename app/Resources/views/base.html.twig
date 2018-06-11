@@ -37,12 +37,12 @@
                 </a>        
             </div>
             {# Icône panier #}
-            <a data-toggle="modal" data-backdrop="false" data-target="modal">
-                <img id="modal-panier" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
+            <a data-toggle="modal" data-backdrop="false" data-target="ordermodal">
+                <img id="modal-order" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
             </a> 
             {# Icône user #}
             <a data-toggle="modal" data-backdrop="false" data-target="user-modal">
-                <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">        
+                <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
             </a>
         </span>
 
@@ -56,34 +56,32 @@
         <div class="clear"></div>     
 
         {# Modal Panier #}
-        <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="ordermodal" tabindex="-1" role="dialog" aria-labelledby="orderModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
+
                     <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Mon panier</h5>
+                        <h5 class="modal-title" id="orderModalLabel">Ma commande</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
+
                     <div class="modal-body">
                         <table class="table">
-                            <tbody id="order-target">
-                                {# {% for commande in commandes %}
-                                    {% for produits in commande.produits %}
-
-                                    {% endfor %}
-                                {% endfor %} #}
-                            </tbody>
+                            <tbody id="order-target"></tbody>
                         </table>
                     </div>
+
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                        <button type="button" class="btn btn-primary">Payer</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                        <button type="button" class="btn btn-primary btn-checkout">Payer</button>
                     </div>
+                    
                 </div>
             </div>
         </div>
-        {# Fin Modal Panier #}
+        <!-- End Modal -->
 
         {# Modal User #}
         <div class="modal fade" id="user-modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

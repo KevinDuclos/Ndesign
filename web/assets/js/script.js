@@ -1,10 +1,8 @@
 $(document).ready(function() {
-    $('#modal-panier').click(function() {
-        $('#modal').modal('show');
+    $('#modal-order').click(function() {
+        $('#ordermodal').modal('show');
     });
-});
 
-$(document).ready(function() {
     $('#modal-user').click(function() {
         $('#user-modal').modal('show');
     });
