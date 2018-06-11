@@ -63,8 +63,7 @@ class AppController extends Controller
                 ->findAll();
             
             return $this->render('@App/App/panier.html.twig', [
-                'commandes' => $commandes,
-                
+                'commandes' => $commandes
             ]);
     }
 }
