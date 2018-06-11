@@ -1,24 +1,30 @@
 {% extends 'base.html.twig' %}
 
- {% block body %}
- <main role="main">
-<h2>Panier</h2>
+{% block body %}
 
-<table>
-<thead>
-  <tr>
-    <th>Nom produit</th>
-    <th>Quantité</th>
-    <th>Prix</th>
-  </tr>
-  </thead>
-  {% for commande in commandes %}
-  {% for produit in commande.produits %}
+<main role="main">
 
-    {{  dump(produit) }}
-  {% endfor %}
-  {% endfor %}
+  <h2>Panier</h2>
 
-</table>
+    <table>
+
+      <thead>
+        <tr>
+          <th>Nom produit</th>
+          <th>Quantité</th>
+          <th>Prix</th>
+        </tr>
+      </thead>
+      
+      {% for commande in commandes %}
+      {% for produit in commande.produits %}
+
+      {{  dump(produit) }}
+      {% endfor %}
+      {% endfor %}
+
+    </table>
+
 </main>
+
 {% endblock body %}
