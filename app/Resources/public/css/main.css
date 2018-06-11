@@ -71,10 +71,23 @@ table {
  * END CLEAR
  */
 
+
+/*
+ * NDESIGN
+ */
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', sans-serif;
+}
+
+/* Taille fixe */
+#wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 /* Focus des input & textarea */
@@ -86,7 +99,12 @@ textarea:focus {
     outline: none;
 }
 
-/* Couleur des placeholder */
+/* Modifications de tous les liens */
+a {
+    text-decoration: none;    
+}
+
+/* Couleur texte des placeholder */
 ::placeholder {
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Barlow', sans-serif;
@@ -111,7 +129,8 @@ textarea:focus {
 /* Logo NDesign */
 .logo-ndesign {
     position: absolute;
-    width: 10%;
+    width: 140px;
+    height: auto;
     left: 50px;
     top: -10px;
     z-index: 20;
@@ -122,40 +141,15 @@ textarea:focus {
     border-radius:         50%;
 }
 
-/* Barre de recherche */
-.rechercher {
-    position: relative;
-    width: 25%;
-    left: 25%;
-    top: 50%;    
-    margin-top: -14px;    
-}
-
-.search {
-    position: absolute;    
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-}
-
-.icone-search {
-    position: absolute;
-    right: -25px;
-    top: 50%;
-    margin-top: 5px;
-}
-
 /* Icône panier */
 .icone-panier {
     cursor: pointer;
     position: absolute;
-    width: 4%;
-    right: 140px;
+    width: 60px;
+    height: auto;
+    right: 160px;
     top: 50%;
-    margin-top: -27px;
+    margin-top: -30px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
@@ -177,10 +171,11 @@ textarea:focus {
 .icone-user {
     cursor: pointer;    
     position: absolute;
-    width: 4%;
+    width: 60px;
+    height: auto;
     right: 60px;
     top: 50%;
-    margin-top: -27px;
+    margin-top: -30px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
@@ -299,7 +294,7 @@ main {
     100% {opacity:1;}
 }
 
-/* Background feature - INDEX */
+/* Background image feature - INDEX */
 .img-feature {
     width: 100%;
     margin-bottom: 70px;
@@ -308,6 +303,11 @@ main {
 /* Aperçus des templates */
 .templates {
     display: flex;
+}
+
+/* Lien pour cartes */
+a.single-template {
+    text-decoration: none;    
 }
 
 /* Template individuel */
@@ -327,10 +327,6 @@ main {
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
-a {
-    text-decoration: none;    
-}
-
 /* Image template */
 .image-template {   
     width: 100%;
@@ -344,10 +340,6 @@ a {
     padding: 20px;
 }
 
-a.single-template {
-    text-decoration: none;    
-}
-
 /* Bouton RESSOURCES */
 .plus-ressources {
     position: absolute;
@@ -355,13 +347,14 @@ a.single-template {
     text-transform: uppercase;
     color: white;
     font-size: 20px;
+    letter-spacing: 1.5px;
     background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     padding: 10px;
     font-weight: 600;
     left: 50%;
-    margin-left: -140px;
+    margin-left: -170px;
     margin-top: 40px;
 }
 
@@ -693,7 +686,7 @@ a.forget-password:hover {
     margin-left: -54px;
 }
 
-/* Formulaire de inscription */
+/* Formulaire d'inscription */
 .form-inscription {
     position: relative;
     width: 40%;
@@ -739,6 +732,7 @@ a.forget-password:hover {
  *** PAGE PROFIL ***
  *******************/
 
+/* Bandeau bonjour pseudo */
 .bonjour {
     position: relative;
     padding-top: 20px;
@@ -752,71 +746,7 @@ a.forget-password:hover {
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
 }
 
-.blocs-modif {
-    display: flex;
-}
 
-.bloc-profil {
-    float: left;
-    width: 30%;
-    border: 2px solid #F49B00;
-    height: 320px;
-    margin: 20px;
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;
-}
-
-.bloc-profil:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
-}
-
-.bloc-mdp {
-    float: left;
-    width: 30%;    
-    border: 2px solid #A6A74F;
-    width: 30%;
-    height: 320px;    
-    margin: 20px;
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;
-}
-
-.bloc-mdp:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
-}
-
-.bloc-paiement {
-    float: left;
-    width: 30%;
-    border: 2px solid #59B39E;    
-    width: 30%;
-    height: 320px;    
-    margin: 20px;
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;      
-}
-
-.bloc-paiement:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
-}
 
 /*******************
  * END PAGE PROFIL *

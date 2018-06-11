@@ -19,120 +19,119 @@
     </head>
     <body>
 
-    {# HEADER #}
-    <header>
+    {# WRAPPER #}
+    <div id="wrapper">
 
-        {# Logo #}
-        <a href="">
-            <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="Logo NDesign" class="logo-ndesign">
-        </a>
+        {# HEADER #}
+        <header>
 
-        {# Barre de navigation #}
-        <span class="header">
-            {# Barre de recherche #}
-            <div class="rechercher">
-                <input type="search" name="" id="" placeholder="Rechercher" class="search">
-                <a href="#">
-                    <img src="{{ asset('assets/img/search.svg') }}" alt="Icône recherche" class="icone-search">
-                </a>        
-            </div>
-            {# Icône panier #}
-            <a data-toggle="modal" data-backdrop="false" data-target="modal">
-                <img id="modal-panier" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
-            </a> 
-            {# Icône user #}
-            <a data-toggle="modal" data-backdrop="false" data-target="user-modal">
-                <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">        
+            {# Logo #}
+            <a href="">
+                <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="Logo NDesign" class="logo-ndesign">
             </a>
-        </span>
 
-    </header>
-    {# FIN HEADER #}
+            {# Barre de navigation #}
+            <span class="header">
+                {# Icône panier #}
+                <a data-toggle="modal" data-backdrop="false" data-target="modal">
+                    <img id="modal-panier" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
+                </a> 
+                {# Icône user #}
+                <a data-toggle="modal" data-backdrop="false" data-target="user-modal">
+                    <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">        
+                </a>
+            </span>
 
-        <div class="clear"></div>
+        </header>
+        {# FIN HEADER #}
 
-            {% block body %}{% endblock %}
+            <div class="clear"></div>
 
-        <div class="clear"></div>     
+                {% block body %}{% endblock %}
 
-        {# Modal Panier #}
-        <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Mon panier</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <table class="table">
-                            <tbody id="order-target">
-                                {# {% for commande in commandes %}
-                                    {% for produits in commande.produits %}
+            <div class="clear"></div>     
 
-                                    {% endfor %}
-                                {% endfor %} #}
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                        <button type="button" class="btn btn-primary">Payer</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        {# Fin Modal Panier #}
-
-        {# Modal User #}
-        <div class="modal fade" id="user-modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="modal-title">Connexion</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            {# Modal Panier #}
+            <div class="modal fade" id="modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-title">Mon panier</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                <div class="modal-body">
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table">
+                                <tbody id="order-target">
+                                    {# {% for commande in commandes %}
+                                        {% for produits in commande.produits %}
 
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                        <button type="button" class="btn btn-primary">Connexion</button>
+                                        {% endfor %}
+                                    {% endfor %} #}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                            <button type="button" class="btn btn-primary">Payer</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        {# Fin Modal User #}
+            {# Fin Modal Panier #}
 
-    {# FOOTER #}
-    <footer>
+            {# Modal User #}
+            <div class="modal fade" id="user-modal" tabindex="1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal-title">Connexion</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    <div class="modal-body">
 
-        {# Image contact #}
-        <a href="#">        
-            <img src="{{ asset('assets/img/contact.svg') }}" alt="Image contact" class="image-contact" title="Contactez-nous !">
-        </a>
+                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                            <button type="button" class="btn btn-primary">Connexion</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {# Fin Modal User #}
 
-        {# Image team #}
-        <a href="#">        
-            <img src="{{ asset('assets/img/team.svg') }}" alt="Team" class="icone-team" title="DECK">
-        </a>
+        {# FOOTER #}
+        <footer>
 
-        {# Liens du footer #}
-        <div class="liens-footer">
-            <span><a href="{{ path('app_vente') }}" class="lien-a">Conditions Générales de Vente</a> &ndash; </span>
-            <span><a href="#" class="lien-a">Politique de confidentialité</a></span>
-            {# Ajouter un if #}
-            {# {% if is_granted("IS_AUTHENTICATED_FULLY") and user.roles[0] == 'ROLE_ADMIN' %} #}
-            <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
-            {# {% endif %} #}
-            <div>&copy; NDesign &ndash; 2018 &ndash; Création DECK</div>
-        </div>
+            {# Image contact #}
+            <a href="#">        
+                <img src="{{ asset('assets/img/contact.svg') }}" alt="Image contact" class="image-contact" title="Contactez-nous !">
+            </a>
 
-    </footer>
-    {# FIN FOOTER #}
+            {# Image team #}
+            <a href="#">        
+                <img src="{{ asset('assets/img/team.svg') }}" alt="Team" class="icone-team" title="DECK">
+            </a>
+
+            {# Liens du footer #}
+            <div class="liens-footer">
+                <span><a href="{{ path('app_vente') }}" class="lien-a">Conditions Générales de Vente</a> &ndash; </span>
+                <span><a href="#" class="lien-a">Politique de confidentialité</a></span>
+                {# Ajouter un if #}
+                {# {% if is_granted("IS_AUTHENTICATED_FULLY") and user.roles[0] == 'ROLE_ADMIN' %} #}
+                <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
+                {# {% endif %} #}
+                <div>&copy; NDesign &ndash; 2018 &ndash; Création DECK</div>
+            </div>
+
+        </footer>
+        {# FIN FOOTER #}
+
+    </div>
+    {# FIN WRAPPER #}
    
         {% block javascripts %}
         
