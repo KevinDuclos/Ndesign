@@ -60,7 +60,7 @@ class AppController extends Controller
         $em = $this->getDoctrine()->getManager();
             $commandes = $em
                 ->getRepository('AppBundle:Commande')
-                ->getAllCommandeJoinwithProduct();
+                ->findAll()->getProduits();
             
             return $this->render('@App/App/panier.html.twig', [
                 'commandes' => $commandes,

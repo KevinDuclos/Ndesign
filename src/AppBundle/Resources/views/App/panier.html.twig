@@ -11,9 +11,8 @@
     <th>Prix</th>
   </tr>
   {% for commande in commandes %}
-    {% for produit in commandes.id_produit %}
-    
-    {% endfor %}
+  {{ commande.getProduits }}
+
   {% endfor %}
 
 </table>
