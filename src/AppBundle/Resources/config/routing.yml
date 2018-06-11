@@ -29,3 +29,7 @@ app_vente:
 app_panier:
     path: /user/panier
     defaults: { _controller: AppBundle:App:panier}
+
+app_all:
+    path: /all
+    defaults: { _controller: AppBundle:App:all}

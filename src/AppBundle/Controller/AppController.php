@@ -66,4 +66,8 @@ class AppController extends Controller
                 'commandes' => $commandes
             ]);
     }
+    public function allAction()
+    {
+        return $this->render('@App/App/all.html.twig');
+    }
 }
