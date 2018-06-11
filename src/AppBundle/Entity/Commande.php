@@ -32,10 +32,10 @@ class Commande
     /**
      * @ORM\ManyToOne(targetEntity="User\UserBundle\Entity\User", inversedBy="commande")
      */
-    private $users;
+    private $user;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Produit", inversedBy="commandes")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Produit", cascade={"persist"})
      */
     private $produits;
 
@@ -77,84 +77,68 @@ class Commande
      */
     public function __construct()
     {
-        $this->users = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
+
     /**
-     * Add user.
+     * Add produit.
      *
-     * @param \User\UserBundle\Entity\User $user
+     * @param \AppBundle\Entity\Produit $produit
      *
      * @return Commande
      */
-    public function addUser(\User\UserBundle\Entity\User $user)
+    public function addProduit(\AppBundle\Entity\Produit $produit)
     {
-        $this->users[] = $user;
+        $this->produits[] = $produit;
 
         return $this;
     }
 
     /**
-     * Remove user.
+     * Remove produit.
      *
-     * @param \User\UserBundle\Entity\User $user
+     * @param \AppBundle\Entity\Produit $produit
      *
      * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
      */
-    public function removeUser(\User\UserBundle\Entity\User $user)
+    public function removeProduit(\AppBundle\Entity\Produit $produit)
     {
-        return $this->users->removeElement($user);
-    }
-
-    /**
-     * Get users.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getUsers()
-    {
-        return $this->users;
-    }
-
-  
-
-   
-
-    /**
-     * Set users.
-     *
-     * @param \User\UserBundle\Entity\User|null $users
-     *
-     * @return Commande
-     */
-    public function setUsers(\User\UserBundle\Entity\User $users = null)
-    {
-        $this->users = $users;
-
-        return $this;
-    }
-
-    /**
-     * Set produits.
-     *
-     * @param \AppBundle\Entity\Produit|null $produits
-     *
-     * @return Commande
-     */
-    public function setProduits(\AppBundle\Entity\Produit $produits = null)
-    {
-        $this->produits = $produits;
-
-        return $this;
+        return $this->produits->removeElement($produit);
     }
 
     /**
      * Get produits.
      *
-     * @return \AppBundle\Entity\Produit|null
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getProduits()
     {
         return $this->produits;
+    }
+
+    /**
+     * Set user.
+     *
+     * @param \User\UserBundle\Entity\User|null $user
+     *
+     * @return Commande
+     */
+    public function setUser(\User\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user.
+     *
+     * @return \User\UserBundle\Entity\User|null
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }

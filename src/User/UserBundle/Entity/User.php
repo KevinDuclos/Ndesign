@@ -33,7 +33,7 @@ class User extends BaseUser
     private $created_at;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="users")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="user")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;
@@ -79,6 +79,8 @@ class User extends BaseUser
     {
         return $this->created_at;
     }
+
+    
 
     
 

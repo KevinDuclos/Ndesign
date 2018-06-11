@@ -22,16 +22,16 @@ class CommandeRepository extends \Doctrine\ORM\EntityRepository
        
     }
 
-    public function getAllCommandeJoinwithProduct()
-    {
-          return $this->createQueryBuilder('commande')
-                ->leftJoin('commande.produits','commande_produit')
-                ->addSelect('commande_produit')
+    // public function getAllCommandeJoinwithProduct()
+    // {
+    //         return $this->createQueryBuilder('commande')
+    //             ->leftJoin('commande.produits','commande_produit')
+    //             ->addSelect('commande_produit')
 
-                ->leftJoin('commande_produit.commandes', 'produit')
-                ->addSelect('produit')
+    //             ->leftJoin('commande_produit.produits', 'produits')
+    //             ->addSelect('produit')
 
-                ->getQuery()
-                ->getResult();
-    }
+    //             ->getQuery()
+    //             ->getResult();
+    // }
 }
