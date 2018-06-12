@@ -8,21 +8,22 @@
 
     <table>
 
-      <thead>
+      <thead class="entete-panier">
         <tr>
           <th>Nom produit</th>
-          <th>Quantité</th>
           <th>Prix</th>
         </tr>
       </thead>
-      
+      <tbody>
       {% for commande in commandes %}
-      {% for produit in commande.produits %}
-
-      {{  dump(produit) }}
+        {% for produit in commande.produits %}
+          <tr>
+            <td>{{ produit.titre }}</td>
+            <td>{{ produit.prix }}
+          </tr>
+        {% endfor %}
       {% endfor %}
-      {% endfor %}
-
+      </tbody>
     </table>
 
 </main>
