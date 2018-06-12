@@ -71,10 +71,23 @@ table {
  * END CLEAR
  */
 
+
+/*
+ * NDESIGN
+ */
+
 html, body {
     margin: 0;
     padding: 0;
     font-family: 'Barlow', sans-serif;
+}
+
+/* Taille fixe */
+#wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
 }
 
 /* Focus des input & textarea */
@@ -86,7 +99,12 @@ textarea:focus {
     outline: none;
 }
 
-/* Couleur des placeholder */
+/* Modifications de tous les liens */
+a {
+    text-decoration: none;    
+}
+
+/* Couleur texte des placeholder */
 ::placeholder {
     color: rgba(0, 0, 0, 0.7);
     font-family: 'Barlow', sans-serif;
@@ -111,7 +129,8 @@ textarea:focus {
 /* Logo NDesign */
 .logo-ndesign {
     position: absolute;
-    width: 10%;
+    width: 140px;
+    height: auto;
     left: 50px;
     top: -10px;
     z-index: 20;
@@ -122,40 +141,15 @@ textarea:focus {
     border-radius:         50%;
 }
 
-/* Barre de recherche */
-.rechercher {
-    position: relative;
-    width: 25%;
-    left: 25%;
-    top: 50%;    
-    margin-top: -14px;    
-}
-
-.search {
-    position: absolute;    
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-}
-
-.icone-search {
-    position: absolute;
-    right: -25px;
-    top: 50%;
-    margin-top: 5px;
-}
-
 /* Icône panier */
 .icone-panier {
     cursor: pointer;
     position: absolute;
-    width: 4%;
-    right: 140px;
+    width: 60px;
+    height: auto;
+    right: 260px;
     top: 50%;
-    margin-top: -27px;
+    margin-top: -30px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
@@ -177,10 +171,11 @@ textarea:focus {
 .icone-user {
     cursor: pointer;    
     position: absolute;
-    width: 4%;
-    right: 60px;
+    width: 60px;
+    height: auto;
+    right: 160px;
     top: 50%;
-    margin-top: -27px;
+    margin-top: -30px;
     -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
     -moz-box-shadow:    2px 2px 0px 0px lightgrey;
     -o-box-shadow:      2px 2px 0px 0px lightgrey;
@@ -192,6 +187,32 @@ textarea:focus {
 }
 
 .icone-user:hover {
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+/* Icône user */
+.icone-logout {
+    cursor: pointer;    
+    position: absolute;
+    width: 60px;
+    height: auto;
+    right: 60px;
+    top: 50%;
+    margin-top: -30px;
+    -webkit-box-shadow: 2px 2px 0px 0px lightgrey;
+    -moz-box-shadow:    2px 2px 0px 0px lightgrey;
+    -o-box-shadow:      2px 2px 0px 0px lightgrey;
+    box-shadow:         2px 2px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    transition: all 0.3s;
+}
+
+.icone-logout:hover {
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -299,7 +320,7 @@ main {
     100% {opacity:1;}
 }
 
-/* Background feature - INDEX */
+/* Background image feature - INDEX */
 .img-feature {
     width: 100%;
     margin-bottom: 70px;
@@ -308,6 +329,11 @@ main {
 /* Aperçus des templates */
 .templates {
     display: flex;
+}
+
+/* Lien pour cartes */
+a.single-template {
+    text-decoration: none;    
 }
 
 /* Template individuel */
@@ -327,10 +353,6 @@ main {
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
-a {
-    text-decoration: none;    
-}
-
 /* Image template */
 .image-template {   
     width: 100%;
@@ -344,10 +366,6 @@ a {
     padding: 20px;
 }
 
-a.single-template {
-    text-decoration: none;    
-}
-
 /* Bouton RESSOURCES */
 .plus-ressources {
     position: absolute;
@@ -355,13 +373,14 @@ a.single-template {
     text-transform: uppercase;
     color: white;
     font-size: 20px;
+    letter-spacing: 1.5px;
     background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     padding: 10px;
     font-weight: 600;
     left: 50%;
-    margin-left: -140px;
+    margin-left: -170px;
     margin-top: 40px;
 }
 
@@ -599,13 +618,15 @@ a.plus-ressources {
 
 /* Bouton connexion */
 .bouton-connexion {
+    font-family: 'Barlow', sans-serif;    
     width: 100%;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1.3px;
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -693,7 +714,7 @@ a.forget-password:hover {
     margin-left: -54px;
 }
 
-/* Formulaire de inscription */
+/* Formulaire d'inscription */
 .form-inscription {
     position: relative;
     width: 40%;
@@ -715,13 +736,15 @@ a.forget-password:hover {
 
 /* Bouton inscription */
 .bouton-inscription {
+    font-family: 'Barlow', sans-serif;    
     width: 100%;
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
     color: white;
     font-size: 20px;
-    font-weight: 600;
+    font-weight: 500;
+    letter-spacing: 1.3px;
     padding: 5px;
     margin-top: 20px;
     margin-bottom: 20px;
@@ -739,11 +762,12 @@ a.forget-password:hover {
  *** PAGE PROFIL ***
  *******************/
 
+/* Bandeau bonjour pseudo */
 .bonjour {
     position: relative;
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 30px;
+    padding-left: 80px;
     font-size: 30px;
     font-weight: 300;
     color: white;
@@ -752,16 +776,29 @@ a.forget-password:hover {
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
 }
 
-.blocs-modif {
+/* Sidebar + contenu */
+.menu {
     display: flex;
+    margin-top: 50px;
 }
 
-.bloc-profil {
-    float: left;
+/* Sidebar */
+.sidebar {
     width: 30%;
-    border: 2px solid #F49B00;
-    height: 320px;
-    margin: 20px;
+}
+
+/* Titres sidebar */
+.sidebar-titre {  
+    color: black;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1.3px;
+    border: 1px solid black; 
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -769,58 +806,119 @@ a.forget-password:hover {
     transition: all 0.3s;
 }
 
-.bloc-profil:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
+.sidebar-titre:hover {
+    padding: 30px;
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
 }
 
-.bloc-mdp {
-    float: left;
-    width: 30%;    
-    border: 2px solid #A6A74F;
-    width: 30%;
-    height: 320px;    
-    margin: 20px;
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;
-}
-
-.bloc-mdp:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
-}
-
-.bloc-paiement {
-    float: left;
-    width: 30%;
-    border: 2px solid #59B39E;    
-    width: 30%;
-    height: 320px;    
-    margin: 20px;
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;      
-}
-
-.bloc-paiement:hover {
-    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
-    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
-    -o-box-shadow:      15px 15px 0px 0px lightgrey;
-    box-shadow:         15px 15px 0px 0px lightgrey;
+/* Contenu menu */
+.content-menu {
+    width: 70%;
+    margin-top: 10px;    
+    margin-left: 20px;
+    padding: 30px;
 }
 
 /*******************
  * END PAGE PROFIL *
  *******************/
+
+/******************** 
+ ****** SINGLE ******
+ ********************/
+
+.contenu-single {
+    display: flex;
+}
+
+.illustration-single {
+    border: 1px solid black;
+    width: 50%;
+    margin-top: 50px;
+    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
+    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
+    -o-box-shadow:      10px 10px 0px 0px lightgrey;
+    box-shadow:         10px 10px 0px 0px lightgrey;
+}
+
+.image-template-single {
+    width: 100%;
+}
+
+.textes-single {
+    position: relative;
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 30px;   
+    text-align: justify; 
+}
+
+.titre-prix {
+    display: flex;
+}
+
+.titre-single {
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.prix {
+    position: absolute;
+    right: 0;
+    font-size: 50px;
+    font-weight: 800;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.descrip-single {
+    line-height: 1.3;
+    font-size: 18px;
+}
+
+.live-preview {
+    position: absolute;
+    margin-top: 30px;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.live-preview:hover {
+    text-decoration: underline;
+}
+
+.add-to-cart {
+    background: -webkit-linear-gradient(-50deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-50deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    color: white;
+    letter-spacing: 1px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
+}
+
+/******************** 
+ **** END SINGLE ****
+ ********************/
 
 /***************************
  **** END MAIN-CONTENT *****
@@ -835,7 +933,7 @@ footer {
     position: relative;
     background-color: rgb(245, 245, 245);
     width: 100%;
-    margin-top: 120px;
+    margin-top: 50px;
 }
 
 /* Image de contact */

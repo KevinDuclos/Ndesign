@@ -15,7 +15,7 @@
                 <td>{{ user.email }}</td>
             </tr>
             <tr>
-                <th>Created_at</th>
+                <th>Date de création</th>
                 <td>{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
             </tr>
         </tbody>
@@ -23,14 +23,14 @@
 
     <ul>
         <li>
-            <a href="{{ path('user_index') }}">Back to the list</a>
+            <a href="{{ path('app_users') }}">Retour à la liste des utilisateurs</a>
         </li>
         <li>
-            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
+            <a href="{{ path('user_edit', { 'id': user.id }) }}">Editer l'utilisateur</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Supprimer cet utilisateur">
             {{ form_end(delete_form) }}
         </li>
     </ul>

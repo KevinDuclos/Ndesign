@@ -41,10 +41,15 @@
                     <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
                 </a>
                 {# Icône déconnexion #}
-                <a class="logout" href="#">
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <a class="profil" href="{{ path('fos_user_profile_show') }}">
+                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                </a>
+                <a class="logout" href="{{ path('fos_user_security_logout') }}">
                     <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
                 </a>
-            </span>
+                {% endif %}
+            </span> 
 
         </header>
         {# FIN HEADER #}
@@ -74,7 +79,7 @@
         {# Liens du footer #}
         <div class="liens-footer">
             <span><a href="{{ path('app_vente') }}" class="lien-a">Conditions Générales de Vente</a> &ndash; </span>
-            <span><a href="#" class="lien-a">Politique de confidentialité</a></span>
+            <span><a href="{{ path('app_confident') }}" class="lien-a">Politique de confidentialité</a></span>
             {# Ajouter un if #}
             {% if is_granted("IS_AUTHENTICATED_FULLY") and app.user.roles[0] == 'ROLE_ADMIN' %}
             <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
