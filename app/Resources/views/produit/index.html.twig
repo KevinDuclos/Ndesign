@@ -16,7 +16,7 @@
         <tbody>
         {% for produit in produits %}
             <tr>
-                <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
+                <td class="btn btn-warnig"><a  href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
                 <td>{{ produit.titre }}</td>
                 <td>{{ produit.prix }}</td>
                 <td>{{ produit.poids }}</td>

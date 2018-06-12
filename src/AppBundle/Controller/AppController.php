@@ -51,10 +51,12 @@ class AppController extends Controller
              "form" => $form
          ]);
     }
+
     public function venteAction()
     {
         return $this->render('@App/App/vente.html.twig');
     }
+
     public function panierAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -69,5 +71,10 @@ class AppController extends Controller
     public function allAction()
     {
         return $this->render('@App/App/all.html.twig');
+    }
+    
+    public function confidentAction()
+    {
+        return $this->render('@App/App/confident.html.twig');
     }
 }

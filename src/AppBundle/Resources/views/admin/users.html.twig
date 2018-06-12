@@ -2,35 +2,20 @@
 
 {% block body %}
 <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">	
-    <h1>Users list</h1>
-
-    <table>
-        <thead>
-            <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Created_at</th>
-                <th scope="col">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
+    <h1>Liste des utilisateurs</h1>
         {% for user in users %}
-            <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('user_show', { 'id': user.id }) }}">Show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('user_edit', { 'id': user.id }) }}">Edit</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
+       
+        <div class="card col-md-4" >
+
+            <div class="card-body">
+                <h5 class="card-title">{{ user.username }}</h5>
+                <a href="{{ path('user_show', { 'id': user.id }) }}" class="btn btn-primary">Voir le profil de l'utilisateur</a>
+                <a href="{{ path('user_edit', { 'id': user.id }) }}" class="btn btn-primary">Editer le profil de l'utilisateur</a>
+            </div>
+        </div>
+        {% endfor %}
+     
 </div>
 {% endblock %}
+

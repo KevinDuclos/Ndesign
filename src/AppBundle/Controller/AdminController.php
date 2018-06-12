@@ -89,12 +89,12 @@ class AdminController extends Controller
     public function contactAction(){
         {
             $em = $this->getDoctrine()->getManager();
-            $contact = $em
+            $contacts = $em
                 ->getRepository('AppBundle:Contact')
                 ->findAll();
 
             return $this->render('@App/admin/contact_admin.html.twig', [
-                'contact' => $contact
+                'contacts' => $contacts
             ]);
         }
 

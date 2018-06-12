@@ -33,3 +33,7 @@ app_panier:
 app_all:
     path: /all
     defaults: { _controller: AppBundle:App:all}
+
+app_confident:
+    path: /politique-confidentialité/
+    defaults: { _controller: AppBundle:App:confident }

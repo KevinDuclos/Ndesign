@@ -1,4 +1,7 @@
-
+.btn-primary
+{   
+    margin-top : 15px;
+}
 a, a:hover, a:focus {
     color: #00000000;
 }
@@ -57,7 +60,7 @@ ul li {
     list-style: none;
 }
 
-main th, td, tr, table, tbody{
+main th, td, tr, table,thead, tbody{
     border : 1px solid black;
     padding: 5px;
 }
