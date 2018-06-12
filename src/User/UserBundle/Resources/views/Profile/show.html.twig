@@ -3,14 +3,16 @@
 
 {% block body %}
 
-    {# CONTENU PRINCIPAL #}
-    <main role="main">
-
-        {# Bandeau BONJOUR #}
-        <div class="bonjour">
+    {# Bandeau BONJOUR #}
+    <div class="bandeau-bonjour">
+        <div class="texte-bonjour">
             <p>Bonjour, <span style="font-weight: 500;">{{ user.username }}</span> !</p>
             <p style="font-size: 18px; margin-top: 7px;">({{ user.email }})</p>            
         </div>
+    </div>
+
+    {# CONTENU PRINCIPAL #}
+    <main role="main">
 
         {# Menu + contenu #}
         <div class="menu">
@@ -40,37 +42,29 @@
 
             </div>
 
-            {# Contenu #}
+            {# Contenu de chacun des menus #}
             <div class="content-menu">
                 
-                {# Formulaire d'infos #}
-                <h3 class="titre-formulaire-infos">Mes informations</h3>
-                <p class="paragraphe-formulaire">N'hésitez pas à modifier vos coordonnées ci-dessous pour que votre compte NDesign soit parfaitement à jour.</p>
+                {# Formulaire MES INFOS #}
+                <section class="mes-infos">
 
-                <form method="post" class="formulaire-infos">
+                    <h3 class="titre-formulaire">Mes informations</h3>
 
-                    {# Champ prénom #}
-                    <label for="">Prénom</label>
-                    <input type="text" class="" id="" name="">
+                    <form method="post" class="formulaire-infos">
 
-                    {# Champ nom de famille #}
-                    <label for="">Nom de famille</label>
-                    <input type="text" class="" id="" name="">
+                        {# Champ pseudo #}
+                        <label for="" class="label-formulaire">Pseudo</label>
+                        <input type="text" class="input-formulaire" id="" name="">
 
-                    {# Champ mail #}
-                    <label for="">Adresse e-mail</label>
-                    <input type="email" class="" id="" name="">
+                        {# Champ mail #}
+                        <label for="" class="label-formulaire">Adresse e-mail</label>
+                        <input type="email" class="input-formulaire" id="" name="">
 
-                    {# Champ date de naissance avec choix des jours mois années #}
-                    <label for="">Date de naissance</label>
-                    <input type="" class="" id="" name="">
+                        <button type="submit" class="button-save">Enregistrer</button>
 
-                    {# Champ choix sexe #}
-                    <label for="">Sexe</label>
-                    <input type="" class="" id="" name="">
-
-
-                </form>
+                    </form>
+                    
+                </section>
 
             </div>
 
