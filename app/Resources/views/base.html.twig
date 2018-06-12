@@ -5,7 +5,7 @@
         <title>{% block title %}NDESIGN{% endblock %}</title>
         {# Typo de base #}
         <link href="https://fonts.googleapis.com/css?family=Barlow:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+        {# <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"> #}
 
         {# CSS #}
         {% block stylesheets %}
@@ -19,38 +19,46 @@
     </head>
     <body>
 
-    {# HEADER #}
-    <header>
+    {# WRAPPER #}
+    <div id="wrapper">
 
-        {# Logo #}
-        <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="Logo NDesign" class="logo-ndesign">
+        {# HEADER #}
+        <header>
 
-        {# Barre de navigation #}
-        <span class="header">
-            {# Barre de recherche #}
-            <div class="rechercher">
-                <input type="search" name="" id="" placeholder="Rechercher" class="search">
-                <a href="#">
-                    <img src="{{ asset('assets/img/search.svg') }}" alt="Icône recherche" class="icone-search">
-                </a>        
-            </div>
-            {# Icône panier #}
-            <a data-toggle="modal" data-backdrop="false" data-target="modal">
-                <img id="modal-panier" src="{{ asset('assets/img/panier.svg') }}" alt="Icône panier" class="icone-panier" role="button">
-            </a> 
-            {# Icône user #}
-            <a data-toggle="modal" data-backdrop="false" data-target="user-modal">
-                <img id="modal-user" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">        
+            {# Logo #}
+            <a href="{{ path('app_homepage')}}">
+                <img src="{{ asset('assets/img/logo-ndesign-svg.svg') }}" alt="Logo NDesign" class="logo-ndesign">
             </a>
-        </span>
 
-    </header>
-    {# FIN HEADER #}
+            {# Barre de navigation #}
+            <span class="header">
+                {# Icône panier #}
+                <a class="panier" href="{{ path('app_panier') }}">
+                    <img id="" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
+                </a> 
+                {# Icône user #}
+                <a class="profil" href="{{ path('fos_user_security_login') }}">
+                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                </a>
+                {# Icône déconnexion #}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <a class="profil" href="{{ path('fos_user_profile_show') }}">
+                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                </a>
+                <a class="logout" href="{{ path('fos_user_security_logout') }}">
+                    <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
+                </a>
+                {% endif %}
+            </span> 
+
+        </header>
+        {# FIN HEADER #}
 
         <div class="clear"></div>
 
             {% block body %}{% endblock %}
 
+<<<<<<< HEAD
         <div class="clear"></div>     
 
         {# Modal Panier #}
@@ -117,12 +125,18 @@
             </div>
         </div>
         {# Fin Modal User #}
+=======
+        <div class="clear"></div>
+
+    </div>
+    {# FIN WRAPPER #}
+>>>>>>> 9bcafbfff1ab73558bc5abee8c19c11272bce263
 
     {# FOOTER #}
     <footer>
 
         {# Image contact #}
-        <a href="#">        
+        <a href="{{ path('app_contact')}}">        
             <img src="{{ asset('assets/img/contact.svg') }}" alt="Image contact" class="image-contact" title="Contactez-nous !">
         </a>
 
@@ -134,11 +148,11 @@
         {# Liens du footer #}
         <div class="liens-footer">
             <span><a href="{{ path('app_vente') }}" class="lien-a">Conditions Générales de Vente</a> &ndash; </span>
-            <span><a href="#" class="lien-a">Politique de confidentialité</a></span>
+            <span><a href="{{ path('app_confident') }}" class="lien-a">Politique de confidentialité</a></span>
             {# Ajouter un if #}
-            {# {% if is_granted("IS_AUTHENTICATED_FULLY") and user.roles[0] == 'ROLE_ADMIN' %} #}
+            {% if is_granted("IS_AUTHENTICATED_FULLY") and app.user.roles[0] == 'ROLE_ADMIN' %}
             <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
-            {# {% endif %} #}
+            {% endif %}
             <div>&copy; NDesign &ndash; 2018 &ndash; Création DECK</div>
         </div>
 

@@ -33,7 +33,7 @@ class User extends BaseUser
     private $created_at;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="users")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="user")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;
@@ -80,29 +80,9 @@ class User extends BaseUser
         return $this->created_at;
     }
 
-    /**
-     * Set commande.
-     *
-     * @param \App\Entity\Commande $commande
-     *
-     * @return User
-     */
-    public function setCommande(\App\Entity\Commande $commande)
-    {
-        $this->commande = $commande;
+    
 
-        return $this;
-    }
-
-    /**
-     * Get commande.
-     *
-     * @return \App\Entity\Commande
-     */
-    public function getCommande()
-    {
-        return $this->commande;
-    }
+    
 
     /**
      * Add commande.
@@ -128,5 +108,15 @@ class User extends BaseUser
     public function removeCommande(\AppBundle\Entity\Commande $commande)
     {
         return $this->commande->removeElement($commande);
+    }
+
+    /**
+     * Get commande.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommande()
+    {
+        return $this->commande;
     }
 }

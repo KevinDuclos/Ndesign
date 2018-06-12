@@ -3,6 +3,12 @@
 
 {% block body %}
 
+    {# Image connexion #}
+    <div class="thumbnail">
+        <img src="{{ asset('assets/img/bg-p-connexion.jpg') }}" alt="" class="img-connexion">
+        <div class="traduction">*Heureux de vous revoir</div>        
+    </div>
+
     {# CONTENU PRINCIPAL #}
     <main role="main">
 
@@ -12,16 +18,21 @@
         
         <div class="login">
 
+            {# Icône user connexion #}
+            <div class="bloc-icone-user">
+                <img src="{{ asset('assets/img/user.svg') }}" alt="" class="icone-user-connexion">            
+            </div>
+
             {# Formulaire de connexion #}
             <form action="{{ path("fos_user_security_check") }}" method="post" class="form-connexion">
             
                 <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
 
                 {# Champ id #}
-                <input type="text" class="input" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Username"/>
+                <input type="text" class="input-text" id="username" name="_username" value="{{ last_username }}" required="required" placeholder="Email/pseudo"/>
 
                 {# Champ mot de passe #}
-                <input type="password" class="input" id="password" name="_password" required="required" placeholder="Password"/>
+                <input type="password" class="input-text" id="password" name="_password" required="required" placeholder="Mot de passe"/>
 
                 {# Se souvenir de moi #}
                 <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
@@ -30,9 +41,10 @@
                 {# Bouton se connecter #}
                 <input type="submit" class="bouton-connexion" id="_submit" name="_submit" value="Connexion"/>
 
-                <div class="login-help">
-                    <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
-                    <a href="{{ path('fos_user_resetting_request') }}">Mot de passe oublié</a>
+                {# Aide #}
+                <div class="aide-connexion">
+                    <a href="{{ path('fos_user_registration_register') }}" class="sign-up">S'inscrire</a>
+                    <a href="{{ path('fos_user_resetting_request') }}" class="forget-password">Mot de passe oublié</a>
                 </div>
 
             </form>

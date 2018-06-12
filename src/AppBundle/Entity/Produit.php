@@ -4,8 +4,6 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\File;
-use Symfony\Component\HttpFoundation\File\UploadedFile;
-use Vich\UploaderBundle\Entity\File as EmbeddedFile;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 
@@ -55,13 +53,8 @@ class Produit
      */
     private $category;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Commande", cascade={"persist"})
-     */
-    private $commandes;
 
     /**
-     * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
      * @Vich\UploadableField(mapping="produit_image", fileNameProperty="imageName", size="imageSize")
      * 
@@ -70,14 +63,14 @@ class Produit
     private $imageFile;
 
     /**
-     * @ORM\Column(type="string", length=255,nullable=true)
+     * @ORM\Column(type="string", length=255)
      *
      * @var string
      */
     private $imageName;
 
     /**
-     * @ORM\Column(type="integer", nullable=true)
+     * @ORM\Column(type="integer")
      *
      * @var integer
      */
@@ -85,13 +78,15 @@ class Produit
 
 
     /**
-     * Constructor
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="produits")
      */
+    private $commande;
+
     public function __construct()
     {
-        $this->commandes = new \Doctrine\Common\Collections\ArrayCollection();
-        $this->image = new EmbeddedFile();
+        $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
     }
+
 
     /**
      * Get id.
@@ -175,67 +170,11 @@ class Produit
         return $this->poids;
     }
 
-    /**
-     * Set tag.
-     *
-     * @param string $tag
-     *
-     * @return Produit
-     */
-    public function setTag($tag)
-    {
-        $this->tag = $tag;
-
-        return $this;
-    }
-
-    /**
-     * Get tag.
-     *
-     * @return string
-     */
-    public function getTag()
-    {
-        return $this->tag;
-    }
+    
 
    
 
-    /**
-     * Add commande.
-     *
-     * @param \Ndesign\AppBundle\Entity\Commande $commande
-     *
-     * @return Produit
-     */
-    public function addCommande(\Ndesign\AppBundle\Entity\Commande $commande)
-    {
-        $this->commandes[] = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Remove commande.
-     *
-     * @param \Ndesign\AppBundle\Entity\Commande $commande
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeCommande(\Ndesign\AppBundle\Entity\Commande $commande)
-    {
-        return $this->commandes->removeElement($commande);
-    }
-
-    /**
-     * Get commandes.
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCommandes()
-    {
-        return $this->commandes;
-    }
+    
 
     /**
      * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $image
@@ -243,7 +182,6 @@ class Produit
     public function setImageFile(?File $image = null): void
     {
         $this->imageFile = $image;
-
     }
 
     public function getImageFile(): ?File
@@ -271,6 +209,8 @@ class Produit
         return $this->imageSize;
     }
 
+   
+
 
 
     /**
@@ -295,5 +235,43 @@ class Produit
     public function getCategory()
     {
         return $this->category;
+    }
+    
+
+
+    /**
+     * Add commande.
+     *
+     * @param \AppBundle\Entity\Commande $commande
+     *
+     * @return Produit
+     */
+    public function addCommande(\AppBundle\Entity\Commande $commande)
+    {
+        $this->commande[] = $commande;
+
+        return $this;
+    }
+
+    /**
+     * Remove commande.
+     *
+     * @param \AppBundle\Entity\Commande $commande
+     *
+     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
+     */
+    public function removeCommande(\AppBundle\Entity\Commande $commande)
+    {
+        return $this->commande->removeElement($commande);
+    }
+
+    /**
+     * Get commande.
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getCommande()
+    {
+        return $this->commande;
     }
 }

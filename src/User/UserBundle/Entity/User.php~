@@ -4,11 +4,12 @@ namespace User\UserBundle\Entity;
 
 use FOS\UserBundle\Model\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use AppBundle\Entity\Commande;
 
 /**
  * User
  *
- * @ORM\Table(name="user")
+ * @ORM\Table(name="ND_user")
  * @ORM\Entity(repositoryClass="User\UserBundle\Repository\UserRepository")
  */
 class User extends BaseUser
@@ -22,10 +23,7 @@ class User extends BaseUser
      */
     protected $id;
 
-    /**
-     * @ORM\OneToOne(targetEntity="User\UserBundle\Entity\Adresse", cascade={"persist"})
-     */
-    private $adress;
+  
 
     /**
      * @var \DateTime
@@ -35,10 +33,16 @@ class User extends BaseUser
     private $created_at;
 
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="users")
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commande", mappedBy="user")
      * @ORM\JoinColumn(nullable=false)
      */
     private $commande;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->created_at = new \DateTime();
+    }
 
     /**
      * Get id.
@@ -50,29 +54,7 @@ class User extends BaseUser
         return $this->id;
     }
 
-    /**
-     * Set adress.
-     *
-     * @param string $adress
-     *
-     * @return User
-     */
-    public function setAdress($adress)
-    {
-        $this->adress = $adress;
-
-        return $this;
-    }
-
-    /**
-     * Get adress.
-     *
-     * @return string
-     */
-    public function getAdress()
-    {
-        return $this->adress;
-    }
+    
 
     /**
      * Set createdAt.
@@ -98,53 +80,7 @@ class User extends BaseUser
         return $this->created_at;
     }
 
-    /**
-     * Set commande.
-     *
-     * @param \App\Entity\Commande $commande
-     *
-     * @return User
-     */
-    public function setCommande(\App\Entity\Commande $commande)
-    {
-        $this->commande = $commande;
+    
 
-        return $this;
-    }
-
-    /**
-     * Get commande.
-     *
-     * @return \App\Entity\Commande
-     */
-    public function getCommande()
-    {
-        return $this->commande;
-    }
-
-    /**
-     * Add commande.
-     *
-     * @param \AppBundle\Entity\Commande $commande
-     *
-     * @return User
-     */
-    public function addCommande(\AppBundle\Entity\Commande $commande)
-    {
-        $this->commande[] = $commande;
-
-        return $this;
-    }
-
-    /**
-     * Remove commande.
-     *
-     * @param \AppBundle\Entity\Commande $commande
-     *
-     * @return boolean TRUE if this collection contained the specified element, FALSE otherwise.
-     */
-    public function removeCommande(\AppBundle\Entity\Commande $commande)
-    {
-        return $this->commande->removeElement($commande);
-    }
+    
 }

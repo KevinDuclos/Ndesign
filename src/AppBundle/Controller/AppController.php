@@ -5,7 +5,8 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-
+use AppBundle\Entity\Contact;
+use AppBundle\Form\ContactType;
 class AppController extends Controller
 {
     /**
@@ -17,7 +18,7 @@ class AppController extends Controller
             $em = $this->getDoctrine()->getManager();
             $commandes = $em
                 ->getRepository('AppBundle:Commande')
-                ->getAllCommandeJoinwithProduct();
+                ->findAll();
             
             return $this->render('@App/App/index.html.twig', [
                 'commandes' => $commandes,
@@ -25,9 +26,9 @@ class AppController extends Controller
                 
             ]);
     }
-    public function retrieveAction($id){
+    public function singleAction($id){
         $em = $this->getDoctrine()->getManager();
-        $template = $em
+        $produit = $em
             ->getRepository('AppBundle:Produit')
             ->find($id);
         
@@ -35,21 +36,45 @@ class AppController extends Controller
             'produit' => $produit
         ]);
     }
-    public function contactAction()
+    public function contactAction(Request $request)
+    {       
+         $contact = new Contact;
+         $form = $this->createForm(ContactType::class, $contact);
+         if($form->handleRequest($request)->isSubmitted()){
+                 $em = $this->getDoctrine()->getManager();
+                 $em->persist($contact);
+                 $em->flush();
+                 return $this->redirectToRoute('app_homepage');
+             }
+         $form = $form->createView();
+         return $this->render('@App/App/contact.html.twig', [
+             "form" => $form
+         ]);
+    }
+
+    public function venteAction()
+    {
+        return $this->render('@App/App/vente.html.twig');
+    }
+
+    public function panierAction()
     {
         $em = $this->getDoctrine()->getManager();
             $commandes = $em
                 ->getRepository('AppBundle:Commande')
-                ->getAllCommandeJoinwithProduct();
+                ->findAll();
             
-            return $this->render('@App/App/contact.html.twig', [
-                'commandes' => $commandes,
-                'user' => $this->getUser()
-                
+            return $this->render('@App/App/panier.html.twig', [
+                'commandes' => $commandes
             ]);
     }
-    public function venteAction()
+    public function allAction()
     {
-        return $this->render('@App/App/vente.html.twig');
+        return $this->render('@App/App/all.html.twig');
+    }
+    
+    public function confidentAction()
+    {
+        return $this->render('@App/App/confident.html.twig');
     }
 }

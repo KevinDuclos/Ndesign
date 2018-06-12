@@ -72,6 +72,34 @@ class AdminController extends Controller
         
     }
 
+    public function commandeAction(){
+        {
+            $em = $this->getDoctrine()->getManager();
+            $commandes = $em
+                ->getRepository('AppBundle:Commande')
+                ->findAll();
+
+            return $this->render('@App/admin/commandes.html.twig', [
+                'commandes' => $commandes
+            ]);
+        }
+
+    }
+
+    public function contactAction(){
+        {
+            $em = $this->getDoctrine()->getManager();
+            $contacts = $em
+                ->getRepository('AppBundle:Contact')
+                ->findAll();
+
+            return $this->render('@App/admin/contact_admin.html.twig', [
+                'contacts' => $contacts
+            ]);
+        }
+
+    }
+
     
     
 }
