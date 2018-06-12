@@ -485,7 +485,7 @@ a.plus-ressources {
     height: 200%;
 }
 
-/* Formulaire */
+/* Formulaire de contact */
 .form-contact {
     float: right;
     position: relative;
@@ -830,10 +830,12 @@ a.forget-password:hover {
  ****** SINGLE ******
  ********************/
 
+/* Contenu de la page single */
 .contenu-single {
     display: flex;
 }
 
+/* Image du template */
 .illustration-single {
     border: 1px solid black;
     width: 50%;
@@ -848,6 +850,7 @@ a.forget-password:hover {
     width: 100%;
 }
 
+/* Descriptif du template */
 .textes-single {
     position: relative;
     width: 50%;
@@ -919,6 +922,69 @@ a.forget-password:hover {
 /******************** 
  **** END SINGLE ****
  ********************/
+
+/****************
+ *** PAGE ALL ***
+ ****************/
+
+/* Image templates haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-all {
+    display: block;
+    width: 100%;
+}
+
+.img-all {
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 60px;
+}
+
+/* Liste des templates */
+.templates-all {
+    display: flex;
+}
+
+/* Carte template individuel */
+.template-all {
+    margin: 10px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+.template-all:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+/* Aperçu du template */
+.image-template-all {
+    width: 100%;
+}
+
+/* Titre du template */
+.titre-template-all {
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    padding: 20px;
+}
+
+/****************
+ * END PAGE ALL *
+ ****************/
 
 /***************************
  **** END MAIN-CONTENT *****
