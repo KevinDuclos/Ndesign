@@ -887,6 +887,28 @@ a.forget-password:hover {
     margin-top: 20px;
 }
 
+/* TABLEAU DE BORD */
+
+.dashboard {
+    display: none;
+}
+
+.partie-gauche {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.partie-droite {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.informations-profil {
+    margin-bottom: 20px;
+}
+
 /* MES INFOS */
 
 .mes-infos {
@@ -1014,6 +1036,45 @@ a.forget-password:hover {
     color: white;
     letter-spacing: 1.2px;
     padding: 5px;
+}
+
+/* COMMANDES */
+
+.mes-commandes {
+    display: none;
+}
+
+.tableau-commandes {
+    width: 80%;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: tomato;
+}
+
+.col-img-commande {
+    float: left;
+    background-color: teal;
+    width: 20%;
+}
+
+.col-num-commande {
+    float: left;
+    background-color: white;
+    width: 20%;
+}
+
+.col-date-commande {
+    float: left;
+    background-color: brown;
+    width: 20%;
+}
+
+.col-prix-commande {
+    float: left;
+    background-color: yellow;
+    width: 20%;
 }
 
 /*******************
