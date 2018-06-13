@@ -44,13 +44,31 @@
 
             {# Contenu de chacun des menus #}
             <div class="content-menu">
+
+                {# Tableau de bord #}
+                <section class="dashboard">
+
+                    <h3 class="titre-formulaire">Tableau de bord</h3>
+
+                    <form method="post" class="formulaire">
+
+                        {# Pseudo #}
+                        <label for="" class="label-formulaire">Pseudo</label>
+                        <div class="">chloe</div>
+
+                        <label for="" class="label-formulaire">Email</label>
+                        <div class="">chloe.rault76@orange.fr</div>
+
+                    </form>
+                    
+                </section>
                 
                 {# Formulaire MES INFOS #}
                 <section class="mes-infos">
 
                     <h3 class="titre-formulaire">Mes informations</h3>
 
-                    <form method="post" class="formulaire-infos">
+                    <form method="post" class="formulaire">
 
                         {# Champ pseudo #}
                         <label for="" class="label-formulaire">Pseudo</label>
@@ -63,6 +81,65 @@
                         <button type="submit" class="button-save">Enregistrer</button>
 
                     </form>
+                    
+                </section>
+
+                {# Formulaire NOUVEAU MOT DE PASSE #}
+                <section class="nouveau-mdp">
+
+                    <h3 class="titre-formulaire">Modifier mon mot de passe</h3>
+
+                    <form method="post" class="formulaire">
+
+                        {# Champ pseudo #}
+                        <label for="" class="label-formulaire">Mot de passe actuel</label>
+                        <input type="text" class="input-formulaire" id="" name="">
+
+                        {# Champ mail #}
+                        <label for="" class="label-formulaire">Nouveau mot de passe</label>
+                        <input type="email" class="input-formulaire" id="" name="">
+
+                        {# Conditions du mot de passe #}
+                        <ul class="conditions-mdp">
+                            <li class="li">6 caractères minimum</li>
+                            <li>1 chiffre requis</li>
+                        </ul>
+
+                        <button type="submit" class="button-save">Enregistrer</button>
+
+                    </form>
+                    
+                </section>
+
+                {# Formulaire MOYEN DE PAIEMENT #}
+                <section class="moyen-paiement">
+
+                    <h3 class="titre-formulaire">Mes modes de paiement</h3>
+
+                    {# Lien d'ajout de mode de paiement #}
+                    <a href="" class="add-method">Ajouter une nouvelle méthode de paiement</a>
+
+                    <form method="post" class="formulaire-pay">
+
+                        {# Méthode 1 #}
+                        <a href="#" class="link-method">
+                            <label class="container">Paypal
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </a>
+
+                        {# Méthode 2 #}
+                        <a href="#" class="link-method">
+                            <label class="container">Carte bancaire
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                            </label>
+                        </a>
+
+                        <button type="submit" class="button-save-pay">Enregistrer</button>
+
+                    </form>                   
                     
                 </section>
 
