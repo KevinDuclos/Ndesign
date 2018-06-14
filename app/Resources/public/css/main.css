@@ -193,7 +193,7 @@ a {
     box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
-/* Icône user */
+/* Icône logout */
 .icone-logout {
     cursor: pointer;    
     position: absolute;
@@ -256,6 +256,10 @@ main {
     text-align: end;
     font-size: 90px;
     font-weight: 300;
+}
+
+.gros-titre {
+    font-size: 80px;
 }
 
 /* "Découvrez nos contenus exclusifs" */
@@ -792,6 +796,10 @@ a.forget-password:hover {
     margin-top: 60px;
 }
 
+.lien-sidebar {
+    cursor: pointer;
+}
+
 /* Titres sidebar */
 .sidebar-titre {  
     color: black;
@@ -890,7 +898,8 @@ a.forget-password:hover {
 /* TABLEAU DE BORD */
 
 .dashboard {
-    display: none;
+    /* display: none; */
+    background-color: white;
 }
 
 .partie-gauche {
@@ -1042,39 +1051,52 @@ a.forget-password:hover {
 
 .mes-commandes {
     display: none;
+    margin-top: 70px;
 }
 
-.tableau-commandes {
+.link-commande {
+    position: relative;
     width: 80%;
-    margin-top: 90px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
+    border: 1px solid black;
     padding: 10px;
-    background-color: tomato;
 }
 
-.col-img-commande {
-    float: left;
-    background-color: teal;
-    width: 20%;
+.titre-commande {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
 }
 
-.col-num-commande {
-    float: left;
-    background-color: white;
+.img-commande {
     width: 20%;
+    -webkit-box-shadow: 3px 3px 0px 0px lightgrey;
+    -moz-box-shadow:    3px 3px 0px 0px lightgrey;
+    -o-box-shadow:      3px 3px 0px 0px lightgrey;
+    box-shadow:         3px 3px 0px 0px lightgrey;
 }
 
-.col-date-commande {
+.date-commande {
+    position: absolute;
     float: left;
-    background-color: brown;
-    width: 20%;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
 }
 
-.col-prix-commande {
+.details-commande {
+    position: absolute;
     float: left;
-    background-color: yellow;
-    width: 20%;
+    right: 10px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
 }
 
 /*******************
@@ -1299,3 +1321,63 @@ footer {
 /***************************
  ******* END FOOTER ********
  ***************************/
+
+/***************************************************************
+ ************************ MEDIA QUERIES ************************
+ ***************************************************************/
+
+/* MEDIA QUERY FOR IPHONE */
+@media screen and (max-width: 500px) {
+
+    /********************
+     ****** HEADER ******
+     ********************/
+
+    /* Logo NDesign */
+    .logo-ndesign {
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    /* Icône panier */
+    .icone-panier {
+        width: 50px;
+        left: 20px;
+        margin-top: -25px;
+    }
+
+    /* Icône user */
+    .icone-user {
+        width: 50px;
+        left: 80px;
+        margin-top: -25px;
+    }
+
+    /* Icône logout */
+    .icone-logout {
+        width: 50px;
+        right: 20px;
+        margin-top: -25px;
+    }
+
+    /**********************
+     **** MAIN-CONTENT ****
+     **********************/
+
+    /* 
+     * INDEX
+     */
+    
+    /* Titre "Des ressources pour vos sites web" */
+    .titre-feature {
+        right: 20px;
+        color: white;
+        text-align: end;
+        font-size: 5px;
+        font-weight: 300;
+    }
+
+}
+/* FIN MEDIA QUERY FOR IPHONE */
