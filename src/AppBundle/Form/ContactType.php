@@ -12,33 +12,57 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 class ContactType extends AbstractType
 {
     /**
-     * {@inheritdoc}
+     * @param FormBuilderInterface $builder
+     * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+        
         ->add('email',TextType::class,array(
             'attr'=> array(
-                "class"=>"input-text"
-            )
+                "class"=>"input-text",
+                'placeholder'=>'Email',
+              
+            ),
+            
                    ))
             ->add('telephone',TextType::class,array(
             'attr'=> array(
-                "class"=>"input-text"
+                "class"=>"input-text",
+                'placeholder'=> 'Téléphone',
+
             )
                     ))
 
             ->add('sujet',TextType::class,array(
             
             'attr'=> array(
-                "class"=>"input-text"
+                "class"=>"input-text",
+                'placeholder'=> 'Objet',
+
+
             )
                     ))
             ->add('message',TextAreaType::class,array(
             'attr'=> array(
-                "class"=>"input-textarea"
+                "class"=>"input-textarea",
+                'placeholder'=> 'Votre message...',
+
             )
             ));
            
+    }
+    /**
+     * @param OptionsResolver $resolver
+     */
+    public function configureOptions(OptionsResolver $resolver)
+    {
+        $resolver->setDefaults(array(
+            'data_class' => 'AppBundle\Entity\Contact'
+        ));
+    }
+    public function getBlockPrefix() {
+        return null;
     }
 }
