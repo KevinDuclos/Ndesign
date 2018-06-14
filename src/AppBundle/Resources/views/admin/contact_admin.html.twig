@@ -7,19 +7,19 @@
 <table>
     <thead>
         <tr>
-            <th>Email</th>
-            <th>Telephone</th>
-            <th>Sujet</th>
-            <th>Message</th>
+            <th scope="col">Email</th>
+            <th scope="col">Telephone</th>
+            <th scope="col">Sujet</th>
+            <th scope="col">Message</th>
         </tr>
 
     </thead>
     <tbody>
         <tr>
-            <td>{{ contact.email }}</td>
-            <td>{{ contact.telephone }}</td>
-            <td>{{ contact.sujet }}</td>
-            <td>{{ contact.message }}</td>
+            <td scope="row">{{ contact.email }}</td>
+            <td scope="row">{{ contact.telephone }}</td>
+            <td scope="row">{{ contact.sujet }}</td>
+            <td scope="row">{{ contact.message }}</td>
         </tr>
     </tbody>
     </table>
