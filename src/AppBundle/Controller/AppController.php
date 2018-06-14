@@ -60,17 +60,28 @@ class AppController extends Controller
     public function panierAction()
     {
         $em = $this->getDoctrine()->getManager();
-            $commandes = $em
-                ->getRepository('AppBundle:Commande')
+            $produit = $em
+                ->getRepository('AppBundle:Produit')
                 ->findAll();
             
             return $this->render('@App/App/panier.html.twig', [
-                'commandes' => $commandes
+                'produit' => $produit
             ]);
     }
     public function allAction()
     {
-        return $this->render('@App/App/all.html.twig');
+
+        $em = $this->getDoctrine()->getManager();
+            $produits = $em
+                ->getRepository('AppBundle:Produit')
+                ->findAll();
+            
+            return $this->render('@App/App/all.html.twig', [
+                'produits' => $produits,
+                'user' => $this->getUser()
+            ]);
+        
+       
     }
     
     public function confidentAction()

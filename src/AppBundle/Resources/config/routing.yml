@@ -26,8 +26,15 @@ app_vente:
     path: /conditions-de-ventes/
     defaults: { _controller: AppBundle:App:vente }
 
+app_add_panier:
+    path: /panier/{id}
+    defaults: { _controller: AppBundle:Order:panier}
+    requirements:
+        id: \d+
+        _method: POST
+
 app_panier:
-    path: /user/panier
+    path: /panier
     defaults: { _controller: AppBundle:App:panier}
 
 app_all:
