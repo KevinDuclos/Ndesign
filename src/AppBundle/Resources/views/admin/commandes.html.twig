@@ -6,11 +6,11 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Produit</th>
-                <th>Prix</th>
-                <th>Poids</th>
-                <th>Utilisateur</th>
+                <th scope="row">Id</th>
+                <th scope="row">Produit</th>
+                <th scope="row">Prix</th>
+                <th scope="row">Poids</th>
+                <th scope="row">Utilisateur</th>
             </tr>
         </thead>
         <tbody>
@@ -18,11 +18,11 @@
         
             {% for produit in commande.produits %}
             <tr>
-                <td>{{ commande.id }}</td>
-                    <td><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.titre }}</a></td>
-                    <td>{{ produit.prix }}</td>
-                    <td>{{ produit.poids }}</td>
-                    <td>{{ commande.user.username }}</td>
+                <td scope="col">{{ commande.id }}</td>
+                    <td scope="col"><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.titre }}</a></td>
+                    <td scope="col">{{ produit.prix }}</td>
+                    <td scope="col">{{ produit.poids }}</td>
+                    <td scope="col">{{ commande.user.username }}</td>
             </tr>
             {% endfor %}
         {% endfor %}

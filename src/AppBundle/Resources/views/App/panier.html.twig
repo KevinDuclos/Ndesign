@@ -10,19 +10,13 @@
 
       <thead class="entete-panier">
         <tr>
-          <th>Nom produit</th>
-          <th>Prix</th>
+          <th scope="row">Nom produit</th>
+          <th scope="row">Prix</th>
         </tr>
       </thead>
       <tbody>
-      {% for commande in commandes %}
-        {% for produit in commande.produits %}
-          <tr>
-            <td>{{ produit.titre }}</td>
-            <td>{{ produit.prix }}
-          </tr>
-        {% endfor %}
-      {% endfor %}
+          {{dump(produit)}}
+          <td>greggegre</td>
       </tbody>
     </table>
 

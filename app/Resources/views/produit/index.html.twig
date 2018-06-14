@@ -6,21 +6,21 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Titre</th>
-                <th>Prix</th>
-                <th>Poids</th>
-                <th>Actions</th>
+                <th scope="row">Id</th>
+                <th scope="row">Titre</th>
+                <th scope="row">Prix</th>
+                <th scope="row">Poids</th>
+                <th scope="row">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for produit in produits %}
             <tr>
-                <td class="btn btn-warnig"><a  href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
-                <td>{{ produit.titre }}</td>
-                <td>{{ produit.prix }}</td>
-                <td>{{ produit.poids }}</td>
-                <td>
+                <td class="btn btn-warnig"  scope="col"><a  href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.id }}</a></td>
+                <td scope="col">{{ produit.titre }}</td>
+                <td scope="col">{{ produit.prix }}</td>
+                <td scope="col">{{ produit.poids }}</td>
+                <td scope="col">
                     <ul>
                         <li>
                             <a href="{{ path('produit_show', { 'id': produit.id }) }}">show</a>

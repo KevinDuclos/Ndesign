@@ -86,7 +86,13 @@ class Produit
     {
         $this->commande = new \Doctrine\Common\Collections\ArrayCollection();
     }
-
+    //  /**
+    //  * @ORM\Column(type="string")
+    //  *
+    //  * @Assert\NotBlank(message="Veuillez insérez un format symfony")
+    //  * @Assert\File(mimeTypes={ "application/zip" })
+    //  */
+    // private $template;
 
     /**
      * Get id.
