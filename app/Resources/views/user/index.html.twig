@@ -1,4 +1,4 @@
-{% extends 'base_admin.html.twig' %}
+ scope="row"{% extends 'base_admin.html.twig' %}
 
 {% block body %}
     <h1>Users list</h1>
@@ -6,17 +6,17 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
-                <th>Created_at</th>
-                <th>Actions</th>
+                <th scope="row">Id</th>
+                <th scope="row">Created_at</th>
+                <th scope="row">Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for user in users %}
             <tr>
-                <td><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
-                <td>{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
-                <td>
+                <td scope="col"><a href="{{ path('user_show', { 'id': user.id }) }}">{{ user.id }}</a></td>
+                <td scope="col">{% if user.createdat %}{{ user.createdat|date('Y-m-d') }}{% endif %}</td>
+                <td scope="col">
                     <ul>
                         <li>
                             <a href="{{ path('user_show', { 'id': user.id }) }}">show</a>

@@ -763,28 +763,33 @@ a.forget-password:hover {
  *******************/
 
 /* Bandeau bonjour pseudo */
-.bonjour {
+.bandeau-bonjour {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 80px;
-    font-size: 30px;
-    font-weight: 300;
-    color: white;
+    width: 100%;
+    top: 90px;
     background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
 }
 
+.texte-bonjour {
+    padding-top: 20px;
+    padding-left: 220px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+
 /* Sidebar + contenu */
 .menu {
     display: flex;
-    margin-top: 50px;
 }
 
 /* Sidebar */
 .sidebar {
     width: 30%;
+    margin-top: 60px;
 }
 
 /* Titres sidebar */
@@ -793,7 +798,6 @@ a.forget-password:hover {
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-    margin-top: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: 600;
@@ -816,10 +820,261 @@ a.forget-password:hover {
 
 /* Contenu menu */
 .content-menu {
+    position: relative;
     width: 70%;
-    margin-top: 10px;    
+    margin-top: 60px;
     margin-left: 20px;
-    padding: 30px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* Forme du contenu */
+.titre-formulaire {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Formulaires */
+.formulaire {
+    width: 70%;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Label */
+.label-formulaire {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.input-formulaire {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton validation */
+.button-save {
+    cursor: pointer;
+    width: 100%;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+/* TABLEAU DE BORD */
+
+.dashboard {
+    display: none;
+}
+
+.partie-gauche {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.partie-droite {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.informations-profil {
+    margin-bottom: 20px;
+}
+
+/* MES INFOS */
+
+.mes-infos {
+    display: none;
+}
+
+/* MOT DE PASSE */
+
+.nouveau-mdp {
+    display: none;
+}
+
+.conditions-mdp {
+    list-style-type: disc;
+    font-size: 12px;
+}
+
+.li {
+    margin-bottom: 5px;
+}
+
+/* MODE DE PAIEMENT */
+
+.moyen-paiement {
+    display: none;
+}
+
+.formulaire-pay {
+    width: 70%;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lien "ajouter une méthode de paiement" */
+.add-method {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    top: 60px;
+    left: 30px;
+}
+
+.add-method:hover {
+   text-decoration: underline;
+}
+
+.link-method {
+    color: black;
+}
+
+/* Forme autour de la méthode */
+.container {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: lightgrey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+/* Cache le bouton de base */
+.container input {
+    opacity: 0;
+}
+
+/* Customisation du bouton */
+.checkmark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    left: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+/* Bouton coché quand on clique */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Bouton coché */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Intérieur du bouton */
+.container .checkmark:after {
+    top: 50%;
+    margin-top: -5px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+}
+
+/* Enregistrement des modifications */
+.button-save-pay {
+    cursor: pointer;
+    width: 100%;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+}
+
+/* COMMANDES */
+
+.mes-commandes {
+    display: none;
+}
+
+.tableau-commandes {
+    width: 80%;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: tomato;
+}
+
+.col-img-commande {
+    float: left;
+    background-color: teal;
+    width: 20%;
+}
+
+.col-num-commande {
+    float: left;
+    background-color: white;
+    width: 20%;
+}
+
+.col-date-commande {
+    float: left;
+    background-color: brown;
+    width: 20%;
+}
+
+.col-prix-commande {
+    float: left;
+    background-color: yellow;
+    width: 20%;
 }
 
 /*******************

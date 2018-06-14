@@ -1,12 +1,15 @@
 <?php
 
 namespace AppBundle\Controller;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
+use Symfony\Component\HttpFoundation\JsonResponse;
+
 class AppController extends Controller
 {
     /**
@@ -16,12 +19,12 @@ class AppController extends Controller
     {
     
             $em = $this->getDoctrine()->getManager();
-            $commandes = $em
-                ->getRepository('AppBundle:Commande')
+            $produits = $em
+                ->getRepository('AppBundle:Produit')
                 ->findAll();
             
             return $this->render('@App/App/index.html.twig', [
-                'commandes' => $commandes,
+                'produits' => $produits,
                 'user' => $this->getUser()
                 
             ]);
@@ -36,20 +39,59 @@ class AppController extends Controller
             'produit' => $produit
         ]);
     }
+
+   
+   
     public function contactAction(Request $request)
     {       
          $contact = new Contact;
-         $form = $this->createForm(ContactType::class, $contact);
-         if($form->handleRequest($request)->isSubmitted()){
-                 $em = $this->getDoctrine()->getManager();
-                 $em->persist($contact);
-                 $em->flush();
-                 return $this->redirectToRoute('app_homepage');
-             }
+         $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
+        
+         
+        //  if($form->handleRequest($request)->isSubmitted()){
+        //         $em = $this->getDoctrine()->getManager();
+        //         $em->persist($contact);
+        //         $em->flush();
+        //     //    return $this->redirectToRoute('app_homepage');
+            
+        //  }
          $form = $form->createView();
-         return $this->render('@App/App/contact.html.twig', [
-             "form" => $form
+         
+         return $this ->render('@App/App/contact.html.twig', [
+             'form'=> $form,
          ]);
+         
+    }
+    
+    public function contactFormAction(Request $request)
+    {   
+
+        $errors =[];
+        // $status="unsaved";
+        if($request->isXmlHttpRequest()){
+       
+            $contact = new Contact;
+            $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
+            $selected_documents = $request->request->get('data');
+            $form ->handleRequest($request);
+            // if($form->isValid()){ 
+                // die('bonjour');
+                
+                $contact->setEmail($selected_documents[0]['value']);
+                $contact->setTelephone($selected_documents[1]['value']);
+                $contact->setSujet($selected_documents[2]['value']);
+                $contact->setMessage($selected_documents[3]['value']);
+
+                $status = "saved";                
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($contact);
+                $em->flush();
+            }
+            $response = new JsonResponse(array('status' => 'saved', 'data'=> $selected_documents));
+            return $response;
+            
+        // }
+
     }
 
     public function venteAction()
@@ -70,7 +112,6 @@ class AppController extends Controller
     }
     public function allAction()
     {
-
         $em = $this->getDoctrine()->getManager();
             $produits = $em
                 ->getRepository('AppBundle:Produit')
@@ -88,4 +129,5 @@ class AppController extends Controller
     {
         return $this->render('@App/App/confident.html.twig');
     }
+    
 }
