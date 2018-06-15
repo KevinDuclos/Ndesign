@@ -15,14 +15,8 @@
         </tr>
       </thead>
       <tbody>
-      {% for commande in commandes %}
-        {% for produit in commande.produits %}
-          <tr>
-            <td scope="col">{{ produit.titre }}</td>
-            <td scope="col">{{ produit.prix }}
-          </tr>
-        {% endfor %}
-      {% endfor %}
+          {{dump(produit)}}
+          <td>greggegre</td>
       </tbody>
     </table>
 
