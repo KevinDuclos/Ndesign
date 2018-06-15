@@ -1,14 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-<<<<<<< HEAD
-    "content-hash": "dff8543065fc79fc4df08096d9944d28",
-=======
-    "content-hash": "4a35eca3754769c490c6e3ed32e42615",
->>>>>>> f7dbec714857d23e610a3cfd8eb263ad310eb160
+    "content-hash": "337d404d54fdd5c7070757af38e76df5",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -2041,16 +2037,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v6.7.4",
+            "version": "v6.8.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "67fee13fcb344aa865076589888f4afef542dfd7"
+                "reference": "c90990082451dcacf62c483540dd73b8898badb8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/67fee13fcb344aa865076589888f4afef542dfd7",
-                "reference": "67fee13fcb344aa865076589888f4afef542dfd7",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/c90990082451dcacf62c483540dd73b8898badb8",
+                "reference": "c90990082451dcacf62c483540dd73b8898badb8",
                 "shasum": ""
             },
             "require": {
@@ -2092,7 +2088,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2018-05-30T00:13:55+00:00"
+            "time": "2018-06-13T23:38:34+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
