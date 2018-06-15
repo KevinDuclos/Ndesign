@@ -11,19 +11,18 @@
     <main role="main">
 
         {# APERCUS TEMPLATES #}
-        <div class="templates-all">
+        <span class="templates-all">
+
             {% for produit in produits %}
             <a href="{{ path('app_single', {'id': produit.id }) }}" class="single-template-all">
-                <div class="template-all">
-                    <img class="image-template-all" src="{{ asset('assets/img/template1.png') }}" alt="Image de template">
-                    <div class="textes-template-all">
-                        <h5 class="titre-template-all">{{produit.titre}}</h5>                      
-                    </div>
-                </div>
+                <img src="{{ asset('assets/img/template1.png') }}" alt="Image de template" class="image-template-all">
+                <h5 class="titre-template-all">{{produit.titre}}</h5>
             </a>
             {% endfor %}
-        </div>
-            
+
+        <div class="clear"></div>
+
+        </span>
         {# FIN APERCUS TEMPLATES #}
     
     </main>

@@ -193,7 +193,7 @@ a {
     box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
-/* Icône user */
+/* Icône logout */
 .icone-logout {
     cursor: pointer;    
     position: absolute;
@@ -256,6 +256,11 @@ main {
     text-align: end;
     font-size: 90px;
     font-weight: 300;
+}
+
+/* "Des ressources pour" */
+.gros-titre {
+    font-size: 80px;
 }
 
 /* "Découvrez nos contenus exclusifs" */
@@ -326,19 +331,15 @@ main {
     margin-bottom: 70px;
 }
 
-/* Aperçus des templates */
-.templates {
-    display: flex;
-}
-
-/* Lien pour cartes */
+/* Liste des templates */
 a.single-template {
-    text-decoration: none;    
-}
-
-/* Template individuel */
-.template {
-    margin: 10px;
+    float: left;    
+    position: relative;
+    width: 265px;
+    height: auto;
+    text-decoration: none;
+    color: black;
+    margin: 30px;
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -346,24 +347,24 @@ a.single-template {
     transition: all 0.3s;
 }
 
-.template:hover {
+a.single-template:hover {
     -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
     -moz-box-shadow:    15px 15px 0px 0px lightgrey;
     -o-box-shadow:      15px 15px 0px 0px lightgrey;
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
-/* Image template */
-.image-template {   
+/* Image des templates */
+.image-template {
+    position: relative;
     width: 100%;
 }
 
-/* Titre template */
-.titre-template {  
+/* Titre des templates */
+.titre-template {
+    padding: 20px;
     font-size: 23px;
     font-weight: 600;
-    color: black;
-    padding: 20px;
 }
 
 /* Bouton RESSOURCES */
@@ -371,6 +372,7 @@ a.single-template {
     position: absolute;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     color: white;
     font-size: 20px;
     letter-spacing: 1.5px;
@@ -485,7 +487,7 @@ a.plus-ressources {
     height: 200%;
 }
 
-/* Formulaire */
+/* Formulaire de contact */
 .form-contact {
     float: right;
     position: relative;
@@ -518,7 +520,7 @@ a.plus-ressources {
 
 .icone-send {
     position: relative;
-    width: 10%;
+    width: 50px;
     left: 50%;
     margin-left: -25px;
     top: 20px;
@@ -763,28 +765,37 @@ a.forget-password:hover {
  *******************/
 
 /* Bandeau bonjour pseudo */
-.bonjour {
+.bandeau-bonjour {
     position: relative;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 80px;
-    font-size: 30px;
-    font-weight: 300;
-    color: white;
+    width: 100%;
+    top: 90px;
     background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
     background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
     background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
 }
 
+.texte-bonjour {
+    padding-top: 20px;
+    padding-left: 220px;
+    padding-bottom: 20px;
+    font-size: 30px;
+    font-weight: 300;
+    color: white;
+}
+
 /* Sidebar + contenu */
 .menu {
     display: flex;
-    margin-top: 50px;
 }
 
 /* Sidebar */
 .sidebar {
     width: 30%;
+    margin-top: 60px;
+}
+
+.lien-sidebar {
+    cursor: pointer;
 }
 
 /* Titres sidebar */
@@ -793,7 +804,6 @@ a.forget-password:hover {
     padding-top: 20px;
     padding-left: 20px;
     padding-bottom: 20px;
-    margin-top: 10px;
     margin-bottom: 10px;
     text-transform: uppercase;
     font-weight: 600;
@@ -816,10 +826,275 @@ a.forget-password:hover {
 
 /* Contenu menu */
 .content-menu {
+    position: relative;
     width: 70%;
-    margin-top: 10px;    
+    margin-top: 60px;
     margin-left: 20px;
-    padding: 30px;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+
+/* Forme du contenu */
+.titre-formulaire {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Formulaires */
+.formulaire {
+    width: 70%;
+    margin-top: 70px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Label */
+.label-formulaire {
+    display: block;
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Input */
+.input-formulaire {
+    width: 100%;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 17px;    
+    border: 1px solid transparent;
+    border-bottom: 1px solid black;
+}
+
+/* Bouton validation */
+.button-save {
+    cursor: pointer;
+    width: 100%;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+/* TABLEAU DE BORD */
+
+.dashboard {
+    /* display: none; */
+    background-color: white;
+}
+
+.partie-gauche {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.partie-droite {
+    margin-top: 20px;
+    float: left;
+    width: 50%;
+}
+
+.informations-profil {
+    margin-bottom: 20px;
+}
+
+/* MES INFOS */
+
+.mes-infos {
+    display: none;
+}
+
+/* MOT DE PASSE */
+
+.nouveau-mdp {
+    display: none;
+}
+
+.conditions-mdp {
+    list-style-type: disc;
+    font-size: 12px;
+}
+
+.li {
+    margin-bottom: 5px;
+}
+
+/* MODE DE PAIEMENT */
+
+.moyen-paiement {
+    display: none;
+}
+
+.formulaire-pay {
+    width: 70%;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Lien "ajouter une méthode de paiement" */
+.add-method {
+    position: relative;
+    font-size: 17px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: black;
+    top: 60px;
+    left: 30px;
+}
+
+.add-method:hover {
+   text-decoration: underline;
+}
+
+.link-method {
+    color: black;
+}
+
+/* Forme autour de la méthode */
+.container {
+    position: relative;
+    cursor: pointer;
+    display: block;
+    font-size: 20px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: lightgrey;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    margin-bottom: 20px;
+}
+
+/* Cache le bouton de base */
+.container input {
+    opacity: 0;
+}
+
+/* Customisation du bouton */
+.checkmark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 20px;
+    left: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: 1px solid black;
+}
+
+/* Bouton coché quand on clique */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Bouton coché */
+.container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Intérieur du bouton */
+.container .checkmark:after {
+    top: 50%;
+    margin-top: -5px;
+    left: 50%;
+    margin-left: -5px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: black;
+}
+
+/* Enregistrement des modifications */
+.button-save-pay {
+    cursor: pointer;
+    width: 100%;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+}
+
+/* COMMANDES */
+
+.mes-commandes {
+    display: none;
+    margin-top: 70px;
+}
+
+.link-commande {
+    position: relative;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.titre-commande {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.img-commande {
+    width: 20%;
+    -webkit-box-shadow: 3px 3px 0px 0px lightgrey;
+    -moz-box-shadow:    3px 3px 0px 0px lightgrey;
+    -o-box-shadow:      3px 3px 0px 0px lightgrey;
+    box-shadow:         3px 3px 0px 0px lightgrey;
+}
+
+.date-commande {
+    position: absolute;
+    float: left;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
+}
+
+.details-commande {
+    position: absolute;
+    float: left;
+    right: 10px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
 }
 
 /*******************
@@ -830,10 +1105,12 @@ a.forget-password:hover {
  ****** SINGLE ******
  ********************/
 
+/* Contenu de la page single */
 .contenu-single {
     display: flex;
 }
 
+/* Image du template */
 .illustration-single {
     border: 1px solid black;
     width: 50%;
@@ -848,6 +1125,7 @@ a.forget-password:hover {
     width: 100%;
 }
 
+/* Descriptif du template */
 .textes-single {
     position: relative;
     width: 50%;
@@ -920,6 +1198,70 @@ a.forget-password:hover {
  **** END SINGLE ****
  ********************/
 
+/****************
+ *** PAGE ALL ***
+ ****************/
+
+/* Image templates haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-all {
+    display: block;
+    width: 100%;
+}
+
+.img-all {
+    height: 300px;
+    object-fit: cover;
+    margin-bottom: 60px;
+}
+
+/* Liste des templates */
+a.single-template-all {
+    float: left;    
+    position: relative;
+    width: 265px;
+    height: auto;
+    text-decoration: none;
+    color: black;
+    margin: 30px;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    transition: all 0.3s;
+}
+
+a.single-template-all:hover {
+    -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
+    -moz-box-shadow:    15px 15px 0px 0px lightgrey;
+    -o-box-shadow:      15px 15px 0px 0px lightgrey;
+    box-shadow:         15px 15px 0px 0px lightgrey;
+}
+
+/* Image des templates */
+.image-template-all {
+    position: relative;
+    width: 100%;
+}
+
+/* Titre des templates */
+.titre-template-all {
+    padding: 20px;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+/****************
+ * END PAGE ALL *
+ ****************/
+
 /***************************
  **** END MAIN-CONTENT *****
  ***************************/
@@ -941,13 +1283,15 @@ footer {
     margin-left: 200px;
     margin-top: 25px;
     margin-bottom: 25px;
-    width: 15%;
+    width: 184px;
+    height: auto;
 }
 
 /* Icônes de la team */
 .icone-team {
     position: absolute;
-    width: 17%;
+    width: 208px;
+    height: auto;
     margin-top: 40px;
     right: 200px;
 }
@@ -978,3 +1322,163 @@ footer {
 /***************************
  ******* END FOOTER ********
  ***************************/
+
+/***************************************************************
+ ************************ MEDIA QUERIES ************************
+ ***************************************************************/
+
+/* MEDIA QUERY FOR IPHONE */
+@media screen and (max-width: 600px) {
+
+    /********************
+     ****** HEADER ******
+     ********************/
+
+    /* Logo NDesign */
+    .logo-ndesign {
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    /* Icône panier */
+    .icone-panier {
+        width: 50px;
+        left: 20px;
+        margin-top: -25px;
+    }
+
+    /* Icône user */
+    .icone-user {
+        width: 50px;
+        left: 80px;
+        margin-top: -25px;
+    }
+
+    /* Icône logout */
+    .icone-logout {
+        width: 50px;
+        right: 20px;
+        margin-top: -25px;
+    }
+
+    /**********************
+     **** MAIN-CONTENT ****
+     **********************/
+
+    /* 
+     * INDEX
+     */
+    
+    /* Titre "Des ressources pour vos sites web" */
+    .titre-feature {
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+    }
+
+    .gros-titre {
+        font-size: 35px;
+    }
+
+    /* Intro */
+    .intro {
+        left: 20px;
+        bottom: 80px;
+        font-size: 20px;
+    }
+
+    /* Aperçu des templates */
+    a.single-template {
+        display: block;
+    }
+
+    /* Bouton "toutes les ressources" */
+    .plus-ressources {
+        font-size: 15px;
+        margin-left: -135px;
+    }
+
+    /* 
+     * CONTACT
+     */
+
+    /* Image haut de page */
+    .img-contact {
+        height: 100px;
+    }
+
+    /* Section */
+    .page-contact {
+        display: block;
+        top: 30px;
+    }
+
+    /* Localisation */
+    .bloc-localisation {
+        float: none;
+        width: 100%;
+    }
+
+    /* Google maps */
+    .div-google-maps {
+        display: none;
+    }
+
+    /* Formulaire de contact */
+    .form-contact {
+        position: relative;
+        float: none;
+        width: 100%;
+        top: 30px;
+        margin-left: 0;
+    }
+
+    .input-textarea {
+        display: block;
+        width: 100%;
+        height: 150px;
+        font-family: 'Barlow', sans-serif;
+        font-size: 20px;
+        font-weight: 500;    
+        border: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+
+    /* 
+     * CONNEXION
+     */
+
+    /* Image haut de page */
+    .img-connexion {
+        height: 160px;
+    }
+
+    /* Traduction accroche */
+    .traduction {
+        font-size: 8px;
+    }
+
+    /********************
+     ****** FOOTER ******
+     ********************/
+
+    /* Image "contactez nous" */
+    .image-contact {
+        width: 150px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Icônes de la team */
+    .icone-team {
+        width: 130px;
+        top: 0;
+        right: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+/* FIN MEDIA QUERY FOR IPHONE */
