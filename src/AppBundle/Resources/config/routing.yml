@@ -34,15 +34,15 @@ app_vente:
 
 app_add_panier:
     path: /panier/{id}
-    defaults: { _controller: AppBundle:Order:panier}
+    defaults: { _controller: AppBundle:Order:add_panier}
     requirements:
         id: \d+
         _method: POST
 
 app_panier:
     path: /panier
-    defaults: { _controller: AppBundle:App:panier}
-
+    defaults: { _controller: AppBundle:Order:panier}
+    
 app_all:
     path: /all
     defaults: { _controller: AppBundle:App:all}

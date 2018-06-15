@@ -15,8 +15,15 @@
         </tr>
       </thead>
       <tbody>
-          {{dump(produit)}}
-          <td>greggegre</td>
+        
+        {% for produits in commandes %}
+            {#{dump(produits)}#}
+            <tr>
+              <td>{{produits.titre}}</td>
+              <td>{{produits.prix}}</td> 
+            </tr>
+        {% endfor %} 
+       
       </tbody>
     </table>
 
