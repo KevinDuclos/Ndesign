@@ -45,7 +45,7 @@ class AppController extends Controller
     public function contactAction(Request $request)
     {       
          $contact = new Contact;
-         $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
+         $form = $this->createForm(ContactType::class, $contact,array('method' => 'PUT'));
         
          
         //  if($form->handleRequest($request)->isSubmitted()){
@@ -71,17 +71,19 @@ class AppController extends Controller
         if($request->isXmlHttpRequest()){
        
             $contact = new Contact;
-            $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
+            $form = $this->createForm(ContactType::class, $contact,array('method' => 'PUT'));
             $selected_documents = $request->request->get('data');
             $form ->handleRequest($request);
-            // if($form->isValid()){ 
+            // var_dump($form);
+            // die();
+            // if($form->isSubmitted()){ 
                 // die('bonjour');
                 
-                $contact->setEmail($selected_documents[0]['value']);
-                $contact->setTelephone($selected_documents[1]['value']);
-                $contact->setSujet($selected_documents[2]['value']);
-                $contact->setMessage($selected_documents[3]['value']);
-
+                $contact->setEmail($selected_documents[1]['value']);
+                $contact->setTelephone($selected_documents[2]['value']);
+                $contact->setSujet($selected_documents[3]['value']);
+                $contact->setMessage($selected_documents[4]['value']);
+                // die('plop');
                 $status = "saved";                
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($contact);
