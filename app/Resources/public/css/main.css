@@ -1484,7 +1484,6 @@ footer {
      ****** HEADER ******
      ********************/
 
-    /* Logo NDesign */
     .logo-ndesign {
         position: absolute;
         width: 100px;
@@ -1492,21 +1491,18 @@ footer {
         margin-left: -60px;
     }
 
-    /* Icône panier */
     .icone-panier {
         width: 50px;
         left: 20px;
         margin-top: -25px;
     }
 
-    /* Icône user */
     .icone-user {
         width: 50px;
         left: 80px;
         margin-top: -25px;
     }
 
-    /* Icône logout */
     .icone-logout {
         width: 50px;
         right: 20px;
@@ -1521,7 +1517,6 @@ footer {
      * INDEX
      */
     
-    /* Titre "Des ressources pour vos sites web" */
     .titre-feature {
         top: 20px;
         right: 20px;
@@ -1532,19 +1527,18 @@ footer {
         font-size: 35px;
     }
 
-    /* Intro */
     .intro {
         left: 20px;
         bottom: 80px;
         font-size: 20px;
     }
 
-    /* Aperçu des templates */
     a.single-template {
-        display: block;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
     }
 
-    /* Bouton "toutes les ressources" */
     .plus-ressources {
         font-size: 15px;
         margin-left: -135px;
@@ -1554,29 +1548,24 @@ footer {
      * CONTACT
      */
 
-    /* Image haut de page */
     .img-contact {
         height: 100px;
     }
 
-    /* Section */
     .page-contact {
         display: block;
         top: 30px;
     }
 
-    /* Localisation */
     .bloc-localisation {
         float: none;
         width: 100%;
     }
 
-    /* Google maps */
     .div-google-maps {
         display: none;
     }
 
-    /* Formulaire de contact */
     .form-contact {
         position: relative;
         float: none;
@@ -1600,17 +1589,14 @@ footer {
      * CONNEXION
      */
 
-    /* Image haut de page */
     .img-connexion {
         height: 160px;
     }
 
-    /* Traduction accroche */
     .traduction {
         font-size: 8px;
     }
 
-    /* Icône user connexion */
     .bloc-icone-user {
         top: 30px;
         width: 40%;
@@ -1620,20 +1606,16 @@ footer {
         width: 80px;
     }
 
-    /* Formulaire de connexion */
     .form-connexion {
         width: 80%;
         top: 70px;
     }
 
-    /* Aide connexion */
-    /* S'inscrire */
     a.sign-up {
         width: 100%;
         padding-left: 0;
     }
 
-    /* Mot de passe oublié */
     a.forget-password {
         right: 0;   
     }
@@ -1642,7 +1624,6 @@ footer {
      * INSCRIPTION
      */
 
-    /* Image haut de page */
     .img-inscription {
         height: 100px;
     }
@@ -1651,69 +1632,273 @@ footer {
         width: 80px;
     }
 
-    /* Formulaire d'inscription */
     .form-inscription {
         width: 80%;
         top: 70px;
     }
 
-    /* PROFIL */
+    /*
+     * PROFIL
+     */
 
-    /* Bandeau bonjour pseudo */
     .texte-bonjour {
         padding-left: 20px;
     }
 
-    /* Menu */
-    .menu {
-        display: block;
+    /* DASHBOARD */
+
+    .section-dashboard {
+        width: 90%;
     }
 
-    /* Sidebar */
-    .sidebar {
+    .titre-dashboard {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-dashboard {
+        float: none;
+    }
+
+    .partie-une {
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .partie-deux {
+        float: none;
+        width: 100%;
+    }
+
+    .label {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    /* MES INFORMATIONS */
+
+    .section-informations {
+        width: 90%;
+    }
+
+    .titre-informations {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-informations {
+        float: none;
+    }
+
+    .formulaire-informations {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    /* MOT DE PASSE */
+
+    .section-motdepasse {
+        width: 90%;
+    }
+
+    .titre-motdepasse {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-motdepasse {
+        float: none;
+    }
+
+    .formulaire-motdepasse {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .conditions-mdp {
+        margin-left: 15px;
+    }
+
+    /* MOYEN DE PAIEMENT */
+
+    .section-paiement {
+        width: 90%;
+    }
+
+    .titre-paiement {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-paiement {
+        float: none;
+    }
+
+    .moyens-paiement {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    /* HISTORIQUE DE COMMANDES */
+
+    .section-commandes {
+        width: 90%;
+    }
+
+    .titre-commandes {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-commandes {
+        float: none;
+    }
+
+    .link-commande {
+        width: 100%;
+        margin-top: 30px;
+        float: none;
+    }
+
+    .date-commande {
         display: none;
     }
 
-    /* Contenu menu */
-    .content-menu {
-        position: relative;
-        width: 100%;
-        top: 60px;
-        margin-left: auto;
-        margin-right: auto;
-        border-right: none;
-        border-bottom: none;
+    .details-commande {
+        font-size: 14px;
     }
 
-    /* Forme du contenu */
-    .titre-formulaire {
-        top: 0;
-        right: 0;
-        font-size: 25px;
+    /* 
+     * TOUTES LES RESSOURCES (ALL)
+     */
+    
+    .img-all {
+        height: 100px;
     }
 
-    /* Formulaires */
-    .formulaire {
-        position: relative;
+    a.single-template-all {
         width: 100%;
-        top: 30px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    /* Label */
-    .label-formulaire {
-        font-size: 15px;
+    /* 
+     * PANIER
+     */
+
+    .img-panier {
+        height: 130px;
     }
 
-    /* Tableau de bord */
-    .dashboard {
+    .panier-commandes {
+        display: block;
+        width: 100%;
+    }
+
+    .panier {
+        display: block;
+        width: 100%;
+    }
+
+    .contenu-produit {
+        height: 100px;
+    }
+
+    .total {
+        width: 100%;
+        float: none;
+    }
+
+    .prix-total {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .button-pay {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+
+    /* 
+     * SINGLE
+     */
+
+    .contenu-single {
         display: block;
     }
 
-    /* Mes infos */
-    .mes-infos {
+    .illustration-single {
+        position: relative;
+        width: 100%;
+        top: 40px;
+    }
+
+    .textes-single {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .titre-prix {
         display: block;
+    }
+    
+    .titre-single {
+        width: 100%;
+        font-size: 40px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    .prix {
+        position: relative;
+        text-align: end;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .descrip-single {
+        line-height: 1.3;
+        font-size: 18px;
+    }
+    
+    .live-preview {
+        position: relative;
+        top: 10px;
+    }
+    
+    .add-to-cart {
+        bottom: -70px;
+        left: 1px;
+        right: 1px;
     }
 
     /********************
