@@ -2,31 +2,42 @@
 
 {% block body %}
 
-<main role="main">
+    {# Image contact #}
+    <div class="thumbnail">
+        <img src="{{ asset('assets/img/bg-p-panier.jpg') }}" alt="" class="img-panier">
+    </div>
 
-  <h2>Panier</h2>
+    <main role="main">
 
-    <table>
+        <div class="panier-commandes">
 
-      <thead class="entete-panier">
-        <tr>
-          <th scope="row">Nom produit</th>
-          <th scope="row">Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-        
-        {% for produits in commandes %}
-            {#{dump(produits)}#}
-            <tr>
-              <td>{{produits.titre}}</td>
-              <td>{{produits.prix}}</td> 
-            </tr>
-        {% endfor %} 
-       
-      </tbody>
-    </table>
+            {# PANIER #}
+            <div class="panier">
 
-</main>
+                {% for produits in commandes %}
+                    <div class="contenu-produit">
+                        <img src="{{ asset('assets/img/template2.png') }}" alt="" class="image-template-panier">
+                        <span class="infos-commande-panier">
+                            <h2 class="prix-template-panier">{{produits.prix}}€</h2>
+                            <div class="titre-template-panier">{{produits.titre}}</div>
+                        </span>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            {# PRIX TOTAL #}
+            <div class="total">
+
+                <h3 class="titre-total">Total</h3>
+                <div class="prix-total">137€</div>
+
+                <button type="submit" class="button-pay">Payer</button>
+
+            </div>
+
+        </div>
+
+    </main>
 
 {% endblock body %}

@@ -86,7 +86,7 @@ html, body {
 #wrapper {
     position: relative;
     width: 100%;
-    max-width: 1600px;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
@@ -606,18 +606,6 @@ a.plus-ressources {
     top: 90px;
 }
 
-.input-text {
-    display: block;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-}
-
 /* Bouton connexion */
 .bouton-connexion {
     font-family: 'Barlow', sans-serif;    
@@ -724,18 +712,6 @@ a.forget-password:hover {
     top: 90px;
 }
 
-.input-text {
-    display: block;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-}
-
 /* Bouton inscription */
 .bouton-inscription {
     font-family: 'Barlow', sans-serif;    
@@ -783,51 +759,95 @@ a.forget-password:hover {
     color: white;
 }
 
-.dashboard {
+/* DASHBOARD */
+
+.section-dashboard {
     display: flex;
     position: relative;
-    top: 50px;
-}
-
-/* Titre de chaque catégorie */
-.titre-category {
-    padding: 20px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1.3px;
+    width: 80%;
+    margin: 0 auto;
+    top: 20px;
     border: 1px solid black;
-    width: 25%;
-    height: 15px;
+    padding: 10px;
 }
 
-/* Contenu de chaque catégorie */
-.contenu-category {
+/* Titre dashboard */
+.titre-dashboard {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu dashboard */
+.contenu-dashboard {
     width: 70%;
-    padding: 20px;
+    float: left;
 }
 
-/* Label */
-.label-formulaire {
+.partie-une {
+    float: left;
+    width: 50%;
+}
+
+.partie-deux {
+    float: left;
+    width: 50%;
+}
+
+/* Label dashboard */
+.label {
     display: block;
     font-size: 18px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Input */
-.input-formulaire {
-    width: 100%;
+/* User info dashboard */
+.user-info {
+    font-size: 18px;
     margin-bottom: 15px;
-    padding-bottom: 5px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 17px;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
 }
 
-/* Bouton validation */
+/* MES INFORMATIONS */
+
+.section-informations {
+    display: flex;
+    position: relative;
+    width: 80%;
+    top: 40px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Titre informations */
+.titre-informations {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu informations */
+.contenu-informations {
+    width: 70%;
+    float: left;
+}
+
+/* Formulaire informations */
+.formulaire-informations {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Bouton d'enregistrement */
 .button-save {
     cursor: pointer;
     width: 100%;
@@ -843,80 +863,45 @@ a.forget-password:hover {
     color: white;
     letter-spacing: 1.2px;
     padding: 5px;
-    margin-top: 20px;
-}
-/* 
-TABLEAU DE BORD
-
-.dashboard {
-    width: 70%;
-    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
-.titre-formulaire-dashboard {
+/* MOT DE PASSE */
+
+.section-motdepasse {
+    display: flex;
     position: relative;
-    text-align: end;
-    font-size: 30px;
-    right: 20px;
-    top: 20px;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.parties {
     width: 80%;
+    top: 60px;
     margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
-.partie-gauche {
+/* Titre mot de passe */
+.titre-motdepasse {
+    width: 30%;
     float: left;
-    width: 40%;
-    margin-right: 70px;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
 }
 
-.partie-droite {
+/* Contenu mot de passe */
+.contenu-motdepasse {
+    width: 70%;
     float: left;
-    width: 40%;
 }
 
-.informations-profil {
-    margin-bottom: 20px;
-}
-
-MES INFOS
-
-.mes-infos {
-    display: block;
-    position: relative;
+/* Formulaire mot de passe */
+.formulaire-motdepasse {
     width: 70%;
     margin: 0 auto;
 }
 
-.titre-formulaire-mesinfos {
-    position: relative;
-    text-align: end;
-    font-size: 30px;
-    right: 20px;
-    top: 20px;
-    margin-bottom: 50px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-.formulaire-mesinfos {
-    width: 50%;
-    margin: 0 auto;
-}
-
-MOT DE PASSE
-
-.nouveau-mdp {
-    display: none;
-}
-
+/* Conditions mot de passe */
 .conditions-mdp {
     list-style-type: disc;
     font-size: 12px;
@@ -926,121 +911,132 @@ MOT DE PASSE
     margin-bottom: 5px;
 }
 
-MODE DE PAIEMENT
+/* MOYEN DE PAIEMENT */
 
-.moyen-paiement {
-    display: none;
-}
-
-.formulaire-pay {
-    width: 70%;
-    margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-Lien "ajouter une méthode de paiement"
-.add-method {
+.section-paiement {
+    display: flex;
     position: relative;
-    font-size: 17px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: black;
-    top: 60px;
-    left: 30px;
+    width: 80%;
+    top: 80px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
-.add-method:hover {
-   text-decoration: underline;
+/* Titre mode de paiement */
+.titre-paiement {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu paiement */
+.contenu-paiement {
+    width: 70%;
+    float: left;
+}
+
+/* Formulaire mode de paiement */
+.moyens-paiement {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .link-method {
     color: black;
 }
 
-Forme autour de la méthode
+/* Forme autour de la méthode */
 .container {
     position: relative;
     cursor: pointer;
     display: block;
-    font-size: 20px;
+    font-size: 17px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: lightgrey;
+    border: 1px solid black;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 50px;
     margin-bottom: 20px;
 }
 
-Cache le bouton de base
+/* Cache le bouton de base */
 .container input {
     opacity: 0;
 }
 
-Customisation du bouton
+/* Customisation du bouton */
 .checkmark {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 20px;
-    left: 15px;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    margin-top: -5px;
+    left: 20px;
     background-color: white;
     border-radius: 50%;
     border: 1px solid black;
 }
 
-Bouton coché quand on clique
+/* Bouton coché quand on clique */
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-Bouton coché
+/* Bouton coché */
 .container input:checked ~ .checkmark:after {
     display: block;
 }
 
-Intérieur du bouton
+/* Intérieur du bouton */
 .container .checkmark:after {
+    width: 5px;
+    height: 5px;
     top: 50%;
-    margin-top: -5px;
+    margin-top: -2.5px;
     left: 50%;
-    margin-left: -5px;
-    width: 10px;
-    height: 10px;
+    margin-left: -2.5px;
     border-radius: 50%;
     background: black;
 }
 
-Enregistrement des modifications
-.button-save-pay {
-    cursor: pointer;
-    width: 100%;
-    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
-    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
-    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
-    border: 1px solid white;
-    font-family: 'Barlow', sans-serif;
+/* HISTORIQUE DE COMMANDES */
+
+.section-commandes {
+    display: flex;
+    position: relative;
+    width: 80%;
+    top: 100px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Titre historique de commandes */
+.titre-commandes {
+    width: 30%;
+    float: left;
     font-size: 20px;
-    font-weight: 500;
-    text-align: center;
+    font-weight: 600;
     text-transform: uppercase;
-    color: white;
     letter-spacing: 1.2px;
-    padding: 5px;
 }
 
-COMMANDES
-
-.mes-commandes {
-    display: none;
-    margin-top: 70px;
+/* Contenu commandes */
+.contenu-commandes {
+    width: 70%;
+    float: left;
 }
 
+/* Mise en forme commande */
 .link-commande {
     position: relative;
     width: 80%;
@@ -1084,11 +1080,15 @@ COMMANDES
     margin-top: -7.5px;
     color: black;
     font-weight: 500;
-} */
+}
 
-/*******************
- * END PAGE PROFIL *
- *******************/
+.details-commande:hover {
+    text-decoration: underline;
+}
+
+/******************
+ *** END PROFIL ***
+ ******************/
 
 /******************** 
  ****** SINGLE ******
@@ -1247,9 +1247,130 @@ a.single-template-all:hover {
     font-weight: 600;
 }
 
-/****************
- * END PAGE ALL *
- ****************/
+/*****************
+ **** END ALL ****
+ *****************/
+
+/*******************
+ *** PAGE PANIER ***
+ *******************/
+
+/* Image panier haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-panier {
+    display: block;
+    width: 100%;
+}
+
+.img-panier {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Mise en forme panier */
+.panier-commandes {
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 20px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Contenu panier */
+.panier {
+    display: block;
+    width: 70%;
+    padding: 10px;
+}
+
+.contenu-produit {
+    display: flex;
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.image-template-panier {
+    float: left;
+    position: relative;
+    width: 30%;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+.infos-commande-panier {
+    float: left;
+    margin-left: 20px;
+}
+
+.prix-template-panier {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.titre-template-panier {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* Contenu total */
+.total {
+    position: relative;
+    width: 30%;
+    float: left;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.titre-total {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.prix-total {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-pay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+}
+
+/********************
+ **** END PANIER ****
+ ********************/
 
 /***************************
  **** END MAIN-CONTENT *****

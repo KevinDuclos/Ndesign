@@ -33,21 +33,21 @@
             {# Barre de navigation #}
             <span class="header">
                 {# Icône panier #}
-                <a class="panier" href="{{ path('app_panier') }}">
+                <a class="panier-header" href="{{ path('app_panier') }}">
                     <img id="" src="{{ asset('assets/img/achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
                 </a> 
                 {# Icône user #}
-                <a class="profil" href="{{ path('fos_user_security_login') }}">
+                <a class="profil-header" href="{{ path('fos_user_security_login') }}">
                     <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
                 </a>
                 {# Icône déconnexion #}
                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                <a class="profil" href="{{ path('fos_user_profile_show') }}">
-                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
-                </a>
-                <a class="logout" href="{{ path('fos_user_security_logout') }}">
-                    <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
-                </a>
+                    <a class="profil" href="{{ path('fos_user_profile_show') }}">
+                        <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                    </a>
+                    <a class="logout" href="{{ path('fos_user_security_logout') }}">
+                        <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
+                    </a>
                 {% endif %}
             </span> 
 
@@ -79,7 +79,7 @@
             <span><a href="{{ path('app_confident') }}" class="lien-a">Politique de confidentialité</a></span>
             {# Ajouter un if #}
             {% if is_granted("IS_AUTHENTICATED_FULLY") and app.user.roles[0] == 'ROLE_ADMIN' %}
-            <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
+                <span> &ndash; <a href="{{ path('app_dashboard')}}" class="lien-a">Administration</a></span>  
             {% endif %}
             <div>&copy; NDesign &ndash; 2018 &ndash; Création DECK</div>
         </div>
@@ -100,7 +100,7 @@
         <script src="{{ asset('assets/js/jquery.js') }}"></script>
         <script src="{{ asset('bundles/fosjsrouting/js/router.min.js') }}"></script>
         <script src="{{ path('fos_js_routing_js', { callback: 'fos.Router.setData' }) }}"></script>
-         <script src="{{ asset('assets/js/ajax.js') }}"></script>
+        <script src="{{ asset('assets/js/ajax.js') }}"></script>
         {% endblock %}
 
     </body>
