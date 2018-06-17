@@ -579,7 +579,7 @@ a.plus-ressources {
 .bloc-icone-user {
     position: relative;
     top: 50px;
-    width: 40%;
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -783,74 +783,27 @@ a.forget-password:hover {
     color: white;
 }
 
-/* Sidebar + contenu */
-.menu {
+.dashboard {
     display: flex;
+    position: relative;
+    top: 50px;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 30%;
-    margin-top: 60px;
-}
-
-.lien-sidebar {
-    cursor: pointer;
-}
-
-/* Titres sidebar */
-.sidebar-titre {  
-    color: black;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
+/* Titre de chaque catégorie */
+.titre-category {
+    padding: 20px;
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 1.3px;
-    border: 1px solid black; 
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;
+    border: 1px solid black;
+    width: 25%;
+    height: 15px;
 }
 
-.sidebar-titre:hover {
-    padding: 30px;
-    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
-    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
-    -o-box-shadow:      10px 10px 0px 0px lightgrey;
-    box-shadow:         10px 10px 0px 0px lightgrey;
-}
-
-/* Contenu menu */
-.content-menu {
-    position: relative;
+/* Contenu de chaque catégorie */
+.contenu-category {
     width: 70%;
-    margin-top: 60px;
-    margin-left: 20px;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
-}
-
-/* Forme du contenu */
-.titre-formulaire {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 30px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-}
-
-/* Formulaires */
-.formulaire {
-    width: 70%;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: 20px;
 }
 
 /* Label */
@@ -892,37 +845,73 @@ a.forget-password:hover {
     padding: 5px;
     margin-top: 20px;
 }
-
-/* TABLEAU DE BORD */
+/* 
+TABLEAU DE BORD
 
 .dashboard {
-    /* display: none; */
-    background-color: white;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.titre-formulaire-dashboard {
+    position: relative;
+    text-align: end;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.parties {
+    width: 80%;
+    margin: 0 auto;
 }
 
 .partie-gauche {
-    margin-top: 20px;
     float: left;
-    width: 50%;
+    width: 40%;
+    margin-right: 70px;
 }
 
 .partie-droite {
-    margin-top: 20px;
     float: left;
-    width: 50%;
+    width: 40%;
 }
 
 .informations-profil {
     margin-bottom: 20px;
 }
 
-/* MES INFOS */
+MES INFOS
 
 .mes-infos {
-    display: none;
+    display: block;
+    position: relative;
+    width: 70%;
+    margin: 0 auto;
 }
 
-/* MOT DE PASSE */
+.titre-formulaire-mesinfos {
+    position: relative;
+    text-align: end;
+    font-size: 30px;
+    right: 20px;
+    top: 20px;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.formulaire-mesinfos {
+    width: 50%;
+    margin: 0 auto;
+}
+
+MOT DE PASSE
 
 .nouveau-mdp {
     display: none;
@@ -937,7 +926,7 @@ a.forget-password:hover {
     margin-bottom: 5px;
 }
 
-/* MODE DE PAIEMENT */
+MODE DE PAIEMENT
 
 .moyen-paiement {
     display: none;
@@ -950,7 +939,7 @@ a.forget-password:hover {
     margin-right: auto;
 }
 
-/* Lien "ajouter une méthode de paiement" */
+Lien "ajouter une méthode de paiement"
 .add-method {
     position: relative;
     font-size: 17px;
@@ -969,7 +958,7 @@ a.forget-password:hover {
     color: black;
 }
 
-/* Forme autour de la méthode */
+Forme autour de la méthode
 .container {
     position: relative;
     cursor: pointer;
@@ -986,12 +975,12 @@ a.forget-password:hover {
     margin-bottom: 20px;
 }
 
-/* Cache le bouton de base */
+Cache le bouton de base
 .container input {
     opacity: 0;
 }
 
-/* Customisation du bouton */
+Customisation du bouton
 .checkmark {
     position: absolute;
     width: 20px;
@@ -1003,19 +992,19 @@ a.forget-password:hover {
     border: 1px solid black;
 }
 
-/* Bouton coché quand on clique */
+Bouton coché quand on clique
 .checkmark:after {
     content: "";
     position: absolute;
     display: none;
 }
 
-/* Bouton coché */
+Bouton coché
 .container input:checked ~ .checkmark:after {
     display: block;
 }
 
-/* Intérieur du bouton */
+Intérieur du bouton
 .container .checkmark:after {
     top: 50%;
     margin-top: -5px;
@@ -1027,7 +1016,7 @@ a.forget-password:hover {
     background: black;
 }
 
-/* Enregistrement des modifications */
+Enregistrement des modifications
 .button-save-pay {
     cursor: pointer;
     width: 100%;
@@ -1045,7 +1034,7 @@ a.forget-password:hover {
     padding: 5px;
 }
 
-/* COMMANDES */
+COMMANDES
 
 .mes-commandes {
     display: none;
@@ -1095,7 +1084,7 @@ a.forget-password:hover {
     margin-top: -7.5px;
     color: black;
     font-weight: 500;
-}
+} */
 
 /*******************
  * END PAGE PROFIL *
@@ -1458,6 +1447,112 @@ footer {
     /* Traduction accroche */
     .traduction {
         font-size: 8px;
+    }
+
+    /* Icône user connexion */
+    .bloc-icone-user {
+        top: 30px;
+        width: 40%;
+    }
+
+    .icone-user-connexion {
+        width: 80px;
+    }
+
+    /* Formulaire de connexion */
+    .form-connexion {
+        width: 80%;
+        top: 70px;
+    }
+
+    /* Aide connexion */
+    /* S'inscrire */
+    a.sign-up {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    /* Mot de passe oublié */
+    a.forget-password {
+        right: 0;   
+    }
+
+    /* 
+     * INSCRIPTION
+     */
+
+    /* Image haut de page */
+    .img-inscription {
+        height: 100px;
+    }
+
+    .icone-user-inscription {
+        width: 80px;
+    }
+
+    /* Formulaire d'inscription */
+    .form-inscription {
+        width: 80%;
+        top: 70px;
+    }
+
+    /* PROFIL */
+
+    /* Bandeau bonjour pseudo */
+    .texte-bonjour {
+        padding-left: 20px;
+    }
+
+    /* Menu */
+    .menu {
+        display: block;
+    }
+
+    /* Sidebar */
+    .sidebar {
+        display: none;
+    }
+
+    /* Contenu menu */
+    .content-menu {
+        position: relative;
+        width: 100%;
+        top: 60px;
+        margin-left: auto;
+        margin-right: auto;
+        border-right: none;
+        border-bottom: none;
+    }
+
+    /* Forme du contenu */
+    .titre-formulaire {
+        top: 0;
+        right: 0;
+        font-size: 25px;
+    }
+
+    /* Formulaires */
+    .formulaire {
+        position: relative;
+        width: 100%;
+        top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Label */
+    .label-formulaire {
+        font-size: 15px;
+    }
+
+    /* Tableau de bord */
+    .dashboard {
+        display: block;
+    }
+
+    /* Mes infos */
+    .mes-infos {
+        display: block;
     }
 
     /********************
