@@ -21,7 +21,7 @@ class AppController extends Controller
             $em = $this->getDoctrine()->getManager();
             $produits = $em
                 ->getRepository('AppBundle:Produit')
-                ->findAll();
+                ->getAllproduit();
             
             return $this->render('@App/App/index.html.twig', [
                 'produits' => $produits,
@@ -45,7 +45,7 @@ class AppController extends Controller
     public function contactAction(Request $request)
     {       
          $contact = new Contact;
-         $form = $this->createForm(ContactType::class, $contact,array('method' => 'PUT'));
+         $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
         
          
         //  if($form->handleRequest($request)->isSubmitted()){
@@ -71,18 +71,18 @@ class AppController extends Controller
         if($request->isXmlHttpRequest()){
        
             $contact = new Contact;
-            $form = $this->createForm(ContactType::class, $contact,array('method' => 'PUT'));
+            $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
             $selected_documents = $request->request->get('data');
             $form ->handleRequest($request);
             // var_dump($form);
             // die();
-            // if($form->isSubmitted()){ 
+            // if($form->isSubmitted()&& $form->isValid()){ 
                 // die('bonjour');
                 
-                $contact->setEmail($selected_documents[1]['value']);
-                $contact->setTelephone($selected_documents[2]['value']);
-                $contact->setSujet($selected_documents[3]['value']);
-                $contact->setMessage($selected_documents[4]['value']);
+                $contact->setEmail($selected_documents[0]['value']);
+                $contact->setTelephone($selected_documents[1]['value']);
+                $contact->setSujet($selected_documents[2]['value']);
+                $contact->setMessage($selected_documents[3]['value']);
                 // die('plop');
                 $status = "saved";                
                 $em = $this->getDoctrine()->getManager();

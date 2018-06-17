@@ -11,7 +11,7 @@ namespace AppBundle\Repository;
 class ProduitRepository extends \Doctrine\ORM\EntityRepository
 {
 
-
+//Requete retournant le nombre de produit de la base de données
     public function countAllproduit()
     {
 
@@ -23,14 +23,15 @@ class ProduitRepository extends \Doctrine\ORM\EntityRepository
     }
 
 
-
+//Requete retournant les 3 derniers ajouts de produits de la base de données
     public function getAllproduit()
     {
 
-        return $this->createQueryBuilder('produit')->select('produit')->setMaxResults(3)
+        return $this->createQueryBuilder('produit')->select('produit')->orderBy('produit.id', 'DESC')->setMaxResults(3)
         
 
                 ->getQuery()->getresult();
        
     }
+    
 }

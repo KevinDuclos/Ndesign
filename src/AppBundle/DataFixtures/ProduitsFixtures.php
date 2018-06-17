@@ -11,13 +11,14 @@ class ProduitsFixtures extends Fixture implements ORMFixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        // create 20 produits! Bam!
+        $array = ['WebPizza', 'Spatial', 'NeoWizz', 'SimpleBlog', 'S/Dark', 'Soledad', 'Lunatic', 'SolarTheme', 'Urban', 'Arctic', 'LaLaLand', 'Merging','Plurality', 'Nirvana', 'Libellule', 'Personal','Tyrande','LittleSite','Nibel','Ysandre'];
+        // Fixtures des produits
         for ($i = 0; $i < 20; $i++) {
             $produit = new Produit();
-            $produit->setTitre('produit '.$i);
+            $produit->setTitre($array[$i]);
             $produit->setPrix(mt_rand(10, 100));
             $produit->setPoids(mt_rand(10, 100));
-            $produit->setImageName('name');
+            $produit->setImageName('miniature.jpg');
             $produit->setImageSize(12);
             $produit->setImageFile(null);
             $manager->persist($produit);
