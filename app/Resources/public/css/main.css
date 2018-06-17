@@ -541,6 +541,12 @@ a.plus-ressources {
     box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
+/* Image de réussite d'envoi de message */
+.img-reussite-message {
+    width: 50%;
+    margin-left: 80px;
+}
+
 /***************
  * END CONTACT *
  ***************/
@@ -1272,6 +1278,40 @@ a.single-template-all:hover {
 .img-panier {
     height: 300px;
     object-fit: cover;
+}
+
+/* Panier vide */
+
+/* Icône user panier vide */
+.bloc-icone-user {
+    position: relative;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-cart-empty {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+.cart-empty {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    top: 80px;
 }
 
 /* Mise en forme panier */

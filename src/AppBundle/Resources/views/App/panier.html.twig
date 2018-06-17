@@ -9,6 +9,15 @@
 
     <main role="main">
 
+        {# Si le panier est vide #}
+        {# <div class="panier-vide">
+            <div class="bloc-icone-user">
+                <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
+            </div>
+            <h2 class="cart-empty">Votre panier est vide</h2>
+        </div> #}
+
+        {# Si le panier est rempli #}
         <div class="panier-commandes">
 
             {# PANIER #}
@@ -30,7 +39,7 @@
             <div class="total">
 
                 <h3 class="titre-total">Total</h3>
-                <div class="prix-total">137€</div>
+                <div class="prix-total">113€</div>
 
                 <button type="submit" class="button-pay">Payer</button>
 
