@@ -9,28 +9,30 @@
 
     <main role="main">
 
-        {# Si le panier est vide #}
-        {# <div class="panier-vide">
-            <div class="bloc-icone-user">
-                <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
-            </div>
-            <h2 class="cart-empty">Votre panier est vide</h2>
-        </div> #}
-
+        {% if spanierVente is empty and commandes is empty  %}
+          <div class="panier-vide">
+              <div class="bloc-icone-user">
+                  <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
+              </div>
+              <h2 class="cart-empty">Votre panier est vide</h2>
+          </div> 
+        {% else %}
         {# Si le panier est rempli #}
         <div class="panier-commandes">
 
             {# PANIER #}
             <div class="panier">
-
+            
                 {% for produits in commandes %}
                     <div class="contenu-produit">
                         <img src="{{ asset('assets/img/template2.png') }}" alt="" class="image-template-panier">
                         <span class="infos-commande-panier">
                             <h2 class="prix-template-panier">{{produits.prix}}€</h2>
                             <div class="titre-template-panier">{{produits.titre}}</div>
+                            <a href="{{ url('produit_delete',{id: produits.id}) }}">Supprimer</a>
                         </span>
                     </div>
+                    
                 {% endfor %}
 
             </div>
@@ -39,14 +41,14 @@
             <div class="total">
 
                 <h3 class="titre-total">Total</h3>
-                <div class="prix-total">113€</div>
-
-                <button type="submit" class="button-pay">Payer</button>
-
+                <div class="prix-total">{%  if sum == 0 %} {% else %}{{ sum }} &euro;{% endif %}</div>
+                <a href="{{path('app_paiement')}}">
+                <div class="button-pay">Payer</div>
+                </a>
             </div>
 
         </div>
-
+      {% endif %}
     </main>
 
 {% endblock body %}

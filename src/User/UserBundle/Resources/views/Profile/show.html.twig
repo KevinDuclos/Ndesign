@@ -23,18 +23,15 @@
 
                 <div class="partie-une">
                     <label for="" class="label">Pseudo</label>
-                    <h4 class="user-info">chloe</h4>
+                    <h4 class="user-info">{{app.user.username}}</h4>
 
                     <label for="" class="label">Email</label>
-                    <h4 class="user-info">chloe.rault76@orange.fr</h4>
-
-                    <label for="" class="label">Mot de passe</label>
-                    <h4 class="user-info">************330</h4>
+                    <h4 class="user-info">{{app.user.email}}</h4>
                 </div>
 
                 <div class="partie-deux">
                     <label for="" class="label">Membre depuis le</label>
-                    <h4 class="user-info">07/06/2018</h4>
+                    <h4 class="user-info">{{app.user.createdAt|date('Y-m-d')}}</h4>
 
                     <label for="" class="label">Commandes passées</label>
                     <h4 class="user-info">2</h4>
@@ -54,10 +51,10 @@
                 <form method="post" class="formulaire-informations">
 
                     <label for="" class="label">Pseudo</label>
-                    <input type="text" class="input-text" value="chloe">
+                    <input type="text" class="input-text" value="{{app.user.username}}">
 
                     <label for="" class="label">Email</label>
-                    <input type="text" class="input-text" value="chloe.rault76@orange.fr">
+                    <input type="text" class="input-text" value="{{app.user.email}}">
 
                     <button type="submit" class="button-save">Enregistrer</button>
 
