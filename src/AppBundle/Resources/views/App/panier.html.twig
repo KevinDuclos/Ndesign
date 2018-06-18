@@ -2,30 +2,51 @@
 
 {% block body %}
 
-<main role="main">
+    {# Image contact #}
+    <div class="thumbnail">
+        <img src="{{ asset('assets/img/bg-p-panier.jpg') }}" alt="" class="img-panier">
+    </div>
 
-  <h2>Panier</h2>
+    <main role="main">
 
-    <table>
+        {# Si le panier est vide #}
+        {# <div class="panier-vide">
+            <div class="bloc-icone-user">
+                <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
+            </div>
+            <h2 class="cart-empty">Votre panier est vide</h2>
+        </div> #}
 
-      <thead class="entete-panier">
-        <tr>
-          <th scope="row">Nom produit</th>
-          <th scope="row">Prix</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for commande in commandes %}
-        {% for produit in commande.produits %}
-          <tr>
-            <td scope="col">{{ produit.titre }}</td>
-            <td scope="col">{{ produit.prix }}
-          </tr>
-        {% endfor %}
-      {% endfor %}
-      </tbody>
-    </table>
+        {# Si le panier est rempli #}
+        <div class="panier-commandes">
 
-</main>
+            {# PANIER #}
+            <div class="panier">
+
+                {% for produits in commandes %}
+                    <div class="contenu-produit">
+                        <img src="{{ asset('assets/img/template2.png') }}" alt="" class="image-template-panier">
+                        <span class="infos-commande-panier">
+                            <h2 class="prix-template-panier">{{produits.prix}}€</h2>
+                            <div class="titre-template-panier">{{produits.titre}}</div>
+                        </span>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            {# PRIX TOTAL #}
+            <div class="total">
+
+                <h3 class="titre-total">Total</h3>
+                <div class="prix-total">113€</div>
+
+                <button type="submit" class="button-pay">Payer</button>
+
+            </div>
+
+        </div>
+
+    </main>
 
 {% endblock body %}

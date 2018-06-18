@@ -11,7 +11,7 @@ namespace AppBundle\Repository;
 class CommandeRepository extends \Doctrine\ORM\EntityRepository
 {
 
-
+//Requete pour compter le nombre de commandes dans la base de données
     public function countAllCommande()
     {
 
@@ -22,16 +22,5 @@ class CommandeRepository extends \Doctrine\ORM\EntityRepository
        
     }
 
-    // public function getAllCommandeJoinwithProduct()
-    // {
-    //         return $this->createQueryBuilder('commande')
-    //             ->leftJoin('commande.produits','commande_produit')
-    //             ->addSelect('commande_produit')
-
-    //             ->leftJoin('commande_produit.produits', 'produits')
-    //             ->addSelect('produit')
-
-    //             ->getQuery()
-    //             ->getResult();
-    // }
+    
 }

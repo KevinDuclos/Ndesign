@@ -5,7 +5,7 @@
     {# FEATURE #}
     <div class="feature">
         {# Titre feature #}
-        <div class="titre-feature"><span style="font-size: 80px;">Des <span style="font-weight: 600;">ressources</span> pour</span><br>vos <span style="font-weight: 600;">sites web</span></div>
+        <div class="titre-feature"><span class="gros-titre">Des <span style="font-weight: 600;">ressources</span> pour</span><br>vos <span style="font-weight: 600;">sites web</span></div>
 
         {# Présentation du site #}
         <div class="intro">
@@ -23,36 +23,18 @@
     <main role="main">
 
         {# APERCUS TEMPLATES #}
-        <div class="templates">
-
+        <span class="templates">
+            {% for produit in produits %}
             <a href="" class="single-template">
-                <div class="template">
-                    <img class="image-template" src="{{ asset('assets/img/template1.png') }}" alt="Image de template">
-                    <div class="textes-template">
-                        <h5 class="titre-template">AltoFocus</h5>                      
-                    </div>
-                </div>
+                <img src="{{ asset('assets/img/template1.png') }}" alt="Image de template" class="image-template">
+                <h5 class="titre-template">{{produit.titre}}</h5>
             </a>
+            {% endfor %}
+            
 
-            <a href="" class="single-template">
-                <div class="template">
-                    <img class="image-template" src="{{ asset('assets/img/template2.png') }}" alt="Image de template">
-                    <div class="textes-template">
-                        <h5 class="titre-template">Small Business</h5>                      
-                    </div>
-                </div>
-            </a>
+        <div class="clear"></div>        
 
-            <a href="{{ path('app_single',{'id': 1}) }}" class="single-template">
-                <div class="template">
-                    <img class="image-template" src="{{ asset('assets/img/template3.png') }}" alt="Image de template">
-                    <div class="textes-template">
-                        <h5 class="titre-template">Spatial</h5>                      
-                    </div>
-                </div>
-            </a>
-
-        </div>
+        </span>
         {# FIN APERCUS TEMPLATES #}
 
         <a href="{{ path('app_all')}}" class="plus-ressources">Voir toutes les ressources</a>

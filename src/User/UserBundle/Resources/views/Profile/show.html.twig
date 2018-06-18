@@ -14,200 +14,132 @@
     {# CONTENU PRINCIPAL #}
     <main role="main">
 
-        {# Menu + contenu #}
-        <div class="menu">
+        {# DASHBOARD #}
+        <div class="section-dashboard">
 
-            {# Menu #}
-            <div class="sidebar">
+            <h3 class="titre-dashboard">Tableau de bord</h3>
 
-                <a href="#" class="lien-sidebar">              
-                    <h3 class="sidebar-titre">Tableau de bord</h3>
-                </a>
+            <section class="contenu-dashboard">
 
-                <a href="#" class="lien-sidebar">              
-                    <h3 class="sidebar-titre">Mes infos</h3>
-                </a>
+                <div class="partie-une">
+                    <label for="" class="label">Pseudo</label>
+                    <h4 class="user-info">chloe</h4>
 
-                <a href="#" class="lien-sidebar">                
-                    <h3 class="sidebar-titre">Mot de passe</h3>
-                </a>
+                    <label for="" class="label">Email</label>
+                    <h4 class="user-info">chloe.rault76@orange.fr</h4>
 
-                <a href="#" class="lien-sidebar">                
-                    <h3 class="sidebar-titre">Mode de paiement</h3>
-                </a>
+                    <label for="" class="label">Mot de passe</label>
+                    <h4 class="user-info">************330</h4>
+                </div>
 
-                <a href="#" class="lien-sidebar">                
-                    <h3 class="sidebar-titre">Mes commandes</h3>
-                </a>
+                <div class="partie-deux">
+                    <label for="" class="label">Membre depuis le</label>
+                    <h4 class="user-info">07/06/2018</h4>
 
-            </div>
+                    <label for="" class="label">Commandes passées</label>
+                    <h4 class="user-info">2</h4>
+                </div>
+            
+            </section>
 
-            {# Contenu de chacun des menus #}
-            <div class="content-menu">
+        </div>
 
-                {# TABLEAU DE BORD #}
-                <section class="dashboard">
+        {# MES INFORMATIONS #}
+        <div class="section-informations">
 
-                    <h3 class="titre-formulaire">Tableau de bord</h3>
+            <h3 class="titre-informations">Mes informations</h3>
 
-                    <div class="formulaire">
+            <section class="contenu-informations">
 
-                        <div class="partie-gauche">
+                <form method="post" class="formulaire-informations">
 
-                            {# Pseudo #}
-                            <label for="" class="label-formulaire">Pseudo</label>
-                            <div class="informations-profil">chloe</div>
+                    <label for="" class="label">Pseudo</label>
+                    <input type="text" class="input-text" value="chloe">
 
-                            {# Email #}
-                            <label for="" class="label-formulaire">Email</label>
-                            <div class="informations-profil">chloe.rault76@orange.fr</div>
+                    <label for="" class="label">Email</label>
+                    <input type="text" class="input-text" value="chloe.rault76@orange.fr">
 
-                            {# Date de création de profil #}
-                            <label for="" class="label-formulaire">Création du profil</label>
-                            <div class="informations-profil">07/06/2018</div>
+                    <button type="submit" class="button-save">Enregistrer</button>
 
-                        </div>
+                </form>
+            
+            </section>
 
-                        <div class="partie-droite">
+        </div>
 
-                            {# Pseudo #}
-                            <label for="" class="label-formulaire">Mot de passe</label>
-                            <div class="informations-profil">************330</div>
+        {# MODIFIER MON MOT DE PASSE #}
+        <div class="section-motdepasse">
 
-                            {# Email #}
-                            <label for="" class="label-formulaire">Mode de paiement</label>
-                            <div class="informations-profil">Paypal</div>
+            <h3 class="titre-motdepasse">Modifier mon<br>mot de passe</h3>
 
-                            {# Date de création de profil #}
-                            <label for="" class="label-formulaire">Commandes passées</label>
-                            <div class="informations-profil">2</div>
+            <section class="contenu-motdepasse">
 
-                        </div>
+                <form method="post" class="formulaire-motdepasse">
 
-                    </div>
-                    
-                </section>
-                
-                {# Formulaire MES INFOS #}
-                <section class="mes-infos">
+                    {% include "@FOSUser/ChangePassword/change_password.html.twig" %}
 
-                    <h3 class="titre-formulaire">Mes informations</h3>
+                    <button type="submit" class="button-save">Enregistrer</button>
 
-                    <form method="post" class="formulaire">
+                </form>
+            
+            </section>
 
-                        {# Champ pseudo #}
-                        <label for="" class="label-formulaire">Pseudo</label>
-                        <input type="text" class="input-formulaire" id="" name="">
+        </div>
 
-                        {# Champ mail #}
-                        <label for="" class="label-formulaire">Adresse e-mail</label>
-                        <input type="email" class="input-formulaire" id="" name="">
+        {# MES MOYENS DE PAIEMENT #}
+        <div class="section-paiement">
 
-                        <button type="submit" class="button-save">Enregistrer</button>
+            <h3 class="titre-paiement">Mes moyens de paiement</h3>
 
-                    </form>
-                    
-                </section>
+            <section class="contenu-paiement">
 
-                {# Formulaire NOUVEAU MOT DE PASSE #}
-                <section class="nouveau-mdp">
+                <div class="moyens-paiement">
 
-                    <h3 class="titre-formulaire">Modifier mon mot de passe</h3>
+                    {# Méthode 1 #}
+                    <a href="#" class="link-method">
+                        <label class="container">Paypal
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </a>
+                    {# Méthode 2 #}
+                    <a href="#" class="link-method">
+                        <label class="container">Carte bancaire
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                        </label>
+                    </a>
 
-                    <form method="post" class="formulaire">
+                    <button type="submit" class="button-save">Enregistrer</button>
 
-                        {# Champ pseudo #}
-                        <label for="" class="label-formulaire">Mot de passe actuel</label>
-                        <input type="text" class="input-formulaire" id="" name="">
+                </div>
+            
+            </section>
 
-                        {# Champ mail #}
-                        <label for="" class="label-formulaire">Nouveau mot de passe</label>
-                        <input type="email" class="input-formulaire" id="" name="">
+        </div>
 
-                        {# Conditions du mot de passe #}
-                        <ul class="conditions-mdp">
-                            <li class="li">6 caractères minimum</li>
-                            <li>1 chiffre requis</li>
-                        </ul>
+        {# MON HISTORIQUE DE COMMANDES #}
+        <div class="section-commandes">
 
-                        <button type="submit" class="button-save">Enregistrer</button>
+            <h3 class="titre-commandes">Mon historique de commandes</h3>
 
-                    </form>
-                    
-                </section>
+            <section class="contenu-commandes">
 
-                {# Formulaire MOYEN DE PAIEMENT #}
-                <section class="moyen-paiement">
+                <div class="link-commande">
+                    <div class="titre-commande">AltoFocus</div>
+                    <img src="{{ asset('assets/img/template1.png') }}" alt="" class="img-commande">
+                    <div class="date-commande">07/06/2018</div>
+                    <a href="#" class="details-commande">Détails de la commande</a>
+                </div>
 
-                    <h3 class="titre-formulaire">Mes modes de paiement</h3>
-
-                    {# Lien d'ajout de mode de paiement #}
-                    <a href="" class="add-method">Ajouter une nouvelle méthode de paiement</a>
-
-                    <form method="post" class="formulaire-pay">
-
-                        {# Méthode 1 #}
-                        <a href="#" class="link-method">
-                            <label class="container">Paypal
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </a>
-
-                        {# Méthode 2 #}
-                        <a href="#" class="link-method">
-                            <label class="container">Carte bancaire
-                                <input type="checkbox">
-                                <span class="checkmark"></span>
-                            </label>
-                        </a>
-
-                        <button type="submit" class="button-save-pay">Enregistrer</button>
-
-                    </form>                   
-                    
-                </section>
-
-                {# Tableau MES COMMANDES #}
-                <section class="mes-commandes">
-
-                    <h3 class="titre-formulaire">Mon historique de commandes</h3>
-
-                    <div class="tableau-commandes">
-
-                        <div class="col-img-commande">
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                        </div>
-
-                        <div class="col-num-commande">
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                        </div>
-
-                        <div class="col-date-commande">
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                        </div>
-
-                        <div class="col-prix-commande">
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                            <p>salut</p>
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </div>
+                <div class="link-commande">
+                    <div class="titre-commande">Small Business</div>
+                    <img src="{{ asset('assets/img/template2.png') }}" alt="" class="img-commande">
+                    <div class="date-commande">08/06/2018</div>
+                    <a href="#" class="details-commande">Détails de la commande</a>
+                </div>
+            
+            </section>
 
         </div>
 

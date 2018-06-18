@@ -86,7 +86,7 @@ html, body {
 #wrapper {
     position: relative;
     width: 100%;
-    max-width: 1600px;
+    max-width: 2000px;
     margin: 0 auto;
 }
 
@@ -193,7 +193,7 @@ a {
     box-shadow:         5px 5px 0px 0px lightgrey;
 }
 
-/* Icône user */
+/* Icône logout */
 .icone-logout {
     cursor: pointer;    
     position: absolute;
@@ -256,6 +256,11 @@ main {
     text-align: end;
     font-size: 90px;
     font-weight: 300;
+}
+
+/* "Des ressources pour" */
+.gros-titre {
+    font-size: 80px;
 }
 
 /* "Découvrez nos contenus exclusifs" */
@@ -326,19 +331,15 @@ main {
     margin-bottom: 70px;
 }
 
-/* Aperçus des templates */
-.templates {
-    display: flex;
-}
-
-/* Lien pour cartes */
+/* Liste des templates */
 a.single-template {
-    text-decoration: none;    
-}
-
-/* Template individuel */
-.template {
-    margin: 10px;
+    float: left;    
+    position: relative;
+    width: 265px;
+    height: auto;
+    text-decoration: none;
+    color: black;
+    margin: 30px;
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -346,24 +347,24 @@ a.single-template {
     transition: all 0.3s;
 }
 
-.template:hover {
+a.single-template:hover {
     -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
     -moz-box-shadow:    15px 15px 0px 0px lightgrey;
     -o-box-shadow:      15px 15px 0px 0px lightgrey;
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
-/* Image template */
-.image-template {   
+/* Image des templates */
+.image-template {
+    position: relative;
     width: 100%;
 }
 
-/* Titre template */
-.titre-template {  
+/* Titre des templates */
+.titre-template {
+    padding: 20px;
     font-size: 23px;
     font-weight: 600;
-    color: black;
-    padding: 20px;
 }
 
 /* Bouton RESSOURCES */
@@ -371,6 +372,7 @@ a.single-template {
     position: absolute;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
     color: white;
     font-size: 20px;
     letter-spacing: 1.5px;
@@ -518,7 +520,7 @@ a.plus-ressources {
 
 .icone-send {
     position: relative;
-    width: 10%;
+    width: 50px;
     left: 50%;
     margin-left: -25px;
     top: 20px;
@@ -537,6 +539,12 @@ a.plus-ressources {
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
     box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+/* Image de réussite d'envoi de message */
+.img-reussite-message {
+    width: 50%;
+    margin-left: 80px;
 }
 
 /***************
@@ -577,7 +585,7 @@ a.plus-ressources {
 .bloc-icone-user {
     position: relative;
     top: 50px;
-    width: 40%;
+    width: 100px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -602,18 +610,6 @@ a.plus-ressources {
     width: 40%;
     margin: 0 auto;
     top: 90px;
-}
-
-.input-text {
-    display: block;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
 }
 
 /* Bouton connexion */
@@ -722,18 +718,6 @@ a.forget-password:hover {
     top: 90px;
 }
 
-.input-text {
-    display: block;
-    margin-bottom: 20px;
-    padding-bottom: 5px;
-    width: 100%;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
-}
-
 /* Bouton inscription */
 .bouton-inscription {
     font-family: 'Barlow', sans-serif;    
@@ -781,94 +765,95 @@ a.forget-password:hover {
     color: white;
 }
 
-/* Sidebar + contenu */
-.menu {
+/* DASHBOARD */
+
+.section-dashboard {
     display: flex;
-}
-
-/* Sidebar */
-.sidebar {
-    width: 30%;
-    margin-top: 60px;
-}
-
-/* Titres sidebar */
-.sidebar-titre {  
-    color: black;
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-bottom: 20px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 1.3px;
-    border: 1px solid black; 
-    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
-    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
-    -o-box-shadow:      5px 5px 0px 0px lightgrey;
-    box-shadow:         5px 5px 0px 0px lightgrey;
-    transition: all 0.3s;
-}
-
-.sidebar-titre:hover {
-    padding: 30px;
-    -webkit-box-shadow: 10px 10px 0px 0px lightgrey;
-    -moz-box-shadow:    10px 10px 0px 0px lightgrey;
-    -o-box-shadow:      10px 10px 0px 0px lightgrey;
-    box-shadow:         10px 10px 0px 0px lightgrey;
-}
-
-/* Contenu menu */
-.content-menu {
     position: relative;
-    width: 70%;
-    margin-top: 60px;
-    margin-left: 20px;
-    border-right: 1px solid black;
-    border-bottom: 1px solid black;
+    width: 80%;
+    margin: 0 auto;
+    top: 20px;
+    border: 1px solid black;
+    padding: 10px;
 }
 
-/* Forme du contenu */
-.titre-formulaire {
-    position: absolute;
-    top: 0;
-    right: 20px;
-    font-size: 30px;
+/* Titre dashboard */
+.titre-dashboard {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
     text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.2px;
 }
 
-/* Formulaires */
-.formulaire {
+/* Contenu dashboard */
+.contenu-dashboard {
     width: 70%;
-    margin-top: 70px;
-    margin-left: auto;
-    margin-right: auto;
+    float: left;
 }
 
-/* Label */
-.label-formulaire {
+.partie-une {
+    float: left;
+    width: 50%;
+}
+
+.partie-deux {
+    float: left;
+    width: 50%;
+}
+
+/* Label dashboard */
+.label {
     display: block;
     font-size: 18px;
     font-weight: 500;
-    margin-bottom: 10px;
+    margin-bottom: 6px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
 
-/* Input */
-.input-formulaire {
-    width: 100%;
+/* User info dashboard */
+.user-info {
+    font-size: 18px;
     margin-bottom: 15px;
-    padding-bottom: 5px;
-    font-family: 'Barlow', sans-serif;
-    font-size: 17px;    
-    border: 1px solid transparent;
-    border-bottom: 1px solid black;
 }
 
-/* Bouton validation */
+/* MES INFORMATIONS */
+
+.section-informations {
+    display: flex;
+    position: relative;
+    width: 80%;
+    top: 40px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Titre informations */
+.titre-informations {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu informations */
+.contenu-informations {
+    width: 70%;
+    float: left;
+}
+
+/* Formulaire informations */
+.formulaire-informations {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Bouton d'enregistrement */
 .button-save {
     cursor: pointer;
     width: 100%;
@@ -884,43 +869,45 @@ a.forget-password:hover {
     color: white;
     letter-spacing: 1.2px;
     padding: 5px;
-    margin-top: 20px;
-}
-
-/* TABLEAU DE BORD */
-
-.dashboard {
-    display: none;
-}
-
-.partie-gauche {
-    margin-top: 20px;
-    float: left;
-    width: 50%;
-}
-
-.partie-droite {
-    margin-top: 20px;
-    float: left;
-    width: 50%;
-}
-
-.informations-profil {
-    margin-bottom: 20px;
-}
-
-/* MES INFOS */
-
-.mes-infos {
-    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /* MOT DE PASSE */
 
-.nouveau-mdp {
-    display: none;
+.section-motdepasse {
+    display: flex;
+    position: relative;
+    width: 80%;
+    top: 60px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
+/* Titre mot de passe */
+.titre-motdepasse {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu mot de passe */
+.contenu-motdepasse {
+    width: 70%;
+    float: left;
+}
+
+/* Formulaire mot de passe */
+.formulaire-motdepasse {
+    width: 70%;
+    margin: 0 auto;
+}
+
+/* Conditions mot de passe */
 .conditions-mdp {
     list-style-type: disc;
     font-size: 12px;
@@ -930,32 +917,38 @@ a.forget-password:hover {
     margin-bottom: 5px;
 }
 
-/* MODE DE PAIEMENT */
+/* MOYEN DE PAIEMENT */
 
-.moyen-paiement {
-    display: none;
-}
-
-.formulaire-pay {
-    width: 70%;
-    margin-top: 90px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Lien "ajouter une méthode de paiement" */
-.add-method {
+.section-paiement {
+    display: flex;
     position: relative;
-    font-size: 17px;
-    font-weight: 400;
-    text-transform: uppercase;
-    color: black;
-    top: 60px;
-    left: 30px;
+    width: 80%;
+    top: 80px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
 }
 
-.add-method:hover {
-   text-decoration: underline;
+/* Titre mode de paiement */
+.titre-paiement {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu paiement */
+.contenu-paiement {
+    width: 70%;
+    float: left;
+}
+
+/* Formulaire mode de paiement */
+.moyens-paiement {
+    width: 70%;
+    margin: 0 auto;
 }
 
 .link-method {
@@ -967,12 +960,12 @@ a.forget-password:hover {
     position: relative;
     cursor: pointer;
     display: block;
-    font-size: 20px;
+    font-size: 17px;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    background-color: lightgrey;
+    border: 1px solid black;
     padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 50px;
@@ -987,10 +980,11 @@ a.forget-password:hover {
 /* Customisation du bouton */
 .checkmark {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 20px;
-    left: 15px;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    margin-top: -5px;
+    left: 20px;
     background-color: white;
     border-radius: 50%;
     border: 1px solid black;
@@ -1010,76 +1004,97 @@ a.forget-password:hover {
 
 /* Intérieur du bouton */
 .container .checkmark:after {
+    width: 5px;
+    height: 5px;
     top: 50%;
-    margin-top: -5px;
+    margin-top: -2.5px;
     left: 50%;
-    margin-left: -5px;
-    width: 10px;
-    height: 10px;
+    margin-left: -2.5px;
     border-radius: 50%;
     background: black;
 }
 
-/* Enregistrement des modifications */
-.button-save-pay {
-    cursor: pointer;
-    width: 100%;
-    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
-    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
-    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
-    border: 1px solid white;
-    font-family: 'Barlow', sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    text-transform: uppercase;
-    color: white;
-    letter-spacing: 1.2px;
-    padding: 5px;
-}
+/* HISTORIQUE DE COMMANDES */
 
-/* COMMANDES */
-
-.mes-commandes {
-    display: none;
-}
-
-.tableau-commandes {
+.section-commandes {
+    display: flex;
+    position: relative;
     width: 80%;
-    margin-top: 90px;
+    top: 100px;
+    margin: 0 auto;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+/* Titre historique de commandes */
+.titre-commandes {
+    width: 30%;
+    float: left;
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+/* Contenu commandes */
+.contenu-commandes {
+    width: 70%;
+    float: left;
+}
+
+/* Mise en forme commande */
+.link-commande {
+    position: relative;
+    width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
+    border: 1px solid black;
     padding: 10px;
-    background-color: tomato;
 }
 
-.col-img-commande {
-    float: left;
-    background-color: teal;
+.titre-commande {
+    color: black;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.img-commande {
     width: 20%;
+    -webkit-box-shadow: 3px 3px 0px 0px lightgrey;
+    -moz-box-shadow:    3px 3px 0px 0px lightgrey;
+    -o-box-shadow:      3px 3px 0px 0px lightgrey;
+    box-shadow:         3px 3px 0px 0px lightgrey;
 }
 
-.col-num-commande {
+.date-commande {
+    position: absolute;
     float: left;
-    background-color: white;
-    width: 20%;
+    left: 50%;
+    margin-left: -50px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
 }
 
-.col-date-commande {
+.details-commande {
+    position: absolute;
     float: left;
-    background-color: brown;
-    width: 20%;
+    right: 10px;
+    top: 50%;
+    margin-top: -7.5px;
+    color: black;
+    font-weight: 500;
 }
 
-.col-prix-commande {
-    float: left;
-    background-color: yellow;
-    width: 20%;
+.details-commande:hover {
+    text-decoration: underline;
 }
 
-/*******************
- * END PAGE PROFIL *
- *******************/
+/******************
+ *** END PROFIL ***
+ ******************/
 
 /******************** 
  ****** SINGLE ******
@@ -1203,13 +1218,14 @@ a.forget-password:hover {
 }
 
 /* Liste des templates */
-.templates-all {
-    display: flex;
-}
-
-/* Carte template individuel */
-.template-all {
-    margin: 10px;
+a.single-template-all {
+    float: left;    
+    position: relative;
+    width: 265px;
+    height: auto;
+    text-decoration: none;
+    color: black;
+    margin: 30px;
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -1217,29 +1233,184 @@ a.forget-password:hover {
     transition: all 0.3s;
 }
 
-.template-all:hover {
+a.single-template-all:hover {
     -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
     -moz-box-shadow:    15px 15px 0px 0px lightgrey;
     -o-box-shadow:      15px 15px 0px 0px lightgrey;
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
-/* Aperçu du template */
+/* Image des templates */
 .image-template-all {
+    position: relative;
     width: 100%;
 }
 
-/* Titre du template */
+/* Titre des templates */
 .titre-template-all {
+    padding: 20px;
     font-size: 23px;
     font-weight: 600;
-    color: black;
-    padding: 20px;
 }
 
-/****************
- * END PAGE ALL *
- ****************/
+/*****************
+ **** END ALL ****
+ *****************/
+
+/*******************
+ *** PAGE PANIER ***
+ *******************/
+
+/* Image panier haut de page */
+.thumbnail {
+    position: relative;
+    width: 100%;
+    top: 90px;
+    overflow: hidden;
+    margin: 0;
+}
+
+.thumbnail .img-panier {
+    display: block;
+    width: 100%;
+}
+
+.img-panier {
+    height: 300px;
+    object-fit: cover;
+}
+
+/* Panier vide */
+
+/* Icône user panier vide */
+.bloc-icone-user {
+    position: relative;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.user-cart-empty {
+    position: relative;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+    -webkit-border-radius: 50%;
+    -moz-border-radius:    50%;
+    border-radius:         50%;
+    width: 25%;
+    left: 50%;
+    margin-left: -54px;
+}
+
+.cart-empty {
+    position: relative;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    top: 80px;
+}
+
+/* Mise en forme panier */
+.panier-commandes {
+    display: flex;
+    position: relative;
+    width: 100%;
+    top: 20px;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Contenu panier */
+.panier {
+    display: block;
+    width: 70%;
+    padding: 10px;
+}
+
+.contenu-produit {
+    display: flex;
+    height: 160px;
+    margin-bottom: 40px;
+}
+
+.image-template-panier {
+    float: left;
+    position: relative;
+    width: 30%;
+    -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
+    -moz-box-shadow:    5px 5px 0px 0px lightgrey;
+    -o-box-shadow:      5px 5px 0px 0px lightgrey;
+    box-shadow:         5px 5px 0px 0px lightgrey;
+}
+
+.infos-commande-panier {
+    float: left;
+    margin-left: 20px;
+}
+
+.prix-template-panier {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.titre-template-panier {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+/* Contenu total */
+.total {
+    position: relative;
+    width: 30%;
+    float: left;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+.titre-total {
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+}
+
+.prix-total {
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.button-pay {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    width: 90%;
+    margin: 0 auto;
+    cursor: pointer;
+    background: -webkit-linear-gradient(-45deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(244,155,0,1) 0%, rgba(89,179,158,1) 100%);
+    background: linear-gradient(135deg, rgba(244,155,0,1) 0%,rgba(89,179,158,1) 100%);
+    border: 1px solid white;
+    font-family: 'Barlow', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1.2px;
+    padding: 5px;
+}
+
+/********************
+ **** END PANIER ****
+ ********************/
 
 /***************************
  **** END MAIN-CONTENT *****
@@ -1262,13 +1433,15 @@ footer {
     margin-left: 200px;
     margin-top: 25px;
     margin-bottom: 25px;
-    width: 15%;
+    width: 184px;
+    height: auto;
 }
 
 /* Icônes de la team */
 .icone-team {
     position: absolute;
-    width: 17%;
+    width: 208px;
+    height: auto;
     margin-top: 40px;
     right: 200px;
 }
@@ -1299,3 +1472,472 @@ footer {
 /***************************
  ******* END FOOTER ********
  ***************************/
+
+/***************************************************************
+ ************************ MEDIA QUERIES ************************
+ ***************************************************************/
+
+/* MEDIA QUERY FOR IPHONE */
+@media screen and (max-width: 600px) {
+
+    /********************
+     ****** HEADER ******
+     ********************/
+
+    .logo-ndesign {
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        margin-left: -60px;
+    }
+
+    .icone-panier {
+        width: 50px;
+        left: 20px;
+        margin-top: -25px;
+    }
+
+    .icone-user {
+        width: 50px;
+        left: 80px;
+        margin-top: -25px;
+    }
+
+    .icone-logout {
+        width: 50px;
+        right: 20px;
+        margin-top: -25px;
+    }
+
+    /**********************
+     **** MAIN-CONTENT ****
+     **********************/
+
+    /* 
+     * INDEX
+     */
+    
+    .titre-feature {
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+    }
+
+    .gros-titre {
+        font-size: 35px;
+    }
+
+    .intro {
+        left: 20px;
+        bottom: 80px;
+        font-size: 20px;
+    }
+
+    a.single-template {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .plus-ressources {
+        font-size: 15px;
+        margin-left: -135px;
+    }
+
+    /* 
+     * CONTACT
+     */
+
+    .img-contact {
+        height: 100px;
+    }
+
+    .page-contact {
+        display: block;
+        top: 30px;
+    }
+
+    .bloc-localisation {
+        float: none;
+        width: 100%;
+    }
+
+    .div-google-maps {
+        display: none;
+    }
+
+    .form-contact {
+        position: relative;
+        float: none;
+        width: 100%;
+        top: 30px;
+        margin-left: 0;
+    }
+
+    .input-textarea {
+        display: block;
+        width: 100%;
+        height: 150px;
+        font-family: 'Barlow', sans-serif;
+        font-size: 20px;
+        font-weight: 500;    
+        border: 1px solid transparent;
+        border-bottom: 1px solid black;
+    }
+
+    /* 
+     * CONNEXION
+     */
+
+    .img-connexion {
+        height: 160px;
+    }
+
+    .traduction {
+        font-size: 8px;
+    }
+
+    .bloc-icone-user {
+        top: 30px;
+        width: 40%;
+    }
+
+    .icone-user-connexion {
+        width: 80px;
+    }
+
+    .form-connexion {
+        width: 80%;
+        top: 70px;
+    }
+
+    a.sign-up {
+        width: 100%;
+        padding-left: 0;
+    }
+
+    a.forget-password {
+        right: 0;   
+    }
+
+    /* 
+     * INSCRIPTION
+     */
+
+    .img-inscription {
+        height: 100px;
+    }
+
+    .icone-user-inscription {
+        width: 80px;
+    }
+
+    .form-inscription {
+        width: 80%;
+        top: 70px;
+    }
+
+    /*
+     * PROFIL
+     */
+
+    .texte-bonjour {
+        padding-left: 20px;
+    }
+
+    /* DASHBOARD */
+
+    .section-dashboard {
+        width: 90%;
+    }
+
+    .titre-dashboard {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-dashboard {
+        float: none;
+    }
+
+    .partie-une {
+        float: none;
+        width: 100%;
+        margin-top: 30px;
+    }
+    
+    .partie-deux {
+        float: none;
+        width: 100%;
+    }
+
+    .label {
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    /* MES INFORMATIONS */
+
+    .section-informations {
+        width: 90%;
+    }
+
+    .titre-informations {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-informations {
+        float: none;
+    }
+
+    .formulaire-informations {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    /* MOT DE PASSE */
+
+    .section-motdepasse {
+        width: 90%;
+    }
+
+    .titre-motdepasse {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-motdepasse {
+        float: none;
+    }
+
+    .formulaire-motdepasse {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .conditions-mdp {
+        margin-left: 15px;
+    }
+
+    /* MOYEN DE PAIEMENT */
+
+    .section-paiement {
+        width: 90%;
+    }
+
+    .titre-paiement {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-paiement {
+        float: none;
+    }
+
+    .moyens-paiement {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    /* HISTORIQUE DE COMMANDES */
+
+    .section-commandes {
+        width: 90%;
+    }
+
+    .titre-commandes {
+        width: 100%;
+        font-size: 17px;
+        float: none;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        text-align: end;
+    }
+
+    .contenu-commandes {
+        float: none;
+    }
+
+    .link-commande {
+        width: 100%;
+        margin-top: 30px;
+        float: none;
+    }
+
+    .date-commande {
+        display: none;
+    }
+
+    .details-commande {
+        font-size: 14px;
+    }
+
+    /* 
+     * TOUTES LES RESSOURCES (ALL)
+     */
+    
+    .img-all {
+        height: 100px;
+    }
+
+    a.single-template-all {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* 
+     * PANIER
+     */
+
+    .img-panier {
+        height: 130px;
+    }
+
+    .panier-commandes {
+        display: block;
+        width: 100%;
+    }
+
+    .panier {
+        display: block;
+        width: 100%;
+    }
+
+    .contenu-produit {
+        height: 100px;
+    }
+
+    .total {
+        width: 100%;
+        float: none;
+    }
+
+    .prix-total {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .button-pay {
+        position: relative;
+        width: 100%;
+        bottom: 0;
+    }
+
+    /* 
+     * SINGLE
+     */
+
+    .contenu-single {
+        display: block;
+    }
+
+    .illustration-single {
+        position: relative;
+        width: 100%;
+        top: 40px;
+    }
+
+    .textes-single {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .titre-prix {
+        display: block;
+    }
+    
+    .titre-single {
+        width: 100%;
+        font-size: 40px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    .prix {
+        position: relative;
+        text-align: end;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .descrip-single {
+        line-height: 1.3;
+        font-size: 18px;
+    }
+    
+    .live-preview {
+        position: relative;
+        top: 10px;
+    }
+    
+    .add-to-cart {
+        bottom: -70px;
+        left: 1px;
+        right: 1px;
+    }
+
+    /********************
+     ****** FOOTER ******
+     ********************/
+
+    /* Image "contactez nous" */
+    .image-contact {
+        width: 150px;
+        margin-left: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    /* Icônes de la team */
+    .icone-team {
+        width: 130px;
+        top: 0;
+        right: 20px;
+        margin-bottom: 20px;
+    }
+
+}
+/* FIN MEDIA QUERY FOR IPHONE */
+
+/* MEDIA QUERY FOR IPAD */
+@media screen and (max-width: 900px) {
+
+    /**************
+     *** HEADER ***
+     **************/
+
+    /********************
+     *** MAIN-CONTENT ***
+     ********************/
+
+    /**************
+     *** FOOTER ***
+     **************/
+
+
+}
