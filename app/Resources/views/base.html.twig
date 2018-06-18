@@ -38,18 +38,21 @@
                     {# If panier rempli #}
                     <img id="" src="{{ asset('assets/img/notif-achat.svg') }}" alt="Icône panier" class="icone-panier" role="button">
                 </a> 
-                {# Icône user #}
-                <a class="profil-header" href="{{ path('fos_user_security_login') }}">
-                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
-                </a>
+                
                 {# Icône déconnexion #}
                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                    <a class="profil" href="{{ path('fos_user_profile_show') }}">
-                        <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
-                    </a>
-                    <a class="logout" href="{{ path('fos_user_security_logout') }}">
-                        <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
-                    </a>
+                
+                <a class="profil" href="{{ path('fos_user_profile_show') }}">
+                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                </a>
+                <a class="logout" href="{{ path('fos_user_security_logout') }}">
+                    <img id="" src="{{ asset('assets/img/log-out.svg') }}" alt="Icône déconnexion" class="icone-logout" role="button">       
+                </a>
+                {% else %}
+                {# Icône user #}
+                <a class="profil" href="{{ path('fos_user_security_login') }}">
+                    <img id="" src="{{ asset('assets/img/user.svg') }}" alt="Icône user" class="icone-user" role="button">       
+                </a>
                 {% endif %}
             </span> 
 

@@ -21,7 +21,7 @@ class AppController extends Controller
             $em = $this->getDoctrine()->getManager();
             $produits = $em
                 ->getRepository('AppBundle:Produit')
-                ->findAll();
+                ->getAllproduit();
             
             return $this->render('@App/App/index.html.twig', [
                 'produits' => $produits,
@@ -74,14 +74,16 @@ class AppController extends Controller
             $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
             $selected_documents = $request->request->get('data');
             $form ->handleRequest($request);
-            // if($form->isValid()){ 
+            // var_dump($form);
+            // die();
+            // if($form->isSubmitted()&& $form->isValid()){ 
                 // die('bonjour');
                 
                 $contact->setEmail($selected_documents[0]['value']);
                 $contact->setTelephone($selected_documents[1]['value']);
                 $contact->setSujet($selected_documents[2]['value']);
                 $contact->setMessage($selected_documents[3]['value']);
-
+                // die('plop');
                 $status = "saved";                
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($contact);
