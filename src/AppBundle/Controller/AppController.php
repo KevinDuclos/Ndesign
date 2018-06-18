@@ -99,17 +99,6 @@ class AppController extends Controller
         return $this->render('@App/App/vente.html.twig');
     }
 
-    // public function panierAction()
-    // {
-    //     $em = $this->getDoctrine()->getManager();
-    //         $produit = $em
-    //             ->getRepository('AppBundle:Produit')
-    //             ->findAll();
-            
-    //         return $this->render('@App/App/panier.html.twig', [
-    //             'produit' => $produit
-    //         ]);
-    // }
     public function allAction()
     {
         $em = $this->getDoctrine()->getManager();

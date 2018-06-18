@@ -9,14 +9,14 @@
 
     <main role="main">
 
-        {# Si le panier est vide #}
-        {# <div class="panier-vide">
-            <div class="bloc-icone-user">
-                <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
-            </div>
-            <h2 class="cart-empty">Votre panier est vide</h2>
-        </div> #}
-
+        {% if spanierVente is empty and commandes is empty  %}
+          <div class="panier-vide">
+              <div class="bloc-icone-user">
+                  <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
+              </div>
+              <h2 class="cart-empty">Votre panier est vide</h2>
+          </div> 
+        {% else %}
         {# Si le panier est rempli #}
         <div class="panier-commandes">
 
@@ -29,6 +29,7 @@
                         <span class="infos-commande-panier">
                             <h2 class="prix-template-panier">{{produits.prix}}€</h2>
                             <div class="titre-template-panier">{{produits.titre}}</div>
+                            <a href="{{ url('produit_delete',{id: produits.id}) }}">Supprimer</a>
                         </span>
                     </div>
                 {% endfor %}
@@ -46,7 +47,7 @@
             </div>
 
         </div>
-
+      {% endif %}
     </main>
 
 {% endblock body %}
