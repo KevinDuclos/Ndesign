@@ -6,24 +6,33 @@
     {# CONTENU PRINCIPAL #}
     <main role="main">
     
-        <h3>Votre commande s'élève à {{sum}} &euro; </h3>
-        <form action ="" method="POST" >
-            <input type="text" placeholder="Entrez les numeros de votre carte de paiement"/>
+        <h3 class="indication-prix">Votre commande s'élève à {{sum}} &euro;</h3>
 
+        <form action="" method="POST" class="form-pay">
 
-            <select >
+            <label for="" class="label">Numéro de carte</label>
+            <input type="text" class="input-text">
+
+            <label for="" class="label">Mois et année d'expiration</label>            
+            <select class="selection-pay">
                 {% for i in 1..12 %}
-                <option value="{{ i }}">{{ i }}</option>
+                    <option value="{{ i }}">{{ i }}</option>
                 {% endfor %}
             </select>
-            <select>
-                {% for i in 18..22 %}
-                <option value="{{i}}">{{ i }}</option>
-                {% endfor %}
 
-            <input type= "text" placeholder="Cryptogramme">
-            <input type="submit" value ="Payer">
+            <select class="selection-pay">
+                {% for i in 2018..2022 %}
+                    <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+
+            <label for="" class="label">Cryptogramme</label>
+            <input type="text" class="input-text-crypto">
+
+            <input type="submit" value="Payer" class="pay-button">
+
         </form>
+
     </main>
 
 

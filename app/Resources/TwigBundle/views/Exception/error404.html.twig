@@ -1,13 +1,69 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}ERROR 404{% endblock %}</title>
 
-{% block body %}
+        {# Favicon #}
+        <link rel="icon" type="image/x-icon" href="{{ asset('assets/img/favicon.png') }}" />
+    </head>
+    <body>
 
-    {# FEATURE #}
-    <div class="feature">
-        
-        <img src="{{ asset('assets/img/bg-p-404.png') }}" alt="Image feature" class="img-feature">
-        
-    </div>
-    {# END FEATURE #}
+        <style>
 
-{% endblock %}
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .img-404 {
+                width: 100%;
+                margin-top: -60px;
+            }
+
+            .error-404 {
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                font-family: 'Barlow', sans-serif;
+                font-size: 90px;
+                color: black;
+                letter-spacing: 1.3px;
+                text-transform: uppercase;
+                text-shadow: 0 0 15px white; 
+                left: 50%;
+                margin-left: -259px;
+                top: 50%;
+                margin-top: -54px;
+            }
+
+            .lien-accueil {
+                margin: 0;
+                padding: 0;
+                position: absolute;
+                font-family: 'Barlow', sans-serif;
+                font-size: 40px;
+                color: black;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                text-decoration: none;
+                left: 50%;
+                margin-left: -290px;
+                top: 50%;
+                margin-top: 50px;
+                transition: all 0.3s;
+            }
+
+            .lien-accueil:hover {
+                text-decoration: underline;
+            }
+
+        </style>
+
+        <h2 class="error-404">Erreur 404</h2>
+        <a href="" class="lien-accueil">Retour à la page d'accueil</a>
+
+        <img src="{{ asset('assets/img/fond-p-404-deg.jpg') }}" alt="Image 404" class="img-404">
+
+    </body>
+</html>

@@ -34,16 +34,19 @@
                     </div>
                 {% endfor %}
 
+                <a href="{{ path('app_all')}}" class="continue-shop">Poursuivre les achats</a>            
+
             </div>
 
             {# PRIX TOTAL #}
             <div class="total">
 
                 <h3 class="titre-total">Total</h3>
-                <div class="prix-total">{%  if sum == 0 %} {% else %}{{ sum }} &euro;{% endif %}</div>
-                <a href="{{path('app_paiement')}}">
-                <div class="button-pay">Payer</div>
-                </a>
+                    <div class="prix-total">{%  if sum == 0 %} {% else %}{{ sum }} &euro;{% endif %}</div>
+                    <a href="{{path('app_paiement')}}">
+                        <div class="button-pay">Payer</div>
+                    </a>
+
             </div>
 
         </div>
