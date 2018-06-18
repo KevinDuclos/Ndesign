@@ -1,27 +1,30 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-{{dump(app.session)}}
-<main role="main">
-    <h3>Votre commande s'élève à {{sum}} &euro; </h3>
-    <form action ="" method="POST" >
-        <input type="text" placeholder="Entrez les numeros de votre carte de paiement"/>
+{# {{dump(app.session)}} #}
+
+    {# CONTENU PRINCIPAL #}
+    <main role="main">
+    
+        <h3>Votre commande s'élève à {{sum}} &euro; </h3>
+        <form action ="" method="POST" >
+            <input type="text" placeholder="Entrez les numeros de votre carte de paiement"/>
 
 
-        <select >
-            {% for i in 1..12 %}
-            <option value="{{ i }}">{{ i }}</option>
-            {% endfor %}
-        </select>
-        <select>
-            {% for i in 18..22 %}
-            <option value="{{i}}">{{ i }}</option>
-            {% endfor %}
+            <select >
+                {% for i in 1..12 %}
+                <option value="{{ i }}">{{ i }}</option>
+                {% endfor %}
+            </select>
+            <select>
+                {% for i in 18..22 %}
+                <option value="{{i}}">{{ i }}</option>
+                {% endfor %}
 
-        <input type= "text" placeholder="Cryptogramme">
-        <input type="submit" value ="Payer">
-    </form>
-</main>
+            <input type= "text" placeholder="Cryptogramme">
+            <input type="submit" value ="Payer">
+        </form>
+    </main>
 
 
 {% endblock body %}

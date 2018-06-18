@@ -25,14 +25,13 @@
             
                 {% for produits in commandes %}
                     <div class="contenu-produit">
-                        <img src="{{ asset('assets/img/template2.png') }}" alt="" class="image-template-panier">
+                        <img src="{{ asset('assets/img/mini'~ produits.id ~'.png') }}" alt="" class="image-template-panier">
                         <span class="infos-commande-panier">
                             <h2 class="prix-template-panier">{{produits.prix}}€</h2>
                             <div class="titre-template-panier">{{produits.titre}}</div>
-                            <a href="{{ url('produit_delete',{id: produits.id}) }}">Supprimer</a>
+                            <a href="{{ url('produit_delete',{id: produits.id}) }}" class="delete-template-panier">Supprimer</a>
                         </span>
                     </div>
-                    
                 {% endfor %}
 
             </div>
