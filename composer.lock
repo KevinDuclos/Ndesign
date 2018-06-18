@@ -1518,6 +1518,8 @@
                 "random"
             ],
             "time": "2018-06-08T15:26:40+00:00"
+<<<<<<< HEAD
+=======
         },
         {
             "name": "payplug/payplug-php",
@@ -1564,6 +1566,7 @@
             "description": "A simple PHP library for PayPlug public API.",
             "homepage": "https://www.payplug.com",
             "time": "2015-05-06T00:00:00+00:00"
+>>>>>>> f7dbec714857d23e610a3cfd8eb263ad310eb160
         },
         {
             "name": "psr/cache",

@@ -1477,6 +1477,204 @@ footer {
  ************************ MEDIA QUERIES ************************
  ***************************************************************/
 
+/* MEDIA QUERY FOR IPAD */
+@media screen and (max-width: 950px) {
+
+    /********************
+     *** MAIN-CONTENT ***
+     ********************/
+
+    /* 
+     * INDEX
+     */
+    
+    .titre-feature {
+        top: 30px;
+        right: 30px;
+        font-size: 70px;
+    }
+
+    .gros-titre {
+        font-size: 65px;
+    }
+
+    .intro {
+        left: 40px;
+        bottom: 120px;
+        font-size: 40px;
+    }
+
+    a.single-template {
+        float: left;
+        width: 180px;
+        height: auto;
+        margin: 20px;
+    }
+
+    .titre-template {
+        font-size: 20px;
+    }
+
+    .plus-ressources {
+        font-size: 20px;
+        margin-left: -135px;
+    }
+
+    /* 
+     * CONTACT
+     */
+
+    .bloc-localisation {
+        width: 40%;
+    }
+
+    .div-google-maps {
+        width: 100%;
+    }
+
+    .form-contact {
+        width: 60%;
+    }
+
+    .img-reussite-message {
+        width: 60%;
+    }
+
+    /*
+     * PANIER
+     */
+
+    .contenu-produit {
+        height: 110px;
+    }
+
+    /*
+     * PROFIL
+     */
+
+    /* DASHBOARD */
+
+    .section-dashboard {
+        width: 100%;
+    }
+
+    /* MES INFORMATIONS */
+
+    .section-informations {
+        width: 100%;
+    }
+
+    /* MOT DE PASSE */
+
+    .section-motdepasse {
+        width: 100%;
+    }
+
+    /* MOYEN DE PAIEMENT */
+
+    .section-paiement {
+        width: 100%;
+    }
+
+    /* HISTORIQUE DE COMMANDES */
+
+    .section-commandes {
+        width: 100%;
+    }
+
+    .date-commande {
+        left: 100px;
+        margin-left: 0;
+    }
+
+    /* 
+     * SINGLE
+     */
+
+    .contenu-single {
+        display: block;
+    }
+
+    .illustration-single {
+        position: relative;
+        width: 100%;
+        top: 40px;
+    }
+
+    .textes-single {
+        position: relative;
+        top: 20px;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .titre-prix {
+        display: block;
+    }
+    
+    .titre-single {
+        width: 100%;
+        font-size: 40px;
+        padding: 0;
+        margin-bottom: 10px;
+    }
+    
+    .prix {
+        position: relative;
+        text-align: end;
+        padding: 0;
+        margin-bottom: 20px;
+    }
+    
+    .descrip-single {
+        line-height: 1.3;
+        font-size: 18px;
+    }
+    
+    .live-preview {
+        position: relative;
+        top: 10px;
+    }
+    
+    .add-to-cart {
+        bottom: -70px;
+        left: 1px;
+        right: 1px;
+    }
+
+    /* 
+     * CONNEXION
+     */
+
+    .form-connexion {
+        width: 60%;
+    }
+
+    /* 
+     * INSCRIPTION
+     */
+    
+    .form-inscription {
+        width: 60%;
+    }
+
+    /**************
+     *** FOOTER ***
+     **************/
+
+    .image-contact {
+        width: 200px;
+        margin-left: 90px;
+    }
+
+    .icone-team {
+        width: 170px;
+        right: 90px;
+    }
+
+}
+/* FIN MEDIA QUERY FOR IPAD */
+
 /* MEDIA QUERY FOR IPHONE */
 @media screen and (max-width: 600px) {
 
@@ -1905,39 +2103,15 @@ footer {
      ****** FOOTER ******
      ********************/
 
-    /* Image "contactez nous" */
     .image-contact {
-        width: 150px;
-        margin-left: 20px;
-        margin-top: 20px;
-        margin-bottom: 20px;
+        width: 160px;
+        margin-left: 30px;
     }
 
-    /* Icônes de la team */
     .icone-team {
         width: 130px;
-        top: 0;
-        right: 20px;
-        margin-bottom: 20px;
+        right: 30px;
     }
 
 }
 /* FIN MEDIA QUERY FOR IPHONE */
-
-/* MEDIA QUERY FOR IPAD */
-@media screen and (max-width: 900px) {
-
-    /**************
-     *** HEADER ***
-     **************/
-
-    /********************
-     *** MAIN-CONTENT ***
-     ********************/
-
-    /**************
-     *** FOOTER ***
-     **************/
-
-
-}

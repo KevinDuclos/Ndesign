@@ -792,10 +792,13 @@ a.forget-password:hover {
 .sidebar {
     width: 30%;
     margin-top: 60px;
+<<<<<<< HEAD
+=======
 }
 
 .lien-sidebar {
     cursor: pointer;
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
 }
 
 /* Titres sidebar */
@@ -896,8 +899,12 @@ a.forget-password:hover {
 /* TABLEAU DE BORD */
 
 .dashboard {
+<<<<<<< HEAD
+    display: none;
+=======
     /* display: none; */
     background-color: white;
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
 }
 
 .partie-gauche {
@@ -1049,6 +1056,41 @@ a.forget-password:hover {
 
 .mes-commandes {
     display: none;
+<<<<<<< HEAD
+}
+
+.tableau-commandes {
+    width: 80%;
+    margin-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    background-color: tomato;
+}
+
+.col-img-commande {
+    float: left;
+    background-color: teal;
+    width: 20%;
+}
+
+.col-num-commande {
+    float: left;
+    background-color: white;
+    width: 20%;
+}
+
+.col-date-commande {
+    float: left;
+    background-color: brown;
+    width: 20%;
+}
+
+.col-prix-commande {
+    float: left;
+    background-color: yellow;
+    width: 20%;
+=======
     margin-top: 70px;
 }
 
@@ -1095,6 +1137,7 @@ a.forget-password:hover {
     margin-top: -7.5px;
     color: black;
     font-weight: 500;
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
 }
 
 /*******************
@@ -1223,6 +1266,15 @@ a.forget-password:hover {
 }
 
 /* Liste des templates */
+<<<<<<< HEAD
+.templates-all {
+    display: flex;
+}
+
+/* Carte template individuel */
+.template-all {
+    margin: 10px;
+=======
 a.single-template-all {
     float: left;    
     position: relative;
@@ -1231,6 +1283,7 @@ a.single-template-all {
     text-decoration: none;
     color: black;
     margin: 30px;
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
     -webkit-box-shadow: 5px 5px 0px 0px lightgrey;
     -moz-box-shadow:    5px 5px 0px 0px lightgrey;
     -o-box-shadow:      5px 5px 0px 0px lightgrey;
@@ -1238,13 +1291,30 @@ a.single-template-all {
     transition: all 0.3s;
 }
 
+<<<<<<< HEAD
+.template-all:hover {
+=======
 a.single-template-all:hover {
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
     -webkit-box-shadow: 15px 15px 0px 0px lightgrey;
     -moz-box-shadow:    15px 15px 0px 0px lightgrey;
     -o-box-shadow:      15px 15px 0px 0px lightgrey;
     box-shadow:         15px 15px 0px 0px lightgrey;
 }
 
+<<<<<<< HEAD
+/* Aperçu du template */
+.image-template-all {
+    width: 100%;
+}
+
+/* Titre du template */
+.titre-template-all {
+    font-size: 23px;
+    font-weight: 600;
+    color: black;
+    padding: 20px;
+=======
 /* Image des templates */
 .image-template-all {
     position: relative;
@@ -1256,6 +1326,7 @@ a.single-template-all:hover {
     padding: 20px;
     font-size: 23px;
     font-weight: 600;
+>>>>>>> 5c1b983a50961ed6931165b88672208c4165f2fa
 }
 
 /****************
