@@ -57,6 +57,6 @@ app_paiement:
     methods: GET
     
 app_paye:
-    path: /payer
+    path: /paiement
     defaults: { _controller: AppBundle:App:payer}
     methods: POST

@@ -3,7 +3,7 @@
 namespace AppBundle\Form;
 
 use AppBundle\Entity\Categorie;
-use AppBundle\Form\ImageType;
+// use AppBundle\Form\ImageType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -12,7 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Vich\UploaderBundle\Form\Type\VichImageType;
-use Vich\UploaderBundle\Form\Type\VichFileType;
+// use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class ProduitType extends AbstractType
 {
@@ -33,14 +33,7 @@ class ProduitType extends AbstractType
             )
                     ))
 
-            ->add('category',EntityType::class,array(
-            'class'=> 'AppBundle\Entity\Categorie',
-            'choice_label' => 'category',
-            'multiple'=>false,
-            'attr'=> array(
-                "class"=>"form-control"
-            )
-                    ))
+           
             ->add('prix',TextType::class,array(
             'attr'=> array(
                 "class"=>"form-control"

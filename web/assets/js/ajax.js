@@ -34,7 +34,10 @@ $(document).ready( function(){
             success: function(response){
                 console.log(response);
                 if(response.status == 'saved'){
-                    form.fadeOut(1000);
+                    form.fadeOut(1);
+                    $('.img-reussite-message').fadeIn(1);
+                    
+
                  } 
             }
         });

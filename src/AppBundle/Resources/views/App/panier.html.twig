@@ -15,7 +15,7 @@
                 <img src="{{ asset('assets/img/icone-panier-vide.svg') }}" alt="" class="user-cart-empty">            
             </div>
             <h2 class="cart-empty">Votre panier est vide</h2>
-        </div> #}
+        </div> #}ù
 
         {# Si le panier est rempli #}
         <div class="panier-commandes">
@@ -37,14 +37,16 @@
             </div>
 
             {# PRIX TOTAL #}
-            <div class="total">
-
+                {%  if sum == 0 %}
+                {% else %}  
+                <div class="total">
                 <h3 class="titre-total">Total</h3>
-                <div class="prix-total">{%  if sum == 0 %} {% else %}{{ sum }} &euro;{% endif %}</div>
+                <div class="prix-total"> {{ sum }} &euro;</div>
                 <a href="{{path('app_paiement')}}">
                 <div class="button-pay">Payer</div>
                 </a>
             </div>
+                {% endif %}
 
         </div>
 

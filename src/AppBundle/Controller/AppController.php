@@ -7,6 +7,9 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Contact;
+use AppBundle\Entity\Produit;
+use AppBundle\Entity\Commande;
+use User\UserBundle\Entity\User;
 use AppBundle\Form\ContactType;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Session\Session; 
@@ -48,15 +51,6 @@ class AppController extends Controller
     {       
          $contact = new Contact;
          $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
-        
-         
-        //  if($form->handleRequest($request)->isSubmitted()){
-        //         $em = $this->getDoctrine()->getManager();
-        //         $em->persist($contact);
-        //         $em->flush();
-        //     //    return $this->redirectToRoute('app_homepage');
-            
-        //  }
          $form = $form->createView();
          
          return $this ->render('@App/App/contact.html.twig', [
@@ -103,17 +97,6 @@ class AppController extends Controller
         return $this->render('@App/App/vente.html.twig');
     }
 
-    // public function panierAction()
-    // {
-    //     $em = $this->getDoctrine()->getManager();
-    //         $produit = $em
-    //             ->getRepository('AppBundle:Produit')
-    //             ->findAll();
-            
-    //         return $this->render('@App/App/panier.html.twig', [
-    //             'produit' => $produit
-    //         ]);
-    // }
     public function allAction()
     {
         $em = $this->getDoctrine()->getManager();
@@ -167,15 +150,26 @@ class AppController extends Controller
     public function payerAction()
     {
         $commande = new Commande();
-       
-            $em = $this->getDoctrine()->getManager();
-            $user= $this->getUser();
-            $commande->setUser($user->getId());
-           
-            $em->persist($commande);
-            $em->flush();
+        // $produit= [];
+        $em = $this->getDoctrine()->getManager();
+        // $commande = $em->getReference('Appbundle\Entity\Commande', $user_id);
+        // $user = new User();
+        // $user= $this->getUser();
+        // $user -> addCommande($commande);
+        // foreach($_SESSION as $session){
+        //     // echo "<pre>";
+            
+        //     // print_r($session);
 
-            return $this->redirectToRoute('app_homepage');
+        //     // echo "</pre>";
+        // }
+        // die();
+        var_dump($commande);
+        die();
+        $em->persist($commande);
+        $em->flush();
+
+        return $this->redirectToRoute('app_homepage');
         
 
 
