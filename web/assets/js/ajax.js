@@ -26,7 +26,7 @@ $(document).ready( function(){
         var form = $('.form-contact');
         
         $.ajax({
-            method: "POST",
+            type: "POST",
             url: contact,
             data:{ data: form.serializeArray()},
             dataType: "json",

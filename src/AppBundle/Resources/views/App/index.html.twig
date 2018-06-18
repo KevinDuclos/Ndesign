@@ -24,21 +24,13 @@
 
         {# APERCUS TEMPLATES #}
         <span class="templates">
-
-            <a href="" class="single-template">
+            {% for produit in produits %}
+            <a href="{{ path('app_single', {'id': produit.id }) }}" class="single-template">
                 <img src="{{ asset('assets/img/template1.png') }}" alt="Image de template" class="image-template">
-                <h5 class="titre-template">AltoFocus</h5>
+                <h5 class="titre-template">{{produit.titre}}</h5>
             </a>
-
-            <a href="" class="single-template">
-                <img src="{{ asset('assets/img/template2.png') }}" alt="Image de template" class="image-template">
-                <h5 class="titre-template">Small Business</h5>
-            </a>
-
-            <a href="" class="single-template">
-                <img src="{{ asset('assets/img/template3.png') }}" alt="Image de template" class="image-template">
-                <h5 class="titre-template">Spatial</h5>
-            </a>
+            {% endfor %}
+            
 
         <div class="clear"></div>        
 

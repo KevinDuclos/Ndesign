@@ -38,7 +38,7 @@ class OrderController extends Controller
                     $produit[$id] = $id;
                     $session->set('produit',$produit);
 
-                    return $this->redirectToRoute('app_all');
+                    return $this->redirectToRoute('app_panier');
                     
                     
                 }
@@ -54,18 +54,23 @@ class OrderController extends Controller
 		# Récupération des paniers en session
 		$spanierVente    = $session->get('produit');
         $commandes=[];
+        $sum = 0;
+
 		# Réuperation des oeuvres en bdd
 		if (!empty($spanierVente)){
 
-			$idsv = array_keys($spanierVente);
+            $idsv = array_keys($spanierVente);
 			foreach ($idsv as $id){
-				$commandes[$id] = $this->getDoctrine()->getRepository('AppBundle:Produit')->find($id);
+                $commandes[$id] = $this->getDoctrine()->getRepository('AppBundle:Produit')->find($id);
+                
+                $sum = $sum + $commandes[$id]->getPrix();
 			}
 		}
 
 		return $this->render('@App/App/panier.html.twig',[
             'commandes' => $commandes,
-            'spanierVente' => $spanierVente
+            'spanierVente' => $spanierVente,
+            'sum'=> $sum
         ]);
 
     }

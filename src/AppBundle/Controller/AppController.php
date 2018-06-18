@@ -1,14 +1,16 @@
 <?php
 
 namespace AppBundle\Controller;
-use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Contact;
 use AppBundle\Form\ContactType;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Session\Session; 
+
 
 class AppController extends Controller
 {
@@ -21,7 +23,7 @@ class AppController extends Controller
             $em = $this->getDoctrine()->getManager();
             $produits = $em
                 ->getRepository('AppBundle:Produit')
-                ->findAll();
+                ->getAllproduit();
             
             return $this->render('@App/App/index.html.twig', [
                 'produits' => $produits,
@@ -74,14 +76,16 @@ class AppController extends Controller
             $form = $this->createForm(ContactType::class, $contact,array('method' => 'POST'));
             $selected_documents = $request->request->get('data');
             $form ->handleRequest($request);
-            // if($form->isValid()){ 
+            // var_dump($form);
+            // die();
+            // if($form->isSubmitted()&& $form->isValid()){ 
                 // die('bonjour');
                 
                 $contact->setEmail($selected_documents[0]['value']);
                 $contact->setTelephone($selected_documents[1]['value']);
                 $contact->setSujet($selected_documents[2]['value']);
                 $contact->setMessage($selected_documents[3]['value']);
-
+                // die('plop');
                 $status = "saved";                
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($contact);
@@ -118,5 +122,51 @@ class AppController extends Controller
     {
         return $this->render('@App/App/confident.html.twig');
     }
-    
+    public function paiementAction()
+    {
+         # On ouvre une session (si besoin)
+		if(!isset($session)) {$session = new Session();}
+
+		# Récupération des paniers en session
+		$spanierVente    = $session->get('produit');
+        $commandes=[];
+        $sum = 0;
+
+		# Réuperation des oeuvres en bdd
+		if (!empty($spanierVente)){
+
+            $idsv = array_keys($spanierVente);
+			foreach ($idsv as $id){
+                $commandes[$id] = $this->getDoctrine()->getRepository('AppBundle:Produit')->find($id);
+                
+                $sum = $sum + $commandes[$id]->getPrix();
+                $user= $this->getUser();
+                $user->getId();
+              
+			}
+		}
+
+		return $this->render('@App/App/paiement.html.twig',[
+            'commandes' => $commandes,
+            'sum'=> $sum,
+            'session'=>$session
+        ]);
+    }
+
+    public function payerAction()
+    {
+        $commande = new Commande();
+       
+            $em = $this->getDoctrine()->getManager();
+            $user= $this->getUser();
+            $commande->setUser($user->getId());
+           
+            $em->persist($commande);
+            $em->flush();
+
+            return $this->redirectToRoute('app_homepage');
+        
+
+
+    }
 }

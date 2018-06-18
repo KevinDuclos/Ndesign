@@ -62,6 +62,7 @@ class ContactType extends AbstractType
             'data_class' => 'AppBundle\Entity\Contact'
         ));
     }
+    
     public function getBlockPrefix() {
         return null;
     }
