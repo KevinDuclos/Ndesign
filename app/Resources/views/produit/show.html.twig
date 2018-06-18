@@ -6,27 +6,27 @@
     <table>
         <tbody>
             <tr>
-                <th>Id</th>
-                <td>{{ produit.id }}</td>
+                <th scope="row">Id</th>
+                <td scope="col">{{ produit.id }}</td>
             </tr>
             <tr>
-                <th>Titre</th>
-                <td>{{ produit.titre }}</td>
+                <th scope="row">Titre</th>
+                <td scope="col">{{ produit.titre }}</td>
             </tr>
             <tr>
-                <th>Prix</th>
-                <td>{{ produit.prix }}</td>
+                <th scope="row">Prix</th>
+                <td scope="col">{{ produit.prix }}</td>
             </tr>
             <tr>
-                <th>Poids</th>
-                <td>{{ produit.poids }}</td>
+                <th scope="row">Poids</th>
+                <td scope="col">{{ produit.poids }}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('produit_index') }}">Back to the list</a>
+            <a href="{{ path('app_produits') }}">Back to the list</a>
         </li>
         <li>
             <a href="{{ path('produit_edit', { 'id': produit.id }) }}">Edit</a>

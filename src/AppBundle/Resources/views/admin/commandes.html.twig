@@ -1,0 +1,31 @@
+{% extends ('base_admin.html.twig') %}
+
+{% block body %}
+    <h1>Liste des commandes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th scope="row">Id</th>
+                <th scope="row">Produit</th>
+                <th scope="row">Prix</th>
+                <th scope="row">Poids</th>
+                <th scope="row">Utilisateur</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for commande in commandes %}
+        
+            {% for produit in commande.produits %}
+            <tr>
+                <td scope="col">{{ commande.id }}</td>
+                    <td scope="col"><a href="{{ path('produit_show', { 'id': produit.id }) }}">{{ produit.titre }}</a></td>
+                    <td scope="col">{{ produit.prix }}</td>
+                    <td scope="col">{{ produit.poids }}</td>
+                    <td scope="col">{{ commande.user.username }}</td>
+            </tr>
+            {% endfor %}
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

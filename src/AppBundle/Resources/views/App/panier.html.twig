@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<main role="main">
+
+  <h2>Panier</h2>
+
+    <table>
+
+      <thead class="entete-panier">
+        <tr>
+          <th scope="row">Nom produit</th>
+          <th scope="row">Prix</th>
+        </tr>
+      </thead>
+      <tbody>
+      {% for commande in commandes %}
+        {% for produit in commande.produits %}
+          <tr>
+            <td scope="col">{{ produit.titre }}</td>
+            <td scope="col">{{ produit.prix }}
+          </tr>
+        {% endfor %}
+      {% endfor %}
+      </tbody>
+    </table>
+
+</main>
+
+{% endblock body %}

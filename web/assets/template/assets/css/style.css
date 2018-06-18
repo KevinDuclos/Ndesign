@@ -1,0 +1,209 @@
+/**
+ * Layout
+ */
+*, *:hover, *:focus {
+    outline: none;
+    border-color: inherit;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+}
+a {
+    cursor: pointer;
+}
+
+.btn.btn-yellow {
+    background-color: #fbd708;
+    border-radius: 0;
+    border: none;
+    font-size: 1.3rem;
+    color: #000000;
+    
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.btn.btn-yellow:hover {
+    background-color: #e82208;
+    color: #FFFFFF;
+}
+
+/**
+ * Header
+ */
+
+.main-header {
+    background-color: rgba(0, 0, 0, 0.6);
+    -webkit-transition: all .6s;
+            transition: all .6s;
+}
+/* Main Header scrollé > opacité 90% */
+.scrolled .main-header {
+    background-color: rgba(0, 0, 0, 0.9);
+    -webkit-transition: all .6s;
+            transition: all .6s;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(255,255,255,.5);
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    color: rgba(255,255,255,1);
+}
+
+
+
+/**
+ * Footer
+ */
+
+.googlemap, .contact {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+.googlemap-content {
+    top: -80px;
+    height: 380px !important;
+    width: 100% !important;
+    position: relative;
+    overflow: hidden;
+}
+.googlemap iframe {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    height: 200%;
+    width: 200%;
+}
+.copyright {
+    background-color: #ffffff;
+}
+
+.contact .form-control {
+    border-radius: 0;
+    border: 1px solid rgba(255,255,255,.7);
+    background-color: rgba(255,255,255,0);
+    color: #ffffff;
+
+    -webkit-transition: all .3s;
+            transition: all .3s;
+}
+.contact .form-control:focus {
+    background-color: rgba(255,255,255,.1);
+}
+
+
+/**
+ * Content
+ */
+
+/* sections */
+section {
+    margin-bottom: 80px;
+}
+section:last-child {
+    margin-bottom: 160px;
+}
+
+/* sections header */
+.section-header {
+    text-align: center;
+}
+.section-header .lead {
+    color: #797979;
+}
+.section-title {
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+    text-transform: uppercase;
+
+    display: inline-block;
+    border-bottom: 3px solid #fbd708;
+}
+.section-title::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+/* cards */
+.card {
+    border: none;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+.card-title {
+    text-align: center;
+}
+.card-text {
+    text-align: justify;
+}
+.card .btn.btn-yellow {
+    color: #FFFFFF;
+}
+/* 
+.card .btn {
+    background-color: #e82208;
+    border-radius: 0;
+    border: none;
+    font-size: 1.3rem;
+    
+    -webkit-transition: all .3s;
+    transition: all .3s;
+}
+.card .btn:hover {
+    background-color: #fbd708;
+} */
+
+
+
+/**
+ * Content Pages
+ */
+
+.featured {
+    /* background-image: url(./../images/pizza-show-1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* height: 700px; */
+}
+
+#featured-carousel {
+    position: relative;
+}
+#featured-carousel::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+
+    background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    
+    z-index: 1;
+}
+.carousel-control {
+    z-index: 2;
+}
+
+.jumbotron {
+    top: 205px;
+    position: relative;
+    border-radius: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    text-transform: uppercase;
+    text-align: center;
+}
+.jumbotron .lead {
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+.jumbotron .btn {
+    font-size: 90%;
+}

@@ -52,7 +52,7 @@
 						</div>
 						<div class="col-sm-9 col-lg-7 widget-right">
 							<div class="large">{{ users }}</div>
-							<div class="text-muted">D'utilisateurs</div>
+							<div class="text-muted">{% if users <= 1 %}Utilisateur{% else %} Utilisateurs{% endif %}</div>
 						</div>
 					</div>
 				</div>
@@ -65,9 +65,13 @@
 				<div class="panel panel-default">
 					<div class="panel-body">
 						<div class="canvas-wrapper">
-						<div class="large">{% for temp in temps %}
+						<div class="large">
+						<ul>
+						{% for temp in temps %}
     						<li>{{ temp.titre }}</li>
-							{% endfor %}</div>
+						{% endfor %}
+						</ul>
+						</div>
 							<canvas class="main-chart" id="line-chart" height="200" width="600"></canvas>
 						</div>
 					</div>

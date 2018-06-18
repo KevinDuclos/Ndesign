@@ -32,27 +32,70 @@
 
             </div>
 
-            {# Formulaire de contact #}
-            <form action="" method="post" class="form-contact">
+            {# FORMULAIRE DE BASE #}
+
+            {# <form action="" method="post" class="form-contact"> #}
 
                 {# Champ email #}
-                <input type="text" name="" id="" class="input-text" placeholder="Email">
+                {# <input type="text" name="" id="" class="input-text" placeholder="Email"> #}
 
                 {# Champ tel #}
-                <input type="tel" name="" id="" class="input-text" placeholder="Téléphone">
+                {# <input type="tel" name="" id="" class="input-text" placeholder="Téléphone"> #}
 
                 {# Champ objet #}
-                <input type="text" name="" id="" class="input-text" placeholder="Objet">
+                {# <input type="text" name="" id="" class="input-text" placeholder="Objet"> #}
 
                 {# Champ texte #}
-                <textarea name="" id="" cols="30" class="input-textarea" placeholder="Votre message..."></textarea>
+                {# <textarea name="" id="" cols="30" class="input-textarea" placeholder="Votre message..."></textarea> #}
 
                 {# Bouton de contact #}
-                <a href="#">
-                    <img src="{{ asset('assets/img/send.svg') }}" alt="" class="icone-send">
-                </a>
+                {# <a href="#"> #}
+                    {# <img src="{{ asset('assets/img/send.svg') }}" alt="" class="icone-send"> #}
+                {# </a> #}
 
-            </form>
+            {# </form> #}
+
+            {# Formulaire de contact #}
+            {{ form_start (form, {
+                'attr' :{
+                    'class': 'form-contact'
+                }
+            }) }}
+
+                {# Champ email #}
+                {{ form_widget(form.email, {
+                        'attr':{
+                            'class': 'input-text',
+                            'placeholder': 'Email'
+                        }
+                    }) }}
+
+                {# Champ téléphone #}
+                {{ form_widget(form.telephone, {
+                        'attr':{
+                            'class': 'input-text',
+                            'placeholder': 'Téléphone'
+                        }
+                    }) }}
+        
+                {# Champ objet #}
+                {{ form_widget(form.sujet, {
+                        'attr':{
+                            'class': 'input-text',
+                            'placeholder': 'Objet'
+                        }
+                    }) }}
+
+                {# Champ message #}
+                {{ form_widget(form.message, {
+                        'attr':{
+                            'class': 'input-textarea',
+                            'placeholder': 'Votre message...'
+                        }
+                    }) }}
+
+                <input type="image" src="{{ asset('assets/img/send.svg') }}" value="" alt="" class="icone-send">
+            {{ form_end (form) }}
 
         </section>
 

@@ -2,9 +2,13 @@ app_homepage:
     path: /
     defaults: { _controller: AppBundle:App:index }
 
+app_produits:
+    path: /admin/produits/
+    defaults: { _controller: AppBundle:Admin:produit }
+
 app_produit:
     resource: "@AppBundle/Resources/config/routing/produit.yml"
-    prefix:   /admin/produit
+    prefix:   /admin
 
 app_contact:
     path: /contact
@@ -21,3 +25,15 @@ app_single:
 app_vente:
     path: /conditions-de-ventes/
     defaults: { _controller: AppBundle:App:vente }
+
+app_panier:
+    path: /user/panier
+    defaults: { _controller: AppBundle:App:panier}
+
+app_all:
+    path: /all
+    defaults: { _controller: AppBundle:App:all}
+
+app_confident:
+    path: /politique-confidentialité/
+    defaults: { _controller: AppBundle:App:confident }
