@@ -1361,6 +1361,16 @@ a.single-template-all:hover {
 .titre-template-panier {
     font-size: 25px;
     font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.delete-template-panier {
+    color: black;
+    font-size: 20px;
+}
+
+.delete-template-panier:hover {
+    text-decoration: underline;
 }
 
 /* Contenu total */

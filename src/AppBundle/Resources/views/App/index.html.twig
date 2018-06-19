@@ -26,7 +26,7 @@
         <span class="templates">
             {% for produit in produits %}
             <a href="{{ path('app_single', {'id': produit.id }) }}" class="single-template">
-                <img src="{{ asset('assets/img/template1.png') }}" alt="Image de template" class="image-template">
+                <img src="{{ asset('assets/img/mini'~ produit.id ~'.png') }}" alt="Image de template" class="image-template">
                 <h5 class="titre-template">{{produit.titre}}</h5>
             </a>
             {% endfor %}

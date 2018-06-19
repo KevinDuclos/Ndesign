@@ -30,7 +30,7 @@ class Commande
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="User\UserBundle\Entity\User", inversedBy="commande")
+     * @ORM\ManyToOne(targetEntity="User\UserBundle\Entity\User", inversedBy="commande",cascade={"persist"})
      */
     private $user;
 
@@ -77,7 +77,7 @@ class Commande
      */
     public function __construct()
     {
-        $this->user = new \Doctrine\Common\Collections\ArrayCollection();
+        // $this->user = new \Doctrine\Common\Collections\ArrayCollection();
         $this->produit = new \Doctrine\Common\Collections\ArrayCollection();
     }
 

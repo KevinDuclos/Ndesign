@@ -116,6 +116,7 @@ class AppController extends Controller
     {
         return $this->render('@App/App/confident.html.twig');
     }
+
     public function paiementAction()
     {
          # On ouvre une session (si besoin)
@@ -150,23 +151,21 @@ class AppController extends Controller
     public function payerAction()
     {
         $commande = new Commande();
-        // $produit= [];
         $em = $this->getDoctrine()->getManager();
-        // $commande = $em->getReference('Appbundle\Entity\Commande', $user_id);
-        // $user = new User();
-        // $user= $this->getUser();
-        // $user -> addCommande($commande);
-        // foreach($_SESSION as $session){
-        //     // echo "<pre>";
-            
-        //     // print_r($session);
-
-        //     // echo "</pre>";
+        // $produit= new Produit();
+        $session =$this->get('session');
+        // var_dump($session);
+        $produit = $session->get('produit');
+        $commande->addProduit(new Produit, $produit);
+        // foreach($session as $sess){
         // }
+       
+        $user= $this->getUser();
+        $commande->setUser(new User, $user);
         // die();
-        var_dump($commande);
-        die();
         $em->persist($commande);
+        // $em->persist($produit);
+        $em->persist($user);
         $em->flush();
 
         return $this->redirectToRoute('app_homepage');
