@@ -162,12 +162,7 @@ class AppController extends Controller
        
         $user= $this->getUser();
         $commande->setUser(new User, $user);
-        foreach($commande as $commandes){
-            echo "<pre>";
-            print_r($commandes);
-            echo "</pre>";
-        }
-        // var_dump($commande);
+         
         die();
         $em->persist($commande);
         // $em->persist($produit);
