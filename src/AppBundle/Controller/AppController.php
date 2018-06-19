@@ -163,7 +163,7 @@ class AppController extends Controller
         $user= $this->getUser();
         $commande->setUser(new User, $user);
          
-        die();
+        // die();
         $em->persist($commande);
         // $em->persist($produit);
         $em->persist($user);
