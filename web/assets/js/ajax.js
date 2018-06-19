@@ -35,10 +35,9 @@ $(document).ready( function(){
                 console.log(response);
                 if(response.status == 'saved'){
                     form.fadeOut(1);
-                    $('.img-reussite-message').fadeIn(1);
-                    
+                    $('.img-reussite-message').css('display','block'); 
 
-                 } 
+                } 
             }
         });
     });
